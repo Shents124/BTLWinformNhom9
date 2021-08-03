@@ -2,5 +2,8 @@
 {
     class test
     {
+        private string te;
+
+        private string zelda_SieuCap_ProVip_No1;
     }
 }
