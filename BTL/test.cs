@@ -10,10 +10,6 @@ namespace BTL
     {
         private string te;
 
-        public string _te
-        {
-            get;
-            set;
-        }
+        private string zelda;
     }
 }
