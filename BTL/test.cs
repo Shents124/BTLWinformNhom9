@@ -9,5 +9,11 @@ namespace BTL
     class test
     {
         private string te;
+
+        public string _te
+        {
+            get;
+            set;
+        }
     }
 }
