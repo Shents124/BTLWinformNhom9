@@ -8,5 +8,9 @@ namespace BTL
 {
     class test
     {
+        public void Test()
+        {
+            Console.WriteLine("Lambeo");
+        }
     }
 }
