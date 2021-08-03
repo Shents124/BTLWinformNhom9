@@ -1,6 +1,4 @@
-﻿
-
-namespace BTL
+﻿namespace BTL
 {
     class test
     {
