@@ -9,5 +9,6 @@ namespace BTL
     class test
     {
         private string te;
+        private int aaa;
     }
 }
