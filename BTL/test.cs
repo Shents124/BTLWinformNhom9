@@ -6,5 +6,7 @@
 
         private string zelda_SieuCap_ProVip_No1;
         private string zelda;
+
+        private string DInhSon;
     }
 }
