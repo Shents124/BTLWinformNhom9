@@ -24,7 +24,9 @@ namespace BTL
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (isValidUser())
-                MessageBox.Show("Đăng nhập thành công");
+            {
+                this.DialogResult = DialogResult.OK;
+            }
             else
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
         }
