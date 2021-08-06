@@ -189,7 +189,7 @@ namespace BTL
             // 
             // btnXoaAll
             // 
-            this.btnXoaAll.Location = new System.Drawing.Point(447, 433);
+            this.btnXoaAll.Location = new System.Drawing.Point(422, 416);
             this.btnXoaAll.Name = "btnXoaAll";
             this.btnXoaAll.Size = new System.Drawing.Size(94, 29);
             this.btnXoaAll.TabIndex = 28;
