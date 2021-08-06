@@ -95,7 +95,7 @@ namespace BTL
         private void btnQLDonNhapHang_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý đơn nhập hàng
-            OpenChildForm(new FormQuanLyDonHang());
+            OpenChildForm(new FormQuanLyDonHang(), sender);
             HideSubMenu();
         }
 
