@@ -10,6 +10,7 @@ namespace BTL
     public partial class DangNhap : Form
     {
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
+        public int MaTK { get; set; }
 
         public DangNhap()
         {
@@ -45,6 +46,7 @@ namespace BTL
                 var taikhoan = from tk in qLBanSachContext.Taikhoans
                                where tk.TenDangNhap == txtTenDangNhap.Text && tk.MatKhau == txtMatKhau.Text
                                select tk;
+                MaTK = taikhoan.ToList()[0].MaTk;
 
                 if (taikhoan.Any())
                     return true;
