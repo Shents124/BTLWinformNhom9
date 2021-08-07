@@ -38,9 +38,10 @@ namespace BTL
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbTim = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dsDanhMuc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +56,10 @@ namespace BTL
             this.dsDanhMuc.Name = "dsDanhMuc";
             this.dsDanhMuc.RowHeadersWidth = 51;
             this.dsDanhMuc.RowTemplate.Height = 29;
-            this.dsDanhMuc.Size = new System.Drawing.Size(541, 191);
+            this.dsDanhMuc.Size = new System.Drawing.Size(583, 318);
             this.dsDanhMuc.TabIndex = 30;
+            this.dsDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
+            this.dsDanhMuc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
             // 
             // maloai
             // 
@@ -79,10 +82,10 @@ namespace BTL
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txbTim);
             this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(138, 250);
+            this.groupBox1.Location = new System.Drawing.Point(138, 375);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(583, 177);
             this.groupBox1.TabIndex = 31;
@@ -97,6 +100,7 @@ namespace BTL
             this.btnThoat.TabIndex = 33;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnSap
             // 
@@ -106,6 +110,7 @@ namespace BTL
             this.btnSap.TabIndex = 32;
             this.btnSap.Text = "Sắp xếp";
             this.btnSap.UseVisualStyleBackColor = true;
+            this.btnSap.Click += new System.EventHandler(this.btnSap_Click);
             // 
             // btnXoa
             // 
@@ -115,6 +120,7 @@ namespace BTL
             this.btnXoa.TabIndex = 29;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -124,6 +130,7 @@ namespace BTL
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -133,13 +140,14 @@ namespace BTL
             this.btnThem.TabIndex = 27;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // textBox4
+            // txbTim
             // 
-            this.textBox4.Location = new System.Drawing.Point(183, 38);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 25;
+            this.txbTim.Location = new System.Drawing.Point(183, 38);
+            this.txbTim.Name = "txbTim";
+            this.txbTim.Size = new System.Drawing.Size(125, 27);
+            this.txbTim.TabIndex = 25;
             // 
             // btnTim
             // 
@@ -149,6 +157,7 @@ namespace BTL
             this.btnTim.TabIndex = 26;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label5
             // 
@@ -159,15 +168,31 @@ namespace BTL
             this.label5.TabIndex = 19;
             this.label5.Text = "Tìm kiếm theo tên";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Blue;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(737, 55);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(102, 66);
+            this.btnReset.TabIndex = 33;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // BaoTriDanhMucSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 459);
+            this.ClientSize = new System.Drawing.Size(865, 573);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dsDanhMuc);
             this.Controls.Add(this.groupBox1);
+            this.IsMdiContainer = true;
             this.Name = "BaoTriDanhMucSach";
             this.Text = "BaoTriDanhMucSach";
+            this.Load += new System.EventHandler(this.BaoTriDanhMuc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dsDanhMuc)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -186,8 +211,9 @@ namespace BTL
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbTim;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnReset;
     }
 }

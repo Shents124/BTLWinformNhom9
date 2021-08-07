@@ -211,6 +211,7 @@ namespace BTL
             this.ClientSize = new System.Drawing.Size(1198, 574);
             this.Controls.Add(this.dsSach);
             this.Controls.Add(this.groupBox1);
+            this.IsMdiContainer = true;
             this.Name = "BaoTriSach";
             this.Text = "BaoTriSach";
             ((System.ComponentModel.ISupportInitialize)(this.dsSach)).EndInit();
