@@ -35,9 +35,8 @@ namespace BTL
             this.tenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giasach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongcon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhaxuatban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbTim = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,6 +45,7 @@ namespace BTL
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dsSach)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,14 +59,15 @@ namespace BTL
             this.tenloai,
             this.giasach,
             this.tacgia,
-            this.soluongcon,
             this.nhaxuatban});
             this.dsSach.Location = new System.Drawing.Point(12, 28);
             this.dsSach.Name = "dsSach";
             this.dsSach.RowHeadersWidth = 51;
             this.dsSach.RowTemplate.Height = 29;
-            this.dsSach.Size = new System.Drawing.Size(1183, 267);
+            this.dsSach.Size = new System.Drawing.Size(1066, 267);
             this.dsSach.TabIndex = 28;
+            this.dsSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
+            this.dsSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
             // 
             // masach
             // 
@@ -103,13 +104,6 @@ namespace BTL
             this.tacgia.Name = "tacgia";
             this.tacgia.Width = 150;
             // 
-            // soluongcon
-            // 
-            this.soluongcon.HeaderText = "Số lượng còn";
-            this.soluongcon.MinimumWidth = 6;
-            this.soluongcon.Name = "soluongcon";
-            this.soluongcon.Width = 125;
-            // 
             // nhaxuatban
             // 
             this.nhaxuatban.HeaderText = "Nhà xuất bản";
@@ -117,12 +111,12 @@ namespace BTL
             this.nhaxuatban.Name = "nhaxuatban";
             this.nhaxuatban.Width = 200;
             // 
-            // textBox4
+            // txbTim
             // 
-            this.textBox4.Location = new System.Drawing.Point(183, 38);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 25;
+            this.txbTim.Location = new System.Drawing.Point(183, 38);
+            this.txbTim.Name = "txbTim";
+            this.txbTim.Size = new System.Drawing.Size(125, 27);
+            this.txbTim.TabIndex = 25;
             // 
             // btnTim
             // 
@@ -132,6 +126,7 @@ namespace BTL
             this.btnTim.TabIndex = 26;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label5
             // 
@@ -149,7 +144,7 @@ namespace BTL
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txbTim);
             this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(254, 373);
@@ -167,6 +162,7 @@ namespace BTL
             this.btnThoat.TabIndex = 31;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // btnSap
             // 
@@ -176,6 +172,7 @@ namespace BTL
             this.btnSap.TabIndex = 30;
             this.btnSap.Text = "Sắp xếp";
             this.btnSap.UseVisualStyleBackColor = true;
+            this.btnSap.Click += new System.EventHandler(this.SapXep_Click);
             // 
             // btnXoa
             // 
@@ -185,6 +182,7 @@ namespace BTL
             this.btnXoa.TabIndex = 29;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.Xoa_Click);
             // 
             // btnSua
             // 
@@ -194,6 +192,7 @@ namespace BTL
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.SuaClick);
             // 
             // btnThem
             // 
@@ -203,17 +202,33 @@ namespace BTL
             this.btnThem.TabIndex = 27;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.Them_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Blue;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(1084, 74);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(102, 66);
+            this.btnReset.TabIndex = 34;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.Resert_Click);
             // 
             // BaoTriSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 574);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dsSach);
             this.Controls.Add(this.groupBox1);
             this.IsMdiContainer = true;
             this.Name = "BaoTriSach";
             this.Text = "BaoTriSach";
+            this.Load += new System.EventHandler(this.BaoTriSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dsSach)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -224,14 +239,7 @@ namespace BTL
         #endregion
 
         private System.Windows.Forms.DataGridView dsSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tensach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenloai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giasach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluongcon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nhaxuatban;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbTim;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -240,5 +248,12 @@ namespace BTL
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tensach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenloai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giasach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhaxuatban;
+        private System.Windows.Forms.Button btnReset;
     }
 }

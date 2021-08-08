@@ -100,6 +100,14 @@ namespace BTL
                         Loaisach spXoa = (from s in db.Loaisaches
                                           where s.TenLoai == tenLoaiXoa
                                           select s).FirstOrDefault();
+                        int maloai = spXoa.MaLoai;
+                        var query = from s in db.Saches
+                                      where s.MaLoai == maloai
+                                      select s;
+                        foreach(Sach item in query)
+                        {
+                                db.Saches.Remove(item);
+                        }
                         //Xóa đối tượng khỏi tập hợp 
                         db.Loaisaches.Remove(spXoa);
                         //Cập nhật thay đổi vào csdl    
