@@ -16,6 +16,7 @@ namespace BTL
         {
             InitializeComponent();
             this.maTK = maTK;
+            CustomizeDesign();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -90,6 +91,7 @@ namespace BTL
         {
             // Hiển thị form quản lý đơn đặt hàng
             HideSubMenu();
+            OpenChildForm(new QLDonDatHang(), sender);
         }
 
         private void btnQLDonNhapHang_Click(object sender, EventArgs e)
