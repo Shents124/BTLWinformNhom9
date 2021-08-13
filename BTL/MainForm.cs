@@ -6,10 +6,16 @@ namespace BTL
     public partial class MainForm : Form
     {
         private Form activeForm = null;
-
+        private int maTK;
         public MainForm()
         {
             InitializeComponent();
+            CustomizeDesign();
+        }
+        public MainForm(int maTK)
+        {
+            InitializeComponent();
+            this.maTK = maTK;
             CustomizeDesign();
         }
 
@@ -71,6 +77,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
+            OpenChildForm(new QuanLyHoaDonForm());          
             HideSubMenu();
         }
         #endregion
@@ -85,18 +92,20 @@ namespace BTL
         {
             // Hiển thị form quản lý đơn đặt hàng
             HideSubMenu();
+            OpenChildForm(new QLDonDatHang(), sender);
         }
 
         private void btnQLDonNhapHang_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý đơn nhập hàng
-            OpenChildForm(new FormQuanLyDonHang());
+            OpenChildForm(new FormQuanLyDonHang(), sender);
             HideSubMenu();
         }
 
         private void btnQLNhaCungCap_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý nhà cung cấp
+            OpenChildForm(new QuanLyNhaCC());
             HideSubMenu();
         }
         #endregion
@@ -124,6 +133,7 @@ namespace BTL
         private void btnQLKhachHang_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý thông tin khách hàng
+            OpenChildForm(new FormQuanLyThongTinKH());
             HideSubMenu();
         }
         #endregion
@@ -140,7 +150,7 @@ namespace BTL
 
         // Chỉ mở được một form trên panel
         // Gọi hàm này khi nhấn các button mở form ở panel, tham số là form muốn mở
-        private void OpenChildForm(Form childForm)
+        private void OpenChildForm(Form childForm, object sender)
         {
             // Đóng form đang mở
             if (activeForm != null)
@@ -150,12 +160,12 @@ namespace BTL
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-
             panelChildForm.Controls.Add(childForm);
             panelChildForm.Tag = childForm;
 
             childForm.BringToFront();
             childForm.Show();
+            lblTitle.Text = (sender as Button).Text;
         }
         #endregion
 
