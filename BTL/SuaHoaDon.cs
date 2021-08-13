@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.Drawing;
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using BTL.Models;
 
@@ -14,7 +13,7 @@ namespace BTL
     public partial class SuaHoaDon : Form
     {
         QLBanSachContext db = new QLBanSachContext();
-
+        static List<Cthoadon> li = new List<Cthoadon>();
         public SuaHoaDon()
         {
             InitializeComponent();
@@ -29,10 +28,10 @@ namespace BTL
         }
         private void LayChiTietHoaDon()
         {
-            var a = this.Tag;
+            var a = (Hoadon) this.Tag;
 
             var query3 = from h in db.Cthoadons
-                         where h.MaHd == int.Parse(a.ToString())
+                         where h.MaHd == a.MaHd
                          select new
                          {
                              h.MaSachNavigation.TenSach,
@@ -59,10 +58,10 @@ namespace BTL
         }
         private void LayThongTinKhachHangVaHoaDon()
         {
-            var a = this.Tag;
+            var a = (Hoadon)this.Tag;
 
             var query = from h in db.Hoadons
-                        where h.MaHd == int.Parse(a.ToString())
+                        where h.MaHd == a.MaHd
                         select new
                         {
                             h.MaHd,
@@ -103,43 +102,129 @@ namespace BTL
         }
         private void Sua()
         {
+            if (BatLoiHoaDon())
+            {
+                XoaChiTietHoaDonCu();
+                ThemChiTietHoaDon();
+                
+            }
+            else
+            {
+                if (li.Count > 0)
+                {
+                    foreach (var item in li)
+                        db.Cthoadons.Remove(item);
+                    li.Clear();
+                }
+               
+            }
 
-            XoaChiTietHoaDonCu();
-            ThemChiTietHoaDon();
+
             //MessageBox.Show("Sửa hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //XoaText();
-          //  this.Close();
+            //  this.Close();
 
         }
         private void XoaChiTietHoaDonCu()
         {
-            var a = this.Tag;
+            var a = (Hoadon)this.Tag;
             var query = from ct in db.Cthoadons
-                        where ct.MaHd == int.Parse(a.ToString())
+                        where ct.MaHd == a.MaHd
                         select ct;
             var b = query.ToList();
           
             foreach (var item in b)
             {
-                db.Cthoadons.Remove(item);
-               
+                db.Cthoadons.Remove(item);         
             }
-            db.SaveChanges();
+            int k=db.SaveChanges();
+            k = 0;
        
         }
         private void ThemChiTietHoaDon()
         {
-            
-            var a = this.Tag;
-           
-            Cthoadon cthd = new Cthoadon();
-            
-            cthd.MaHd = int.Parse(a.ToString());
+
+            var a = (Hoadon)this.Tag;
+
             int sum = dvgDachsachsua.Rows.Count;
         
             for (int i = 0; i < sum - 1; i++)
             {
 
+                Cthoadon cthd = new Cthoadon();
+
+                cthd.MaHd = a.MaHd;
+                var dongia = from s in db.Saches
+                             where s.MaSach == int.Parse(dvgDachsachsua.Rows[i].Cells[0].Value.ToString())
+                             select new
+                             {
+                                 s.DonGia,
+                             };
+
+                //if (dvgDachsachsua.Rows[i].Cells[0].Value == null)
+                //{
+                //    MessageBox.Show("Bạn chưa lựa chọn tên sản phẩm mua");
+
+                //    return;
+                //}
+                //if (dvgDachsachsua.Rows[i].Cells[2].Value == null)
+                //{
+                //    MessageBox.Show("Bạn chưa nhập số lượng sản phẩm mua");
+
+                //    return;
+                //}
+                //else
+                //{
+                //    try
+                //    {
+                //        int d = int.Parse(dvgDachsachsua.Rows[i].Cells[2].Value.ToString());
+                //    }
+                //    catch
+                //    {
+                //        MessageBox.Show("Bạn nhập số lượng sản phẩm mua không đúng định dạng");
+
+                //        return;
+                //    }
+                //}
+                var dongia2 = dongia.ToList();
+                cthd.MaSach = int.Parse(dvgDachsachsua.Rows[i].Cells[0].Value.ToString());
+                cthd.SoLuong = int.Parse(dvgDachsachsua.Rows[i].Cells[2].Value.ToString());
+                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
+                db.Cthoadons.Add(cthd);
+                int k=db.SaveChanges();
+                k = 0;
+                //try
+                //{
+                //    db.SaveChanges();
+                //}
+
+                //catch
+                //{
+                //    MessageBox.Show("Bạn không thể chọn cùng 1 loại sách trên 2 dòng khác nhau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    db.Cthoadons.Remove(cthd);
+                //    return;
+                //}
+
+            }
+          
+        }
+        private bool BatLoiHoaDon()
+        {
+            var queery = from hd in db.Hoadons
+                         select hd;
+            int dem = queery.ToList().Count;
+        
+            var b = queery.ToList();
+
+             
+            int sum = dvgDachsachsua.Rows.Count;
+           
+            for (int i = 0; i < sum - 1; i++)
+            {
+                Cthoadon cthd = new Cthoadon();
+
+                //cthd.MaHd = int.Parse(a.ToString());
+                cthd.MaHd = b[dem - 1].MaHd+1;
                 var dongia = from s in db.Saches
                              where s.MaSach == int.Parse(dvgDachsachsua.Rows[i].Cells[0].Value.ToString())
                              select new
@@ -150,15 +235,14 @@ namespace BTL
                 if (dvgDachsachsua.Rows[i].Cells[0].Value == null)
                 {
                     MessageBox.Show("Bạn chưa lựa chọn tên sản phẩm mua");
-
-                    return;
+                    return false;
                 }
                 if (dvgDachsachsua.Rows[i].Cells[2].Value == null)
                 {
                     MessageBox.Show("Bạn chưa nhập số lượng sản phẩm mua");
-
-                    return;
+                    return false;
                 }
+
                 else
                 {
                     try
@@ -169,31 +253,31 @@ namespace BTL
                     {
                         MessageBox.Show("Bạn nhập số lượng sản phẩm mua không đúng định dạng");
 
-                        return;
+                        return false;
                     }
                 }
+
                 var dongia2 = dongia.ToList();
                 cthd.MaSach = int.Parse(dvgDachsachsua.Rows[i].Cells[0].Value.ToString());
                 cthd.SoLuong = int.Parse(dvgDachsachsua.Rows[i].Cells[2].Value.ToString());
                 cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
-                db.Cthoadons.Add(cthd);
-
-                try
+                if (db.Cthoadons.Find(cthd.MaHd, cthd.MaSach) != null)
                 {
-                    db.SaveChanges();
+                    MessageBox.Show("Bạn không thể chọn 1 sản phẩn trên 2 dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
                 }
-
-                catch
+                else
                 {
-                    MessageBox.Show("Bạn không thể chọn cùng 1 loại sách trên 2 dòng khác nhau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    db.Cthoadons.Remove(cthd);
-                    return;
-                }
-                
+                    li.Add(cthd);
+                    db.Cthoadons.Add(cthd);
+                }        
             }
-          
+            if(li.Count>0)
+            foreach (Cthoadon item in li)
+                db.Cthoadons.Remove(item);
+            li.Clear();
+            return true;
         }
-      
         private void XoaText()
         {
             dtNgayLapHoaDon.Value = DateTime.Today;

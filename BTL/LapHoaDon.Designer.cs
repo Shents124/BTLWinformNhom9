@@ -44,13 +44,14 @@ namespace BTL
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDachsachthem)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 74);
+            this.label1.Location = new System.Drawing.Point(68, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
@@ -86,7 +87,7 @@ namespace BTL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(523, 69);
+            this.label5.Location = new System.Drawing.Point(68, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 4;
@@ -105,6 +106,7 @@ namespace BTL
             this.dvgDachsachthem.RowTemplate.Height = 29;
             this.dvgDachsachthem.Size = new System.Drawing.Size(790, 191);
             this.dvgDachsachthem.TabIndex = 8;
+            this.dvgDachsachthem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDachsachthem_CellClick);
             // 
             // TenHang
             // 
@@ -129,8 +131,9 @@ namespace BTL
             // 
             // dtNgayLapHoaDon
             // 
-            this.dtNgayLapHoaDon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLapHoaDon.Location = new System.Drawing.Point(230, 69);
+            this.dtNgayLapHoaDon.CustomFormat = "";
+            this.dtNgayLapHoaDon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayLapHoaDon.Location = new System.Drawing.Point(230, 253);
             this.dtNgayLapHoaDon.Name = "dtNgayLapHoaDon";
             this.dtNgayLapHoaDon.Size = new System.Drawing.Size(125, 27);
             this.dtNgayLapHoaDon.TabIndex = 9;
@@ -158,7 +161,7 @@ namespace BTL
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(622, 71);
+            this.textBox4.Location = new System.Drawing.Point(230, 211);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(125, 27);
             this.textBox4.TabIndex = 13;
@@ -173,11 +176,22 @@ namespace BTL
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(995, 412);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(94, 29);
+            this.btnXoa.TabIndex = 15;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // LapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1160, 647);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.txtDiaChi);
@@ -216,5 +230,6 @@ namespace BTL
         private System.Windows.Forms.DataGridViewComboBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

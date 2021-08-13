@@ -16,6 +16,7 @@ namespace BTL
         {
             InitializeComponent();
             this.maTK = maTK;
+            CustomizeDesign();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -76,6 +77,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
+            OpenChildForm(new QuanLyHoaDonForm());          
             HideSubMenu();
         }
         #endregion
@@ -90,6 +92,7 @@ namespace BTL
         {
             // Hiển thị form quản lý đơn đặt hàng
             HideSubMenu();
+            OpenChildForm(new QLDonDatHang(), sender);
         }
 
         private void btnQLDonNhapHang_Click(object sender, EventArgs e)
@@ -102,6 +105,7 @@ namespace BTL
         private void btnQLNhaCungCap_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý nhà cung cấp
+            OpenChildForm(new QuanLyNhaCC());
             HideSubMenu();
         }
         #endregion
@@ -129,6 +133,7 @@ namespace BTL
         private void btnQLKhachHang_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý thông tin khách hàng
+            OpenChildForm(new FormQuanLyThongTinKH());
             HideSubMenu();
         }
         #endregion
@@ -155,7 +160,6 @@ namespace BTL
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-
             panelChildForm.Controls.Add(childForm);
             panelChildForm.Tag = childForm;
 
