@@ -21,7 +21,7 @@ namespace BTL
         {
             this.Close();
         }
-
+        #region HoverButton
         private void btnSearch_MouseMove(object sender, MouseEventArgs e)
         {
            // btnSearch.Image = Properties.Resources.icons8_google_web_search_48__1_;
@@ -54,6 +54,23 @@ namespace BTL
         {
            // btnRefresh.Image = Properties.Resources.icons8_refresh_48;
             btnRefresh.Font = new Font("Arial", 12, FontStyle.Regular);
+        }
+        #endregion
+
+        private void FormQuanLyDonHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            FormQuanLyDonHang_Them frmQLDH_Them = new FormQuanLyDonHang_Them();
+            if (Application.OpenForms[frmQLDH_Them.Name] == null)
+            {
+                frmQLDH_Them.Show();
+            }
+            else
+                Application.OpenForms[frmQLDH_Them.Name].Focus();
         }
     }
 }
