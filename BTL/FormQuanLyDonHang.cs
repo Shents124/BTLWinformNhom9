@@ -64,13 +64,35 @@ namespace BTL
 
         private void btnXem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
             FormQuanLyDonHang_Them frmQLDH_Them = new FormQuanLyDonHang_Them();
             if (Application.OpenForms[frmQLDH_Them.Name] == null)
             {
-                frmQLDH_Them.Show();
+                frmQLDH_Them.ShowDialog();
             }
             else
                 Application.OpenForms[frmQLDH_Them.Name].Focus();
+        }
+
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            FormQuanLyDonHang_Sua frmQLDH_Sua = new FormQuanLyDonHang_Sua();
+            if (Application.OpenForms[frmQLDH_Sua.Name] == null)
+            {
+                frmQLDH_Sua.ShowDialog();
+            }
+            else
+                Application.OpenForms[frmQLDH_Sua.Name].Focus();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

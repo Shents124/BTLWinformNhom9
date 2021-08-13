@@ -158,5 +158,18 @@ namespace BTL
             childForm.Show();
         }
         #endregion
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Quay lại màn hình đăng nhập", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Hide();
+                DangNhap dn = new DangNhap();
+                dn.ShowDialog();
+            }
+            else
+                e.Cancel = true;
+        }
     }
 }

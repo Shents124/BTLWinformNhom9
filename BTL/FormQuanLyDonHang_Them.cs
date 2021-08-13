@@ -24,9 +24,8 @@ namespace BTL
 
         private void FormQuanLyDonHang_Them_Load(object sender, EventArgs e)
         {
-
+            
         }
-
         #region MoveBorderlessWindow
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -43,7 +42,7 @@ namespace BTL
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
-        } 
+        }
         #endregion
     }
 }
