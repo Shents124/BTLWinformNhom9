@@ -1,7 +1,7 @@
 ﻿
 namespace BTL
 {
-    partial class QuanLyHoaDon
+    partial class QuanLyHoaDonForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,10 @@ namespace BTL
             this.txtTenkhachhang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.grChucNang = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.txtMahdtim = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnboloc = new System.Windows.Forms.Button();
             this.btnSuahoadon = new System.Windows.Forms.Button();
             this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
@@ -59,7 +63,8 @@ namespace BTL
             this.label9 = new System.Windows.Forms.Label();
             this.btnXem = new System.Windows.Forms.Button();
             this.grChiTietHoaDon = new System.Windows.Forms.GroupBox();
-            this.btnboloc = new System.Windows.Forms.Button();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietsach)).BeginInit();
             this.grDanhSachHoaDon.SuspendLayout();
@@ -72,7 +77,7 @@ namespace BTL
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnmenucon);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1291, 44);
@@ -81,7 +86,7 @@ namespace BTL
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 9);
+            this.label1.Location = new System.Drawing.Point(512, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 1;
@@ -167,11 +172,11 @@ namespace BTL
             // dvgDanhsachchitietsach
             // 
             this.dvgDanhsachchitietsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDanhsachchitietsach.Location = new System.Drawing.Point(400, 26);
+            this.dvgDanhsachchitietsach.Location = new System.Drawing.Point(376, 26);
             this.dvgDanhsachchitietsach.Name = "dvgDanhsachchitietsach";
             this.dvgDanhsachchitietsach.RowHeadersWidth = 51;
             this.dvgDanhsachchitietsach.RowTemplate.Height = 29;
-            this.dvgDanhsachchitietsach.Size = new System.Drawing.Size(663, 206);
+            this.dvgDanhsachchitietsach.Size = new System.Drawing.Size(750, 222);
             this.dvgDanhsachchitietsach.TabIndex = 1;
             // 
             // grDanhSachHoaDon
@@ -179,7 +184,7 @@ namespace BTL
             this.grDanhSachHoaDon.Controls.Add(this.dvgDanhSachHoaDon);
             this.grDanhSachHoaDon.Location = new System.Drawing.Point(12, 50);
             this.grDanhSachHoaDon.Name = "grDanhSachHoaDon";
-            this.grDanhSachHoaDon.Size = new System.Drawing.Size(1075, 152);
+            this.grDanhSachHoaDon.Size = new System.Drawing.Size(1157, 180);
             this.grDanhSachHoaDon.TabIndex = 9;
             this.grDanhSachHoaDon.TabStop = false;
             this.grDanhSachHoaDon.Text = "Danh Sách Hóa Đơn";
@@ -187,12 +192,11 @@ namespace BTL
             // dvgDanhSachHoaDon
             // 
             this.dvgDanhSachHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDanhSachHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgDanhSachHoaDon.Location = new System.Drawing.Point(3, 23);
+            this.dvgDanhSachHoaDon.Location = new System.Drawing.Point(6, 26);
             this.dvgDanhSachHoaDon.Name = "dvgDanhSachHoaDon";
             this.dvgDanhSachHoaDon.RowHeadersWidth = 51;
             this.dvgDanhSachHoaDon.RowTemplate.Height = 29;
-            this.dvgDanhSachHoaDon.Size = new System.Drawing.Size(1069, 126);
+            this.dvgDanhSachHoaDon.Size = new System.Drawing.Size(674, 148);
             this.dvgDanhSachHoaDon.TabIndex = 0;
             this.dvgDanhSachHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDanhSachHoaDon_CellClick);
             // 
@@ -249,6 +253,9 @@ namespace BTL
             // 
             // grChucNang
             // 
+            this.grChucNang.Controls.Add(this.btnTim);
+            this.grChucNang.Controls.Add(this.txtMahdtim);
+            this.grChucNang.Controls.Add(this.label12);
             this.grChucNang.Controls.Add(this.btnboloc);
             this.grChucNang.Controls.Add(this.btnSuahoadon);
             this.grChucNang.Controls.Add(this.btnLapHoaDon);
@@ -258,18 +265,54 @@ namespace BTL
             this.grChucNang.Controls.Add(this.label10);
             this.grChucNang.Controls.Add(this.label9);
             this.grChucNang.Controls.Add(this.btnXem);
-            this.grChucNang.Location = new System.Drawing.Point(21, 508);
+            this.grChucNang.Location = new System.Drawing.Point(12, 565);
             this.grChucNang.Name = "grChucNang";
-            this.grChucNang.Size = new System.Drawing.Size(1068, 153);
+            this.grChucNang.Size = new System.Drawing.Size(1157, 153);
             this.grChucNang.TabIndex = 11;
             this.grChucNang.TabStop = false;
             this.grChucNang.Text = "Chức Năng";
             // 
+            // btnTim
+            // 
+            this.btnTim.Image = global::BTL.Properties.Resources.icons8_google_web_search_48;
+            this.btnTim.Location = new System.Drawing.Point(339, 24);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(47, 45);
+            this.btnTim.TabIndex = 11;
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtMahdtim
+            // 
+            this.txtMahdtim.Location = new System.Drawing.Point(183, 40);
+            this.txtMahdtim.Name = "txtMahdtim";
+            this.txtMahdtim.Size = new System.Drawing.Size(141, 27);
+            this.txtMahdtim.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(64, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 20);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Mã hóa đơn";
+            // 
+            // btnboloc
+            // 
+            this.btnboloc.Image = global::BTL.Properties.Resources.icons8_refresh_48__1_;
+            this.btnboloc.Location = new System.Drawing.Point(448, 82);
+            this.btnboloc.Name = "btnboloc";
+            this.btnboloc.Size = new System.Drawing.Size(94, 53);
+            this.btnboloc.TabIndex = 8;
+            this.btnboloc.UseVisualStyleBackColor = true;
+            this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click);
+            // 
             // btnSuahoadon
             // 
-            this.btnSuahoadon.Location = new System.Drawing.Point(746, 37);
+            this.btnSuahoadon.Location = new System.Drawing.Point(920, 40);
             this.btnSuahoadon.Name = "btnSuahoadon";
-            this.btnSuahoadon.Size = new System.Drawing.Size(119, 29);
+            this.btnSuahoadon.Size = new System.Drawing.Size(130, 76);
             this.btnSuahoadon.TabIndex = 7;
             this.btnSuahoadon.Text = "Sửa Hóa Đơn";
             this.btnSuahoadon.UseVisualStyleBackColor = true;
@@ -277,9 +320,9 @@ namespace BTL
             // 
             // btnLapHoaDon
             // 
-            this.btnLapHoaDon.Location = new System.Drawing.Point(584, 80);
+            this.btnLapHoaDon.Location = new System.Drawing.Point(745, 37);
             this.btnLapHoaDon.Name = "btnLapHoaDon";
-            this.btnLapHoaDon.Size = new System.Drawing.Size(112, 29);
+            this.btnLapHoaDon.Size = new System.Drawing.Size(112, 76);
             this.btnLapHoaDon.TabIndex = 6;
             this.btnLapHoaDon.Text = "Lập Hóa Đơn";
             this.btnLapHoaDon.UseVisualStyleBackColor = true;
@@ -287,18 +330,18 @@ namespace BTL
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(448, 56);
+            this.btnLoc.Image = global::BTL.Properties.Resources.icons8_filter_48__1_;
+            this.btnLoc.Location = new System.Drawing.Point(448, 24);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(94, 29);
+            this.btnLoc.Size = new System.Drawing.Size(94, 51);
             this.btnLoc.TabIndex = 5;
-            this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // dtNgayketthuc
             // 
             this.dtNgayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayketthuc.Location = new System.Drawing.Point(183, 93);
+            this.dtNgayketthuc.Location = new System.Drawing.Point(183, 108);
             this.dtNgayketthuc.Name = "dtNgayketthuc";
             this.dtNgayketthuc.Size = new System.Drawing.Size(250, 27);
             this.dtNgayketthuc.TabIndex = 4;
@@ -306,7 +349,7 @@ namespace BTL
             // dtNgaybatdau
             // 
             this.dtNgaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaybatdau.Location = new System.Drawing.Point(183, 55);
+            this.dtNgaybatdau.Location = new System.Drawing.Point(183, 75);
             this.dtNgaybatdau.Name = "dtNgaybatdau";
             this.dtNgaybatdau.Size = new System.Drawing.Size(250, 27);
             this.dtNgaybatdau.TabIndex = 3;
@@ -314,26 +357,26 @@ namespace BTL
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(67, 93);
+            this.label10.Location = new System.Drawing.Point(63, 115);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 20);
+            this.label10.Size = new System.Drawing.Size(103, 20);
             this.label10.TabIndex = 2;
-            this.label10.Text = "Ngày kết thúc";
+            this.label10.Text = "Ngày kết thúc:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(63, 55);
+            this.label9.Location = new System.Drawing.Point(64, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.Size = new System.Drawing.Size(102, 20);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Ngày bắt đầu";
+            this.label9.Text = "Ngày bắt đầu:";
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(584, 37);
+            this.btnXem.Location = new System.Drawing.Point(586, 37);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(112, 29);
+            this.btnXem.Size = new System.Drawing.Size(112, 76);
             this.btnXem.TabIndex = 0;
             this.btnXem.Text = "Xem Hóa Đơn";
             this.btnXem.UseVisualStyleBackColor = true;
@@ -341,6 +384,8 @@ namespace BTL
             // 
             // grChiTietHoaDon
             // 
+            this.grChiTietHoaDon.Controls.Add(this.txtTongTien);
+            this.grChiTietHoaDon.Controls.Add(this.label11);
             this.grChiTietHoaDon.Controls.Add(this.txtDiachi);
             this.grChiTietHoaDon.Controls.Add(this.label8);
             this.grChiTietHoaDon.Controls.Add(this.txtSodienthoai);
@@ -356,33 +401,40 @@ namespace BTL
             this.grChiTietHoaDon.Controls.Add(this.txtMahoadon);
             this.grChiTietHoaDon.Controls.Add(this.label2);
             this.grChiTietHoaDon.Controls.Add(this.dvgDanhsachchitietsach);
-            this.grChiTietHoaDon.Location = new System.Drawing.Point(12, 208);
+            this.grChiTietHoaDon.Location = new System.Drawing.Point(12, 236);
             this.grChiTietHoaDon.Name = "grChiTietHoaDon";
-            this.grChiTietHoaDon.Size = new System.Drawing.Size(1075, 266);
+            this.grChiTietHoaDon.Size = new System.Drawing.Size(1157, 302);
             this.grChiTietHoaDon.TabIndex = 10;
             this.grChiTietHoaDon.TabStop = false;
             this.grChiTietHoaDon.Text = "Chi Tiết Hóa Đơn";
             // 
-            // btnboloc
+            // txtTongTien
             // 
-            this.btnboloc.Location = new System.Drawing.Point(448, 94);
-            this.btnboloc.Name = "btnboloc";
-            this.btnboloc.Size = new System.Drawing.Size(94, 29);
-            this.btnboloc.TabIndex = 8;
-            this.btnboloc.Text = "Bỏ Lọc";
-            this.btnboloc.UseVisualStyleBackColor = true;
-            this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click);
+            this.txtTongTien.Location = new System.Drawing.Point(1001, 260);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(125, 27);
+            this.txtTongTien.TabIndex = 17;
             // 
-            // QuanLyHoaDon
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(908, 267);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 20);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Tổng Tiền";
+            // 
+            // QuanLyHoaDonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 673);
+            this.ClientSize = new System.Drawing.Size(1291, 753);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grDanhSachHoaDon);
             this.Controls.Add(this.grChucNang);
             this.Controls.Add(this.grChiTietHoaDon);
-            this.Name = "QuanLyHoaDon";
+            this.Name = "QuanLyHoaDonForm";
             this.Text = "QuanLyHoaDon";
             this.Load += new System.EventHandler(this.QuanLyHoaDon_Load);
             this.panel1.ResumeLayout(false);
@@ -431,5 +483,10 @@ namespace BTL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSuahoadon;
         private System.Windows.Forms.Button btnboloc;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtMahdtim;
+        private System.Windows.Forms.Label label12;
     }
 }
