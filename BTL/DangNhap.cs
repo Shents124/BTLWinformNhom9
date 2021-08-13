@@ -27,10 +27,16 @@ namespace BTL
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (isValidUser())
-                MessageBox.Show("Đăng nhập thành công");
-            else
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+            //if (isValidUser())
+            //    MessageBox.Show("Đăng nhập thành công");
+            //else
+            //    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+            //-----------------------
+            //testing...
+            this.Hide();
+            MessageBox.Show("Đăng nhập thành công");
+            MainForm mainform = new MainForm();
+            mainform.Show();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -153,7 +159,7 @@ namespace BTL
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnAn_Click(object sender, EventArgs e)
