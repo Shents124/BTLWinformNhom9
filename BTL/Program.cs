@@ -15,7 +15,15 @@ namespace BTL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new DangNhap());
+            //DangNhap dangNhap = new DangNhap();
+            //if (dangNhap.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new MainForm(dangNhap.MaTK));
+            //}
+            //else
+            //    Application.Exit();
+
+            Application.Run(new MainForm());
         }
     }
 }

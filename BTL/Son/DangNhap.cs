@@ -1,6 +1,5 @@
 ﻿using BTL.Models;
 using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,6 +9,7 @@ namespace BTL
     public partial class DangNhap : Form
     {
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
+        public int MaTK { get; set; }
 
         public DangNhap()
         {
@@ -27,16 +27,12 @@ namespace BTL
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            //if (isValidUser())
-            //    MessageBox.Show("Đăng nhập thành công");
-            //else
-            //    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
-            //-----------------------
-            //testing...
-            this.Hide();
-            MessageBox.Show("Đăng nhập thành công");
-            MainForm mainform = new MainForm();
-            mainform.Show();
+            if (isValidUser())
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -53,6 +49,7 @@ namespace BTL
                 var taikhoan = from tk in qLBanSachContext.Taikhoans
                                where tk.TenDangNhap == txtTenDangNhap.Text && tk.MatKhau == txtMatKhau.Text
                                select tk;
+                MaTK = taikhoan.ToList()[0].MaTk;
 
                 if (taikhoan.Any())
                     return true;

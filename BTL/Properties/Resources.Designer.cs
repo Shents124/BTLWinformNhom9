@@ -85,7 +85,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_filter_48 {
             get {
-                object obj = ResourceManager.GetObject("icons8-filter-48", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_filter_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_filter_48__1_ {
             get {
-                object obj = ResourceManager.GetObject("icons8-filter-48 (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_filter_48__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_google_web_search_48 {
             get {
-                object obj = ResourceManager.GetObject("icons8-google-web-search-48", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_google_web_search_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_google_web_search_48__1_ {
             get {
-                object obj = ResourceManager.GetObject("icons8-google-web-search-48 (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_google_web_search_48__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_refresh_48 {
             get {
-                object obj = ResourceManager.GetObject("icons8-refresh-48", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_refresh_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace BTL.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_refresh_48__1_ {
             get {
-                object obj = ResourceManager.GetObject("icons8-refresh-48 (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_refresh_48__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +156,16 @@ namespace BTL.Properties {
         internal static System.Drawing.Bitmap icons8_toggle_on_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_toggle_on_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

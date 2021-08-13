@@ -30,7 +30,6 @@ namespace BTL
         private void InitializeComponent()
         {
             this.panelSildeMenu = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
             this.panelSach = new System.Windows.Forms.Panel();
@@ -48,12 +47,15 @@ namespace BTL
             this.btnBaoTriTK = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSildeMenu.SuspendLayout();
             this.panelSach.SuspendLayout();
             this.panelDHNhapXuat.SuspendLayout();
             this.panelQLTaiKhoan.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace BTL
             this.panelSildeMenu.AutoScroll = true;
             this.panelSildeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(123)))), ((int)(((byte)(57)))));
             this.panelSildeMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSildeMenu.Controls.Add(this.flowLayoutPanel1);
+            //this.panelSildeMenu.Controls.Add(this.flowLayoutPanel1);
             this.panelSildeMenu.Controls.Add(this.btnThongKe);
             this.panelSildeMenu.Controls.Add(this.btnQLKhachHang);
             this.panelSildeMenu.Controls.Add(this.panelSach);
@@ -82,11 +84,11 @@ namespace BTL
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(123)))), ((int)(((byte)(57)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 658);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 125);
-            this.flowLayoutPanel1.TabIndex = 12;
+            //this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(123)))), ((int)(((byte)(57)))));
+            //this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 658);
+            //this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            //this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 125);
+            //this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btnThongKe
             // 
@@ -354,6 +356,25 @@ namespace BTL
             // 
             // pictureBox1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(260, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1322, 125);
+            this.panel1.TabIndex = 1;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1322, 125);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "label1";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pictureBox1.BackgroundImage = global::BTL.Properties.Resources.vinaICON_jpg;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
@@ -364,13 +385,14 @@ namespace BTL
             // 
             // panelChildForm
             // 
+            this.panelChildForm.AutoScroll = true;
             this.panelChildForm.BackColor = System.Drawing.Color.White;
             this.panelChildForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(260, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(260, 125);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1322, 853);
-            this.panelChildForm.TabIndex = 1;
+            this.panelChildForm.Size = new System.Drawing.Size(1322, 728);
+            this.panelChildForm.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -378,6 +400,7 @@ namespace BTL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 853);
             this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSildeMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -392,6 +415,7 @@ namespace BTL
             this.panelQLTaiKhoan.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,8 +440,9 @@ namespace BTL
         private System.Windows.Forms.Button btnQLTK;
         private System.Windows.Forms.Button btnBaoTriTK;
         private System.Windows.Forms.Button btnQLNhaCungCap;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
