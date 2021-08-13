@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
 namespace BTL.Models
 {
-    public partial class Sach:IEquatable<Sach>
+    public partial class Sach
     {
         public Sach()
         {
@@ -15,7 +14,6 @@ namespace BTL.Models
             Ctpnhaps = new HashSet<Ctpnhap>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaSach { get; set; }
         public string TenSach { get; set; }
         public int MaLoai { get; set; }
@@ -27,10 +25,5 @@ namespace BTL.Models
         public virtual ICollection<Ctdondh> Ctdondhs { get; set; }
         public virtual ICollection<Cthoadon> Cthoadons { get; set; }
         public virtual ICollection<Ctpnhap> Ctpnhaps { get; set; }
-
-        public bool Equals(Sach other)
-        {
-            return this.MaSach.Equals(other.MaSach);
-        }
     }
 }

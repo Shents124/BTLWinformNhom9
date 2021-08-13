@@ -26,7 +26,6 @@ namespace BTL.Son
             InitializeComponent();
             HideAllPanel();
 
-            txtNCC.Visible = false;
             dtpNgayLap.Value = DateTime.Today;
 
             GetComboBoxLoaiSach();
@@ -92,22 +91,6 @@ namespace BTL.Son
             }
         }
 
-        private void rbNCC_Cu_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbNCC_Cu.Checked == true)
-            {
-                if (cbNCC.Visible == false)
-                    cbNCC.Visible = true;
-                txtNCC.Visible = false;
-            }
-
-            if (rbNCC_Moi.Checked == true)
-            {
-                if (txtNCC.Visible == false)
-                    txtNCC.Visible = true;
-                cbNCC.Visible = false;
-            }
-        }
         #endregion
 
         #region Truyền dữ liệu vào các ComboBox

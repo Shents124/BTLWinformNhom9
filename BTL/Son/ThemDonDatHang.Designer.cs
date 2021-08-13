@@ -32,13 +32,9 @@ namespace BTL.Son
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.rbNCC_Cu = new System.Windows.Forms.RadioButton();
-            this.rbNCC_Moi = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rbSachMoi = new System.Windows.Forms.RadioButton();
             this.rbSachCu = new System.Windows.Forms.RadioButton();
-            this.txtNCC = new System.Windows.Forms.TextBox();
             this.btnXoaSach = new System.Windows.Forms.Button();
             this.btnSuaSach = new System.Windows.Forms.Button();
             this.btnThemSach = new System.Windows.Forms.Button();
@@ -82,7 +78,6 @@ namespace BTL.Son
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelDatSachMoi.SuspendLayout();
             this.panelDatSachCu.SuspendLayout();
@@ -114,9 +109,7 @@ namespace BTL.Son
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.txtNCC);
             this.panel2.Controls.Add(this.btnXoaSach);
             this.panel2.Controls.Add(this.btnSuaSach);
             this.panel2.Controls.Add(this.btnThemSach);
@@ -131,45 +124,11 @@ namespace BTL.Son
             this.panel2.Size = new System.Drawing.Size(1047, 155);
             this.panel2.TabIndex = 7;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rbNCC_Cu);
-            this.panel5.Controls.Add(this.rbNCC_Moi);
-            this.panel5.Location = new System.Drawing.Point(240, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(169, 33);
-            this.panel5.TabIndex = 21;
-            // 
-            // rbNCC_Cu
-            // 
-            this.rbNCC_Cu.AutoSize = true;
-            this.rbNCC_Cu.Checked = true;
-            this.rbNCC_Cu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbNCC_Cu.Location = new System.Drawing.Point(0, 0);
-            this.rbNCC_Cu.Name = "rbNCC_Cu";
-            this.rbNCC_Cu.Size = new System.Drawing.Size(56, 33);
-            this.rbNCC_Cu.TabIndex = 18;
-            this.rbNCC_Cu.TabStop = true;
-            this.rbNCC_Cu.Text = "Cũ";
-            this.rbNCC_Cu.UseVisualStyleBackColor = true;
-            this.rbNCC_Cu.CheckedChanged += new System.EventHandler(this.rbNCC_Cu_CheckedChanged);
-            // 
-            // rbNCC_Moi
-            // 
-            this.rbNCC_Moi.AutoSize = true;
-            this.rbNCC_Moi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbNCC_Moi.Location = new System.Drawing.Point(101, 0);
-            this.rbNCC_Moi.Name = "rbNCC_Moi";
-            this.rbNCC_Moi.Size = new System.Drawing.Size(68, 33);
-            this.rbNCC_Moi.TabIndex = 18;
-            this.rbNCC_Moi.Text = "Mới";
-            this.rbNCC_Moi.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.rbSachMoi);
             this.panel4.Controls.Add(this.rbSachCu);
-            this.panel4.Location = new System.Drawing.Point(240, 107);
+            this.panel4.Location = new System.Drawing.Point(240, 82);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(214, 42);
             this.panel4.TabIndex = 20;
@@ -199,13 +158,6 @@ namespace BTL.Son
             this.rbSachCu.Text = "Sách cũ";
             this.rbSachCu.UseVisualStyleBackColor = true;
             this.rbSachCu.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // txtNCC
-            // 
-            this.txtNCC.Location = new System.Drawing.Point(240, 65);
-            this.txtNCC.Name = "txtNCC";
-            this.txtNCC.Size = new System.Drawing.Size(199, 34);
-            this.txtNCC.TabIndex = 19;
             // 
             // btnXoaSach
             // 
@@ -240,7 +192,7 @@ namespace BTL.Son
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 114);
+            this.label5.Location = new System.Drawing.Point(64, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 28);
             this.label5.TabIndex = 13;
@@ -250,7 +202,7 @@ namespace BTL.Son
             // 
             this.cbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNCC.FormattingEnabled = true;
-            this.cbNCC.Location = new System.Drawing.Point(240, 65);
+            this.cbNCC.Location = new System.Drawing.Point(240, 25);
             this.cbNCC.Name = "cbNCC";
             this.cbNCC.Size = new System.Drawing.Size(199, 36);
             this.cbNCC.TabIndex = 12;
@@ -617,8 +569,6 @@ namespace BTL.Son
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panelDatSachMoi.ResumeLayout(false);
@@ -672,10 +622,6 @@ namespace BTL.Son
         private System.Windows.Forms.DataGridView dgvSachDatHang;
         private System.Windows.Forms.Button btnXoaSach;
         private System.Windows.Forms.Button btnSuaSach;
-        private System.Windows.Forms.TextBox txtNCC;
-        private System.Windows.Forms.RadioButton rbNCC_Moi;
-        private System.Windows.Forms.RadioButton rbNCC_Cu;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton rbSachMoi;
         private System.Windows.Forms.RadioButton rbSachCu;

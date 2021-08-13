@@ -101,14 +101,14 @@ namespace BTL
 
             DialogResult rs = MessageBox.Show("Bạn có chắc muốn hủy đơn đặt hàng", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if(rs == DialogResult.Yes)
+            if (rs == DialogResult.Yes)
             {
                 qLBanSachContext.Dondhs.Remove(xoa);
                 qLBanSachContext.SaveChanges();
             }
 
             LoadDonDatHang(GetDonDatHang());
-        }
+            dgvThongTinSach.Rows.Clear();       }
 
         private void InDonDatHang()
         {
@@ -144,6 +144,11 @@ namespace BTL
         private void btnHuyLoc_Click(object sender, EventArgs e)
         {
             LoadDonDatHang(GetDonDatHang());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HuyDonDH();
         }
     }
 }
