@@ -10,6 +10,13 @@ namespace BTL
     {
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
         public int MaTK { get; set; }
+        public string MatKhau { get; set; }
+
+        public string HoTen { get; set; }
+
+        public string TenDN { get; set; }
+
+        public bool isAdmin { get; set; }
 
         public DangNhap()
         {
@@ -38,34 +45,41 @@ namespace BTL
 
         private bool isValidUser()
         {
-            try
+            if (Check())
             {
-                Check();
+                var taikhoan = (from tk in qLBanSachContext.Taikhoans
+                                where tk.TenDangNhap == txtTenDangNhap.Text && tk.MatKhau == txtMatKhau.Text
+                                select tk).SingleOrDefault();
 
-                var taikhoan = from tk in qLBanSachContext.Taikhoans
-                               where tk.TenDangNhap == txtTenDangNhap.Text && tk.MatKhau == txtMatKhau.Text
-                               select tk;
-                MaTK = taikhoan.ToList()[0].MaTk;
-
-                if (taikhoan.Any())
+                if (taikhoan != null)
+                {
+                    MaTK = taikhoan.MaTk;
+                    MatKhau = taikhoan.MatKhau;
+                    HoTen = taikhoan.HoTen;
+                    TenDN = taikhoan.TenDangNhap;
+                    isAdmin = taikhoan.LoaiTk;
                     return true;
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
+                }                   
             }
 
             return false;
         }
 
-        private void Check()
+        private bool Check()
         {
             if (txtTenDangNhap.Text == String.Empty)
-                throw new Exception("Tên đăng nhập không được để trống");
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống");
+                return false;
+            }
+
 
             if (txtMatKhau.Text == string.Empty)
-                throw new Exception("Mật khẩu không được để trống");
+            {
+                MessageBox.Show("Mật khẩu không được để trống");
+                return false;
+            }
+            return true;
         }
 
     }

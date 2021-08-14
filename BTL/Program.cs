@@ -18,7 +18,7 @@ namespace BTL
             DangNhap dangNhap = new DangNhap();
             if (dangNhap.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm(dangNhap.MaTK));
+                Application.Run(new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin));
             }
             else
                 Application.Exit();

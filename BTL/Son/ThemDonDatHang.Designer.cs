@@ -161,9 +161,9 @@ namespace BTL.Son
             // 
             // btnXoaSach
             // 
-            this.btnXoaSach.Location = new System.Drawing.Point(869, 88);
+            this.btnXoaSach.Location = new System.Drawing.Point(857, 89);
             this.btnXoaSach.Name = "btnXoaSach";
-            this.btnXoaSach.Size = new System.Drawing.Size(149, 35);
+            this.btnXoaSach.Size = new System.Drawing.Size(145, 40);
             this.btnXoaSach.TabIndex = 15;
             this.btnXoaSach.Text = "Xóa sách đặt";
             this.btnXoaSach.UseVisualStyleBackColor = true;
@@ -171,9 +171,9 @@ namespace BTL.Son
             // 
             // btnSuaSach
             // 
-            this.btnSuaSach.Location = new System.Drawing.Point(706, 89);
+            this.btnSuaSach.Location = new System.Drawing.Point(700, 89);
             this.btnSuaSach.Name = "btnSuaSach";
-            this.btnSuaSach.Size = new System.Drawing.Size(149, 35);
+            this.btnSuaSach.Size = new System.Drawing.Size(145, 40);
             this.btnSuaSach.TabIndex = 15;
             this.btnSuaSach.Text = "Sửa sách đặt";
             this.btnSuaSach.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace BTL.Son
             // 
             this.btnThemSach.Location = new System.Drawing.Point(543, 89);
             this.btnThemSach.Name = "btnThemSach";
-            this.btnThemSach.Size = new System.Drawing.Size(149, 35);
+            this.btnThemSach.Size = new System.Drawing.Size(145, 40);
             this.btnThemSach.TabIndex = 15;
             this.btnThemSach.Text = "Thêm sách đặt";
             this.btnThemSach.UseVisualStyleBackColor = true;

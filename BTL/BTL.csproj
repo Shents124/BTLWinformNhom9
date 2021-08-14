@@ -12,6 +12,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1449.0" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.14" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="QLBanSachThongTinDDH.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>QLBanSachThongTinDDH.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -31,6 +38,13 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="QLBanSachThongTinDDH.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanSachThongTinDDH.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
