@@ -42,6 +42,8 @@ namespace BTL
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txbDoanhThu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dsThongKe)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -117,7 +119,7 @@ namespace BTL
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(362, 44);
+            this.label2.Location = new System.Drawing.Point(287, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 36;
@@ -125,58 +127,83 @@ namespace BTL
             // 
             // dateTimeKT
             // 
-            this.dateTimeKT.Location = new System.Drawing.Point(438, 42);
+            this.dateTimeKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeKT.Location = new System.Drawing.Point(379, 38);
             this.dateTimeKT.Name = "dateTimeKT";
-            this.dateTimeKT.Size = new System.Drawing.Size(250, 27);
+            this.dateTimeKT.Size = new System.Drawing.Size(108, 27);
             this.dateTimeKT.TabIndex = 35;
             // 
             // dateTimeBD
             // 
+            this.dateTimeBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeBD.Location = new System.Drawing.Point(106, 40);
             this.dateTimeBD.Name = "dateTimeBD";
-            this.dateTimeBD.Size = new System.Drawing.Size(250, 27);
+            this.dateTimeBD.Size = new System.Drawing.Size(144, 27);
             this.dateTimeBD.TabIndex = 34;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(475, 110);
+            this.btnThoat.Location = new System.Drawing.Point(351, 110);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(94, 29);
             this.btnThoat.TabIndex = 33;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(704, 43);
+            this.btnLoc.Location = new System.Drawing.Point(544, 38);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(94, 29);
             this.btnLoc.TabIndex = 29;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.LocClick);
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(188, 110);
+            this.btnIn.Location = new System.Drawing.Point(156, 110);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(94, 29);
             this.btnIn.TabIndex = 28;
-            this.btnIn.Text = "In hóa đơn";
+            this.btnIn.Text = "In ";
             this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.XuatThongKe_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(568, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 20);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Tổng doanh thu";
+            // 
+            // txbDoanhThu
+            // 
+            this.txbDoanhThu.Location = new System.Drawing.Point(688, 233);
+            this.txbDoanhThu.Name = "txbDoanhThu";
+            this.txbDoanhThu.Size = new System.Drawing.Size(125, 27);
+            this.txbDoanhThu.TabIndex = 33;
             // 
             // ThongKeBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 521);
+            this.Controls.Add(this.txbDoanhThu);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dsThongKe);
             this.Controls.Add(this.groupBox2);
             this.Name = "ThongKeBaoCao";
             this.Text = "ThongKeBaoCao";
+            this.Load += new System.EventHandler(this.LoadForm_thongke);
             ((System.ComponentModel.ISupportInitialize)(this.dsThongKe)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +221,7 @@ namespace BTL
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txbDoanhThu;
     }
 }
