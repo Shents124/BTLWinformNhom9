@@ -38,6 +38,8 @@ namespace BTL
             this.txtTenkh = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.txtSodt = new System.Windows.Forms.TextBox();
+            this.btnclose = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSua
@@ -115,11 +117,33 @@ namespace BTL
             this.txtSodt.Size = new System.Drawing.Size(125, 27);
             this.txtSodt.TabIndex = 8;
             // 
+            // btnclose
+            // 
+            this.btnclose.Location = new System.Drawing.Point(291, 277);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(94, 29);
+            this.btnclose.TabIndex = 9;
+            this.btnclose.Text = "Đóng";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(216, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(334, 38);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Sửa thông tin khách hàng";
+            // 
             // SuaThongTinKh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.txtSodt);
             this.Controls.Add(this.txtDiachi);
             this.Controls.Add(this.txtTenkh);
@@ -148,5 +172,7 @@ namespace BTL
         private System.Windows.Forms.TextBox txtTenkh;
         private System.Windows.Forms.TextBox txtDiachi;
         private System.Windows.Forms.TextBox txtSodt;
+        private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Label label5;
     }
 }

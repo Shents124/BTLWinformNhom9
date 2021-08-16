@@ -55,16 +55,16 @@ namespace BTL
             this.label7 = new System.Windows.Forms.Label();
             this.tnXemThongtin = new System.Windows.Forms.Button();
             this.dvgDanhSachNhaCungCap = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnmenucon = new System.Windows.Forms.Label();
             this.grDanhSachNhaCc = new System.Windows.Forms.GroupBox();
+            this.btnmenucon = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.grChiTietNhacc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdondh)).BeginInit();
             this.grChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachNhaCungCap)).BeginInit();
-            this.panel1.SuspendLayout();
             this.grDanhSachNhaCc.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grChiTietNhacc
@@ -80,9 +80,10 @@ namespace BTL
             this.grChiTietNhacc.Controls.Add(this.txtManhaCC);
             this.grChiTietNhacc.Controls.Add(this.label2);
             this.grChiTietNhacc.Controls.Add(this.dvgDanhsachchitietdondh);
-            this.grChiTietNhacc.Location = new System.Drawing.Point(9, 200);
+            this.grChiTietNhacc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grChiTietNhacc.Location = new System.Drawing.Point(0, 188);
             this.grChiTietNhacc.Name = "grChiTietNhacc";
-            this.grChiTietNhacc.Size = new System.Drawing.Size(1075, 266);
+            this.grChiTietNhacc.Size = new System.Drawing.Size(1304, 214);
             this.grChiTietNhacc.TabIndex = 14;
             this.grChiTietNhacc.TabStop = false;
             this.grChiTietNhacc.Text = "Chi Tiết Nhà Cung Cấp";
@@ -91,6 +92,7 @@ namespace BTL
             // 
             this.txtSodondat.Location = new System.Drawing.Point(147, 159);
             this.txtSodondat.Name = "txtSodondat";
+            this.txtSodondat.ReadOnly = true;
             this.txtSodondat.Size = new System.Drawing.Size(223, 27);
             this.txtSodondat.TabIndex = 11;
             // 
@@ -173,12 +175,15 @@ namespace BTL
             // 
             // dvgDanhsachchitietdondh
             // 
+            this.dvgDanhsachchitietdondh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgDanhsachchitietdondh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgDanhsachchitietdondh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDanhsachchitietdondh.Location = new System.Drawing.Point(400, 26);
+            this.dvgDanhsachchitietdondh.Location = new System.Drawing.Point(514, 23);
             this.dvgDanhsachchitietdondh.Name = "dvgDanhsachchitietdondh";
             this.dvgDanhsachchitietdondh.RowHeadersWidth = 51;
             this.dvgDanhsachchitietdondh.RowTemplate.Height = 29;
-            this.dvgDanhsachchitietdondh.Size = new System.Drawing.Size(257, 160);
+            this.dvgDanhsachchitietdondh.Size = new System.Drawing.Size(787, 188);
             this.dvgDanhsachchitietdondh.TabIndex = 1;
             // 
             // btnSuaThongTin
@@ -214,7 +219,7 @@ namespace BTL
             this.grChucNang.Controls.Add(this.btnSuaThongTin);
             this.grChucNang.Controls.Add(this.btnLapHoaDon);
             this.grChucNang.Controls.Add(this.tnXemThongtin);
-            this.grChucNang.Location = new System.Drawing.Point(21, 472);
+            this.grChucNang.Location = new System.Drawing.Point(3, 405);
             this.grChucNang.Name = "grChucNang";
             this.grChucNang.Size = new System.Drawing.Size(1063, 170);
             this.grChucNang.TabIndex = 15;
@@ -255,21 +260,21 @@ namespace BTL
             // 
             // btnboloc
             // 
-            this.btnboloc.Image = global::BTL.Properties.Resources.icons8_refresh_48__1_;
             this.btnboloc.Location = new System.Drawing.Point(439, 86);
             this.btnboloc.Name = "btnboloc";
             this.btnboloc.Size = new System.Drawing.Size(94, 53);
             this.btnboloc.TabIndex = 22;
+            this.btnboloc.Text = "Bỏ Lọc";
             this.btnboloc.UseVisualStyleBackColor = true;
             this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click);
             // 
             // btnLoc
             // 
-            this.btnLoc.Image = global::BTL.Properties.Resources.icons8_filter_48__1_;
             this.btnLoc.Location = new System.Drawing.Point(325, 86);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(94, 51);
             this.btnLoc.TabIndex = 21;
+            this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
@@ -311,33 +316,27 @@ namespace BTL
             // 
             // dvgDanhSachNhaCungCap
             // 
+            this.dvgDanhSachNhaCungCap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgDanhSachNhaCungCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDanhSachNhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgDanhSachNhaCungCap.Location = new System.Drawing.Point(3, 23);
             this.dvgDanhSachNhaCungCap.Name = "dvgDanhSachNhaCungCap";
             this.dvgDanhSachNhaCungCap.RowHeadersWidth = 51;
             this.dvgDanhSachNhaCungCap.RowTemplate.Height = 29;
-            this.dvgDanhSachNhaCungCap.Size = new System.Drawing.Size(705, 126);
+            this.dvgDanhSachNhaCungCap.Size = new System.Drawing.Size(1298, 126);
             this.dvgDanhSachNhaCungCap.TabIndex = 0;
             this.dvgDanhSachNhaCungCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDanhSachNhaCungCap_CellClick);
             // 
-            // panel1
+            // grDanhSachNhaCc
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnmenucon);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1304, 36);
-            this.panel1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý nhà cung cấp";
+            this.grDanhSachNhaCc.Controls.Add(this.dvgDanhSachNhaCungCap);
+            this.grDanhSachNhaCc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grDanhSachNhaCc.Location = new System.Drawing.Point(0, 0);
+            this.grDanhSachNhaCc.Name = "grDanhSachNhaCc";
+            this.grDanhSachNhaCc.Size = new System.Drawing.Size(1304, 152);
+            this.grDanhSachNhaCc.TabIndex = 13;
+            this.grDanhSachNhaCc.TabStop = false;
+            this.grDanhSachNhaCc.Text = "Danh Sách Nhà Cung Cấp";
             // 
             // btnmenucon
             // 
@@ -348,15 +347,24 @@ namespace BTL
             this.btnmenucon.TabIndex = 0;
             this.btnmenucon.Text = "Menucon";
             // 
-            // grDanhSachNhaCc
+            // label1
             // 
-            this.grDanhSachNhaCc.Controls.Add(this.dvgDanhSachNhaCungCap);
-            this.grDanhSachNhaCc.Location = new System.Drawing.Point(9, 42);
-            this.grDanhSachNhaCc.Name = "grDanhSachNhaCc";
-            this.grDanhSachNhaCc.Size = new System.Drawing.Size(1075, 152);
-            this.grDanhSachNhaCc.TabIndex = 13;
-            this.grDanhSachNhaCc.TabStop = false;
-            this.grDanhSachNhaCc.Text = "Danh Sách Nhà Cung Cấp";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(285, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Quản lý nhà cung cấp";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnmenucon);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 152);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1304, 36);
+            this.panel1.TabIndex = 12;
             // 
             // QuanLyNhaCC
             // 
@@ -376,9 +384,9 @@ namespace BTL
             this.grChucNang.ResumeLayout(false);
             this.grChucNang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachNhaCungCap)).EndInit();
+            this.grDanhSachNhaCc.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grDanhSachNhaCc.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,9 +408,6 @@ namespace BTL
         private System.Windows.Forms.GroupBox grChucNang;
         private System.Windows.Forms.Button tnXemThongtin;
         private System.Windows.Forms.DataGridView dvgDanhSachNhaCungCap;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label btnmenucon;
         private System.Windows.Forms.GroupBox grDanhSachNhaCc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSodondat;
@@ -415,5 +420,8 @@ namespace BTL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnboloc;
         private System.Windows.Forms.Button btnLoc;
+        private System.Windows.Forms.Label btnmenucon;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

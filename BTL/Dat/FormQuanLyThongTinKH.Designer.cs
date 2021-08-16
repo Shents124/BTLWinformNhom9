@@ -31,21 +31,8 @@ namespace BTL
         {
             this.grDanhSachKH = new System.Windows.Forms.GroupBox();
             this.dvgDanhsachKH = new System.Windows.Forms.DataGridView();
-            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDiaChikh = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTenkh = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMakh = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnmenucon = new System.Windows.Forms.Label();
             this.tnXemThongtin = new System.Windows.Forms.Button();
-            this.dvgDanhsachchitietdonkh = new System.Windows.Forms.DataGridView();
             this.btnSuaThongTin = new System.Windows.Forms.Button();
-            this.grChiTietKH = new System.Windows.Forms.GroupBox();
             this.grChucNang = new System.Windows.Forms.GroupBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.txtSolanmuamax = new System.Windows.Forms.TextBox();
@@ -56,133 +43,51 @@ namespace BTL
             this.label6 = new System.Windows.Forms.Label();
             this.btnboloc = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
+            this.dvgDanhsachchitietdonkh = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDiaChikh = new System.Windows.Forms.TextBox();
+            this.txtMakh = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenkh = new System.Windows.Forms.TextBox();
             this.grDanhSachKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachKH)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdonkh)).BeginInit();
-            this.grChiTietKH.SuspendLayout();
             this.grChucNang.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdonkh)).BeginInit();
             this.SuspendLayout();
             // 
             // grDanhSachKH
             // 
             this.grDanhSachKH.Controls.Add(this.dvgDanhsachKH);
-            this.grDanhSachKH.Location = new System.Drawing.Point(12, 48);
+            this.grDanhSachKH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grDanhSachKH.Location = new System.Drawing.Point(0, 0);
             this.grDanhSachKH.Name = "grDanhSachKH";
-            this.grDanhSachKH.Size = new System.Drawing.Size(1020, 152);
+            this.grDanhSachKH.Size = new System.Drawing.Size(1189, 152);
             this.grDanhSachKH.TabIndex = 17;
             this.grDanhSachKH.TabStop = false;
             this.grDanhSachKH.Text = "Danh Sách Khách Hàng";
             // 
             // dvgDanhsachKH
             // 
+            this.dvgDanhsachKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgDanhsachKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDanhsachKH.Location = new System.Drawing.Point(9, 23);
+            this.dvgDanhsachKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgDanhsachKH.Location = new System.Drawing.Point(3, 23);
             this.dvgDanhsachKH.Name = "dvgDanhsachKH";
             this.dvgDanhsachKH.RowHeadersWidth = 51;
             this.dvgDanhsachKH.RowTemplate.Height = 29;
-            this.dvgDanhsachKH.Size = new System.Drawing.Size(744, 123);
+            this.dvgDanhsachKH.Size = new System.Drawing.Size(1183, 126);
             this.dvgDanhsachKH.TabIndex = 0;
             this.dvgDanhsachKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDanhsachKH_CellClick);
             // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(144, 140);
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.ReadOnly = true;
-            this.txtSoDienThoai.Size = new System.Drawing.Size(222, 27);
-            this.txtSoDienThoai.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Điện thoại";
-            // 
-            // txtDiaChikh
-            // 
-            this.txtDiaChikh.Location = new System.Drawing.Point(144, 107);
-            this.txtDiaChikh.Name = "txtDiaChikh";
-            this.txtDiaChikh.ReadOnly = true;
-            this.txtDiaChikh.Size = new System.Drawing.Size(222, 27);
-            this.txtDiaChikh.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Địa chỉ";
-            // 
-            // txtTenkh
-            // 
-            this.txtTenkh.Location = new System.Drawing.Point(144, 74);
-            this.txtTenkh.Name = "txtTenkh";
-            this.txtTenkh.ReadOnly = true;
-            this.txtTenkh.Size = new System.Drawing.Size(222, 27);
-            this.txtTenkh.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên khách hàng";
-            // 
-            // txtMakh
-            // 
-            this.txtMakh.Location = new System.Drawing.Point(144, 41);
-            this.txtMakh.Name = "txtMakh";
-            this.txtMakh.ReadOnly = true;
-            this.txtMakh.Size = new System.Drawing.Size(222, 27);
-            this.txtMakh.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mã khách hàng";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý thông tin khách hàng";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnmenucon);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1189, 36);
-            this.panel1.TabIndex = 16;
-            // 
-            // btnmenucon
-            // 
-            this.btnmenucon.AutoSize = true;
-            this.btnmenucon.Location = new System.Drawing.Point(12, 9);
-            this.btnmenucon.Name = "btnmenucon";
-            this.btnmenucon.Size = new System.Drawing.Size(70, 20);
-            this.btnmenucon.TabIndex = 0;
-            this.btnmenucon.Text = "Menucon";
-            // 
             // tnXemThongtin
             // 
+            this.tnXemThongtin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tnXemThongtin.Location = new System.Drawing.Point(548, 37);
             this.tnXemThongtin.Name = "tnXemThongtin";
             this.tnXemThongtin.Size = new System.Drawing.Size(125, 79);
@@ -191,43 +96,17 @@ namespace BTL
             this.tnXemThongtin.UseVisualStyleBackColor = true;
             this.tnXemThongtin.Click += new System.EventHandler(this.tnXemThongtin_Click);
             // 
-            // dvgDanhsachchitietdonkh
-            // 
-            this.dvgDanhsachchitietdonkh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDanhsachchitietdonkh.Location = new System.Drawing.Point(400, 41);
-            this.dvgDanhsachchitietdonkh.Name = "dvgDanhsachchitietdonkh";
-            this.dvgDanhsachchitietdonkh.RowHeadersWidth = 51;
-            this.dvgDanhsachchitietdonkh.RowTemplate.Height = 29;
-            this.dvgDanhsachchitietdonkh.Size = new System.Drawing.Size(350, 161);
-            this.dvgDanhsachchitietdonkh.TabIndex = 1;
-            // 
             // btnSuaThongTin
             // 
-            this.btnSuaThongTin.Location = new System.Drawing.Point(746, 37);
+            this.btnSuaThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaThongTin.Location = new System.Drawing.Point(758, 30);
             this.btnSuaThongTin.Name = "btnSuaThongTin";
             this.btnSuaThongTin.Size = new System.Drawing.Size(119, 79);
             this.btnSuaThongTin.TabIndex = 7;
             this.btnSuaThongTin.Text = "Sửa Thông Tin";
             this.btnSuaThongTin.UseVisualStyleBackColor = true;
             this.btnSuaThongTin.Click += new System.EventHandler(this.btnSuaThongTin_Click);
-            // 
-            // grChiTietKH
-            // 
-            this.grChiTietKH.Controls.Add(this.txtSoDienThoai);
-            this.grChiTietKH.Controls.Add(this.label5);
-            this.grChiTietKH.Controls.Add(this.txtDiaChikh);
-            this.grChiTietKH.Controls.Add(this.label4);
-            this.grChiTietKH.Controls.Add(this.txtTenkh);
-            this.grChiTietKH.Controls.Add(this.label3);
-            this.grChiTietKH.Controls.Add(this.txtMakh);
-            this.grChiTietKH.Controls.Add(this.label2);
-            this.grChiTietKH.Controls.Add(this.dvgDanhsachchitietdonkh);
-            this.grChiTietKH.Location = new System.Drawing.Point(15, 206);
-            this.grChiTietKH.Name = "grChiTietKH";
-            this.grChiTietKH.Size = new System.Drawing.Size(1017, 266);
-            this.grChiTietKH.TabIndex = 18;
-            this.grChiTietKH.TabStop = false;
-            this.grChiTietKH.Text = "Chi Tiết Khách Hàng";
             // 
             // grChucNang
             // 
@@ -242,9 +121,9 @@ namespace BTL
             this.grChucNang.Controls.Add(this.btnLoc);
             this.grChucNang.Controls.Add(this.btnSuaThongTin);
             this.grChucNang.Controls.Add(this.tnXemThongtin);
-            this.grChucNang.Location = new System.Drawing.Point(12, 478);
+            this.grChucNang.Location = new System.Drawing.Point(3, 367);
             this.grChucNang.Name = "grChucNang";
-            this.grChucNang.Size = new System.Drawing.Size(1020, 153);
+            this.grChucNang.Size = new System.Drawing.Size(1159, 153);
             this.grChucNang.TabIndex = 19;
             this.grChucNang.TabStop = false;
             this.grChucNang.Text = "Chức Năng";
@@ -309,45 +188,146 @@ namespace BTL
             // 
             // btnboloc
             // 
-            this.btnboloc.Image = global::BTL.Properties.Resources.icons8_refresh_48__1_;
-            this.btnboloc.Location = new System.Drawing.Point(403, 84);
+            this.btnboloc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnboloc.Location = new System.Drawing.Point(431, 76);
             this.btnboloc.Name = "btnboloc";
             this.btnboloc.Size = new System.Drawing.Size(94, 53);
             this.btnboloc.TabIndex = 14;
+            this.btnboloc.Text = "Bỏ Lọc";
             this.btnboloc.UseVisualStyleBackColor = true;
             this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click);
             // 
             // btnLoc
             // 
-            this.btnLoc.Image = global::BTL.Properties.Resources.icons8_filter_48__1_;
+            this.btnLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoc.Location = new System.Drawing.Point(289, 84);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(94, 51);
             this.btnLoc.TabIndex = 13;
+            this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtSoDienThoai);
+            this.groupBox1.Controls.Add(this.dvgDanhsachchitietdonkh);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtDiaChikh);
+            this.groupBox1.Controls.Add(this.txtMakh);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtTenkh);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 152);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1189, 209);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // txtSoDienThoai
+            // 
+            this.txtSoDienThoai.Location = new System.Drawing.Point(147, 125);
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.ReadOnly = true;
+            this.txtSoDienThoai.Size = new System.Drawing.Size(222, 27);
+            this.txtSoDienThoai.TabIndex = 27;
+            // 
+            // dvgDanhsachchitietdonkh
+            // 
+            this.dvgDanhsachchitietdonkh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgDanhsachchitietdonkh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgDanhsachchitietdonkh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDanhsachchitietdonkh.Location = new System.Drawing.Point(410, 26);
+            this.dvgDanhsachchitietdonkh.Name = "dvgDanhsachchitietdonkh";
+            this.dvgDanhsachchitietdonkh.RowHeadersWidth = 51;
+            this.dvgDanhsachchitietdonkh.RowTemplate.Height = 29;
+            this.dvgDanhsachchitietdonkh.Size = new System.Drawing.Size(773, 138);
+            this.dvgDanhsachchitietdonkh.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 20);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Điện thoại";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Mã khách hàng";
+            // 
+            // txtDiaChikh
+            // 
+            this.txtDiaChikh.Location = new System.Drawing.Point(147, 92);
+            this.txtDiaChikh.Name = "txtDiaChikh";
+            this.txtDiaChikh.ReadOnly = true;
+            this.txtDiaChikh.Size = new System.Drawing.Size(222, 27);
+            this.txtDiaChikh.TabIndex = 25;
+            // 
+            // txtMakh
+            // 
+            this.txtMakh.Location = new System.Drawing.Point(147, 26);
+            this.txtMakh.Name = "txtMakh";
+            this.txtMakh.ReadOnly = true;
+            this.txtMakh.Size = new System.Drawing.Size(222, 27);
+            this.txtMakh.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Địa chỉ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Tên khách hàng";
+            // 
+            // txtTenkh
+            // 
+            this.txtTenkh.Location = new System.Drawing.Point(147, 59);
+            this.txtTenkh.Name = "txtTenkh";
+            this.txtTenkh.ReadOnly = true;
+            this.txtTenkh.Size = new System.Drawing.Size(222, 27);
+            this.txtTenkh.TabIndex = 23;
             // 
             // FormQuanLyThongTinKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 636);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grDanhSachKH);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.grChiTietKH);
             this.Controls.Add(this.grChucNang);
             this.Name = "FormQuanLyThongTinKH";
             this.Text = "FormQuanLyThongTinKH";
             this.Load += new System.EventHandler(this.FormQuanLyThongTinKH_Load);
             this.grDanhSachKH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachKH)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdonkh)).EndInit();
-            this.grChiTietKH.ResumeLayout(false);
-            this.grChiTietKH.PerformLayout();
             this.grChucNang.ResumeLayout(false);
             this.grChucNang.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdonkh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,21 +336,8 @@ namespace BTL
 
         private System.Windows.Forms.GroupBox grDanhSachKH;
         private System.Windows.Forms.DataGridView dvgDanhsachKH;
-        private System.Windows.Forms.TextBox txtSoDienThoai;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDiaChikh;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTenkh;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMakh;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label btnmenucon;
         private System.Windows.Forms.Button tnXemThongtin;
-        private System.Windows.Forms.DataGridView dvgDanhsachchitietdonkh;
         private System.Windows.Forms.Button btnSuaThongTin;
-        private System.Windows.Forms.GroupBox grChiTietKH;
         private System.Windows.Forms.GroupBox grChucNang;
         private System.Windows.Forms.Button btnboloc;
         private System.Windows.Forms.Button btnLoc;
@@ -381,5 +348,15 @@ namespace BTL
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtSoDienThoai;
+        private System.Windows.Forms.DataGridView dvgDanhsachchitietdonkh;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDiaChikh;
+        private System.Windows.Forms.TextBox txtMakh;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTenkh;
     }
 }

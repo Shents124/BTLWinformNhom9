@@ -209,7 +209,7 @@ namespace BTL
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Image = global::BTL.Properties.Resources.icons8_refresh_48;
+      
             this.btnRefresh.Location = new System.Drawing.Point(515, 177);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(88, 104);
@@ -224,7 +224,7 @@ namespace BTL
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFilter.BackColor = System.Drawing.Color.Transparent;
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Image = global::BTL.Properties.Resources.icons8_filter_48;
+          
             this.btnFilter.Location = new System.Drawing.Point(463, 177);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(46, 104);
@@ -239,7 +239,7 @@ namespace BTL
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Image = global::BTL.Properties.Resources.icons8_google_web_search_48;
+         
             this.btnSearch.Location = new System.Drawing.Point(463, 31);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(46, 53);

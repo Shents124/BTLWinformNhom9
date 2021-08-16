@@ -25,10 +25,11 @@ namespace BTL
         {
             if (isValidUser())
             {
-                this.DialogResult = DialogResult.OK;
+                //this.DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

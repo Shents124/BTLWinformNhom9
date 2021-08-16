@@ -35,15 +35,10 @@ namespace BTL
                             kh.Hoadons.Count,
                         };
             dvgDanhsachKH.DataSource = query.ToList();
-            dvgDanhsachKH.Columns[0].Width = 200;
             dvgDanhsachKH.Columns[0].HeaderText ="Mã khách hàng";
-            dvgDanhsachKH.Columns[1].Width = 200;
             dvgDanhsachKH.Columns[1].HeaderText = "Tên khách hàng";
-            dvgDanhsachKH.Columns[2].Width = 200;
             dvgDanhsachKH.Columns[2].HeaderText = "Địa chỉ";
-            dvgDanhsachKH.Columns[3].Width = 200;
             dvgDanhsachKH.Columns[3].HeaderText = "Số điện thoại";
-            dvgDanhsachKH.Columns[4].Width = 150;
             dvgDanhsachKH.Columns[4].HeaderText = "Số lần mua";
         }
         int index = -1;
@@ -72,14 +67,9 @@ namespace BTL
                             };
                 
                 dvgDanhsachchitietdonkh.DataSource = query.ToList();
-                dvgDanhsachchitietdonkh.Columns[0].Width = 100;
                 dvgDanhsachchitietdonkh.Columns[0].HeaderText = "Mã HD";
-                dvgDanhsachchitietdonkh.Columns[1].Width = 100;
                 dvgDanhsachchitietdonkh.Columns[1].HeaderText = "Ngày lập";
-                dvgDanhsachchitietdonkh.Columns[2].Width = 200;
-                dvgDanhsachchitietdonkh.Columns[2].HeaderText = "Người lập";
-                var a = query.ToList();
-                
+                dvgDanhsachchitietdonkh.Columns[2].HeaderText = "Người lập";        
             }    
         }
 
@@ -106,7 +96,6 @@ namespace BTL
                         };
                       
         }
-
         private void btnSuaThongTin_Click(object sender, EventArgs e)
         {
             if (index == -1)
@@ -163,20 +152,14 @@ namespace BTL
                                 kh.Hoadons.Count,
                             };
                 dvgDanhsachKH.DataSource = query.ToList();
-                dvgDanhsachKH.Columns[0].Width = 200;
                 dvgDanhsachKH.Columns[0].HeaderText = "Mã khách hàng";
-                dvgDanhsachKH.Columns[1].Width = 200;
                 dvgDanhsachKH.Columns[1].HeaderText = "Tên khách hàng";
-                dvgDanhsachKH.Columns[2].Width = 200;
                 dvgDanhsachKH.Columns[2].HeaderText = "Địa chỉ";
-                dvgDanhsachKH.Columns[3].Width = 200;
                 dvgDanhsachKH.Columns[3].HeaderText = "Số điện thoại";
-                dvgDanhsachKH.Columns[4].Width = 150;
                 dvgDanhsachKH.Columns[4].HeaderText = "Số lần mua";
             }
             else
             {
-
                 MessageBox.Show("Khách hàng không có trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -194,15 +177,10 @@ namespace BTL
                             kh.Hoadons.Count,
                         };
             dvgDanhsachKH.DataSource = query.ToList();
-            dvgDanhsachKH.Columns[0].Width = 200;
             dvgDanhsachKH.Columns[0].HeaderText = "Mã khách hàng";
-            dvgDanhsachKH.Columns[1].Width = 200;
             dvgDanhsachKH.Columns[1].HeaderText = "Tên khách hàng";
-            dvgDanhsachKH.Columns[2].Width = 200;
             dvgDanhsachKH.Columns[2].HeaderText = "Địa chỉ";
-            dvgDanhsachKH.Columns[3].Width = 200;
             dvgDanhsachKH.Columns[3].HeaderText = "Số điện thoại";
-            dvgDanhsachKH.Columns[4].Width = 150;
             dvgDanhsachKH.Columns[4].HeaderText = "Số lần mua";
         }
 
