@@ -205,8 +205,8 @@ namespace BTL
             if (dr == DialogResult.Yes)
             {
                 this.Hide();
-                DangNhap dn = new DangNhap();
-                dn.ShowDialog();
+                //DangNhap dn = new DangNhap();
+                //dn.ShowDialog();
             }
             else
                 e.Cancel = true;

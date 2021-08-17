@@ -14,13 +14,13 @@ namespace BTL
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DangNhap dangNhap = new DangNhap();
-            if (dangNhap.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin));
-            }
-            else
-                Application.Exit();
+            //DangNhap dangNhap = new DangNhap();
+            //if (dangNhap.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin));
+            //}
+            //else
+            //    Application.Exit();
         }
     }
 }
