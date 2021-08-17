@@ -225,7 +225,6 @@ namespace BTL
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dsSach);
             this.Controls.Add(this.groupBox1);
-            this.IsMdiContainer = true;
             this.Name = "BaoTriSach";
             this.Text = "BaoTriSach";
             this.Load += new System.EventHandler(this.BaoTriSach_Load);

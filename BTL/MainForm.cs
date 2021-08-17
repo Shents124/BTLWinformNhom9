@@ -136,12 +136,14 @@ namespace BTL
         {
             // Hiển thị form bảo trì sách
             HideSubMenu();
+            OpenChildForm(new BaoTriSach(), sender);
         }
 
         private void btnBaoTriDMSach_Click(object sender, EventArgs e)
         {
             // Hiển thị form bải trì danh mục sách
             HideSubMenu();
+            OpenChildForm(new BaoTriDanhMucSach(), sender);
         }
         #endregion
 
@@ -159,6 +161,7 @@ namespace BTL
         {
             // Hiển thị form thống kê báo cáo
             HideSubMenu();
+            OpenChildForm(new ThongKeBaoCao(), sender);
         }
         #endregion
 
