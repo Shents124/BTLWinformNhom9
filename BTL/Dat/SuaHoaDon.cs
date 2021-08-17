@@ -11,8 +11,10 @@ namespace BTL
     {
         QLBanSachContext db = new QLBanSachContext();
         static List<Cthoadon> li = new List<Cthoadon>();
-        public SuaHoaDon()
+        private int maTK;
+        public SuaHoaDon(int maTK)
         {
+            this.maTK = maTK;
             InitializeComponent();
         }
 
@@ -21,7 +23,8 @@ namespace BTL
             HienThiDanhSachBookTrongHeThong();
             LayChiTietHoaDon();
             LayThongTinKhachHangVaHoaDon();
-
+            Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == maTK);
+            txtNguoiLap.Text = tk.HoTen;
         }
         private void LayChiTietHoaDon()
         {
@@ -54,20 +57,11 @@ namespace BTL
         private void LayThongTinKhachHangVaHoaDon()
         {
             var a = (Hoadon)this.Tag;
-            var query = from h in db.Hoadons
-                        where h.MaHd == a.MaHd
-                        select new
-                        {
-                            h.MaHd,
-                            h.MaKh,
-                            h.MaKhNavigation.TenKh,
-                            h.NgayLap,  
-                            h.MaTkNavigation.HoTen,
-                        };
-            var hd = query.ToList();
-            dtNgayLapHoaDon.Value = hd[0].NgayLap.Value;
-            txtNguoiLap.Text = hd[0].HoTen;
-            Khachhang kh = db.Khachhangs.SingleOrDefault(kh => kh.MaKh == hd[0].MaKh);
+            Hoadon hd = a;
+            dtNgayLapHoaDon.Value = hd.NgayLap.Value;
+            Taikhoan tk = db.Taikhoans.SingleOrDefault(tk=>tk.MaTk == hd.MaTk);
+            txtNguoiLap.Text = tk.HoTen;
+            Khachhang kh = db.Khachhangs.SingleOrDefault(kh => kh.MaKh == hd.MaKh);
             txtSodienThoai.Text = kh.SoDt;
             txtDiaChi.Text = kh.DiaChi;
             txtTenKhachHang.Text = kh.TenKh;
@@ -222,24 +216,20 @@ namespace BTL
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(index==(dvgDachsachsua.RowCount-1))
-            {
-                MessageBox.Show("Dòng chọn không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }  
-            if(index==-1)
+            if (index == -1)
             {
                 MessageBox.Show("Bạn chưa chọn dòng dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }    
+            }
+            if (index==(dvgDachsachsua.RowCount-1))
+            {
+                MessageBox.Show("Dòng chọn không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }            
             dvgDachsachsua.Rows.Remove(dvgDachsachsua.Rows[index]);
         }
         static int index = -1;
-        private void dvgDachsachsua_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            index = e.RowIndex;
-        }
-
+       
         private void btnXoaAll_Click(object sender, EventArgs e)
         {
             dvgDachsachsua.Rows.Clear();
@@ -249,6 +239,10 @@ namespace BTL
         {
             this.Close();
         }
-     
+
+        private void dvgDachsachsua_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+        }
     }
 }

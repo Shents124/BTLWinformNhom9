@@ -70,6 +70,19 @@ namespace BTL
             ncc.DienThoai = txtSoDienThoai.Text;
             ncc.DiaChi = txtDiaChi.Text;
             db.SaveChanges();
+            XoaText();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void XoaText()
+        {
+            txtTenNhaCC.Text = "";
+            txtManhaCC.Text = "";
+            txtDiaChi.Text = "";
+            txtSoDienThoai.Text = "";
         }
     }
 }

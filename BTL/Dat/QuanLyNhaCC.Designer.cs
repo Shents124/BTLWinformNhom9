@@ -42,7 +42,6 @@ namespace BTL
             this.label2 = new System.Windows.Forms.Label();
             this.dvgDanhsachchitietdondh = new System.Windows.Forms.DataGridView();
             this.btnSuaThongTin = new System.Windows.Forms.Button();
-            this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.grChucNang = new System.Windows.Forms.GroupBox();
             this.txtSolandatmax = new System.Windows.Forms.TextBox();
             this.txtSolandatmin = new System.Windows.Forms.TextBox();
@@ -56,15 +55,11 @@ namespace BTL
             this.tnXemThongtin = new System.Windows.Forms.Button();
             this.dvgDanhSachNhaCungCap = new System.Windows.Forms.DataGridView();
             this.grDanhSachNhaCc = new System.Windows.Forms.GroupBox();
-            this.btnmenucon = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.grChiTietNhacc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdondh)).BeginInit();
             this.grChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachNhaCungCap)).BeginInit();
             this.grDanhSachNhaCc.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grChiTietNhacc
@@ -81,7 +76,7 @@ namespace BTL
             this.grChiTietNhacc.Controls.Add(this.label2);
             this.grChiTietNhacc.Controls.Add(this.dvgDanhsachchitietdondh);
             this.grChiTietNhacc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grChiTietNhacc.Location = new System.Drawing.Point(0, 188);
+            this.grChiTietNhacc.Location = new System.Drawing.Point(0, 152);
             this.grChiTietNhacc.Name = "grChiTietNhacc";
             this.grChiTietNhacc.Size = new System.Drawing.Size(1304, 214);
             this.grChiTietNhacc.TabIndex = 14;
@@ -188,22 +183,13 @@ namespace BTL
             // 
             // btnSuaThongTin
             // 
-            this.btnSuaThongTin.Location = new System.Drawing.Point(746, 37);
+            this.btnSuaThongTin.Location = new System.Drawing.Point(441, 79);
             this.btnSuaThongTin.Name = "btnSuaThongTin";
-            this.btnSuaThongTin.Size = new System.Drawing.Size(119, 70);
+            this.btnSuaThongTin.Size = new System.Drawing.Size(130, 38);
             this.btnSuaThongTin.TabIndex = 7;
             this.btnSuaThongTin.Text = "Sửa Thông Tin";
             this.btnSuaThongTin.UseVisualStyleBackColor = true;
             this.btnSuaThongTin.Click += new System.EventHandler(this.btnSuaThongTin_Click);
-            // 
-            // btnLapHoaDon
-            // 
-            this.btnLapHoaDon.Location = new System.Drawing.Point(889, 37);
-            this.btnLapHoaDon.Name = "btnLapHoaDon";
-            this.btnLapHoaDon.Size = new System.Drawing.Size(148, 61);
-            this.btnLapHoaDon.TabIndex = 6;
-            this.btnLapHoaDon.Text = "Thêm";
-            this.btnLapHoaDon.UseVisualStyleBackColor = true;
             // 
             // grChucNang
             // 
@@ -217,11 +203,10 @@ namespace BTL
             this.grChucNang.Controls.Add(this.txtManhaccTim);
             this.grChucNang.Controls.Add(this.label7);
             this.grChucNang.Controls.Add(this.btnSuaThongTin);
-            this.grChucNang.Controls.Add(this.btnLapHoaDon);
             this.grChucNang.Controls.Add(this.tnXemThongtin);
-            this.grChucNang.Location = new System.Drawing.Point(3, 405);
+            this.grChucNang.Location = new System.Drawing.Point(0, 369);
             this.grChucNang.Name = "grChucNang";
-            this.grChucNang.Size = new System.Drawing.Size(1063, 170);
+            this.grChucNang.Size = new System.Drawing.Size(1063, 153);
             this.grChucNang.TabIndex = 15;
             this.grChucNang.TabStop = false;
             this.grChucNang.Text = "Chức Năng";
@@ -260,9 +245,9 @@ namespace BTL
             // 
             // btnboloc
             // 
-            this.btnboloc.Location = new System.Drawing.Point(439, 86);
+            this.btnboloc.Location = new System.Drawing.Point(325, 111);
             this.btnboloc.Name = "btnboloc";
-            this.btnboloc.Size = new System.Drawing.Size(94, 53);
+            this.btnboloc.Size = new System.Drawing.Size(94, 35);
             this.btnboloc.TabIndex = 22;
             this.btnboloc.Text = "Bỏ Lọc";
             this.btnboloc.UseVisualStyleBackColor = true;
@@ -270,9 +255,9 @@ namespace BTL
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(325, 86);
+            this.btnLoc.Location = new System.Drawing.Point(325, 72);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(94, 51);
+            this.btnLoc.Size = new System.Drawing.Size(94, 33);
             this.btnLoc.TabIndex = 21;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
@@ -280,7 +265,7 @@ namespace BTL
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(336, 33);
+            this.btnTim.Location = new System.Drawing.Point(325, 33);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(94, 29);
             this.btnTim.TabIndex = 10;
@@ -290,7 +275,7 @@ namespace BTL
             // 
             // txtManhaccTim
             // 
-            this.txtManhaccTim.Location = new System.Drawing.Point(172, 37);
+            this.txtManhaccTim.Location = new System.Drawing.Point(174, 35);
             this.txtManhaccTim.Name = "txtManhaccTim";
             this.txtManhaccTim.Size = new System.Drawing.Size(125, 27);
             this.txtManhaccTim.TabIndex = 9;
@@ -306,9 +291,9 @@ namespace BTL
             // 
             // tnXemThongtin
             // 
-            this.tnXemThongtin.Location = new System.Drawing.Point(566, 37);
+            this.tnXemThongtin.Location = new System.Drawing.Point(441, 33);
             this.tnXemThongtin.Name = "tnXemThongtin";
-            this.tnXemThongtin.Size = new System.Drawing.Size(130, 70);
+            this.tnXemThongtin.Size = new System.Drawing.Size(130, 40);
             this.tnXemThongtin.TabIndex = 0;
             this.tnXemThongtin.Text = "Xem Thông Tin";
             this.tnXemThongtin.UseVisualStyleBackColor = true;
@@ -338,34 +323,6 @@ namespace BTL
             this.grDanhSachNhaCc.TabStop = false;
             this.grDanhSachNhaCc.Text = "Danh Sách Nhà Cung Cấp";
             // 
-            // btnmenucon
-            // 
-            this.btnmenucon.AutoSize = true;
-            this.btnmenucon.Location = new System.Drawing.Point(12, 9);
-            this.btnmenucon.Name = "btnmenucon";
-            this.btnmenucon.Size = new System.Drawing.Size(70, 20);
-            this.btnmenucon.TabIndex = 0;
-            this.btnmenucon.Text = "Menucon";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý nhà cung cấp";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnmenucon);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 152);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1304, 36);
-            this.panel1.TabIndex = 12;
-            // 
             // QuanLyNhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -373,7 +330,6 @@ namespace BTL
             this.ClientSize = new System.Drawing.Size(1304, 681);
             this.Controls.Add(this.grChiTietNhacc);
             this.Controls.Add(this.grChucNang);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grDanhSachNhaCc);
             this.Name = "QuanLyNhaCC";
             this.Text = "QuanLyNhaCC";
@@ -385,8 +341,6 @@ namespace BTL
             this.grChucNang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachNhaCungCap)).EndInit();
             this.grDanhSachNhaCc.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +358,6 @@ namespace BTL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dvgDanhsachchitietdondh;
         private System.Windows.Forms.Button btnSuaThongTin;
-        private System.Windows.Forms.Button btnLapHoaDon;
         private System.Windows.Forms.GroupBox grChucNang;
         private System.Windows.Forms.Button tnXemThongtin;
         private System.Windows.Forms.DataGridView dvgDanhSachNhaCungCap;
@@ -420,8 +373,5 @@ namespace BTL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnboloc;
         private System.Windows.Forms.Button btnLoc;
-        private System.Windows.Forms.Label btnmenucon;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

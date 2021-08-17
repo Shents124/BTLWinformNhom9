@@ -35,6 +35,7 @@ namespace BTL
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,9 +84,9 @@ namespace BTL
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(106, 479);
+            this.btnThem.Location = new System.Drawing.Point(114, 489);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(74, 33);
+            this.btnThem.Size = new System.Drawing.Size(74, 45);
             this.btnThem.TabIndex = 14;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -93,9 +94,9 @@ namespace BTL
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(207, 479);
+            this.btnXoa.Location = new System.Drawing.Point(194, 489);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(101, 33);
+            this.btnXoa.Size = new System.Drawing.Size(101, 45);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa 1 dòng";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -103,6 +104,7 @@ namespace BTL
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtTenKhachHang);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -116,14 +118,23 @@ namespace BTL
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1160, 217);
+            this.groupBox1.Size = new System.Drawing.Size(1160, 242);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(387, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 38);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Lập hóa đơn";
             // 
             // txtTenKhachHang
             // 
-            this.txtTenKhachHang.Location = new System.Drawing.Point(207, 26);
+            this.txtTenKhachHang.Location = new System.Drawing.Point(209, 65);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.Size = new System.Drawing.Size(125, 27);
             this.txtTenKhachHang.TabIndex = 10;
@@ -131,7 +142,7 @@ namespace BTL
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 182);
+            this.label1.Location = new System.Drawing.Point(47, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
@@ -140,7 +151,7 @@ namespace BTL
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 31);
+            this.label2.Location = new System.Drawing.Point(47, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 1;
@@ -148,15 +159,16 @@ namespace BTL
             // 
             // txtNguoilap
             // 
-            this.txtNguoilap.Location = new System.Drawing.Point(207, 135);
+            this.txtNguoilap.Location = new System.Drawing.Point(209, 167);
             this.txtNguoilap.Name = "txtNguoilap";
+            this.txtNguoilap.ReadOnly = true;
             this.txtNguoilap.Size = new System.Drawing.Size(125, 27);
             this.txtNguoilap.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 64);
+            this.label3.Location = new System.Drawing.Point(47, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 2;
@@ -164,7 +176,7 @@ namespace BTL
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(207, 92);
+            this.txtDiaChi.Location = new System.Drawing.Point(209, 133);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(125, 27);
             this.txtDiaChi.TabIndex = 12;
@@ -172,7 +184,7 @@ namespace BTL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 97);
+            this.label4.Location = new System.Drawing.Point(47, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 3;
@@ -180,7 +192,7 @@ namespace BTL
             // 
             // txtSodienThoai
             // 
-            this.txtSodienThoai.Location = new System.Drawing.Point(207, 59);
+            this.txtSodienThoai.Location = new System.Drawing.Point(209, 99);
             this.txtSodienThoai.Name = "txtSodienThoai";
             this.txtSodienThoai.Size = new System.Drawing.Size(125, 27);
             this.txtSodienThoai.TabIndex = 11;
@@ -188,7 +200,7 @@ namespace BTL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 135);
+            this.label5.Location = new System.Drawing.Point(47, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 4;
@@ -197,8 +209,9 @@ namespace BTL
             // dtNgayLapHoaDon
             // 
             this.dtNgayLapHoaDon.CustomFormat = "";
+            this.dtNgayLapHoaDon.Enabled = false;
             this.dtNgayLapHoaDon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayLapHoaDon.Location = new System.Drawing.Point(207, 177);
+            this.dtNgayLapHoaDon.Location = new System.Drawing.Point(209, 201);
             this.dtNgayLapHoaDon.Name = "dtNgayLapHoaDon";
             this.dtNgayLapHoaDon.Size = new System.Drawing.Size(125, 27);
             this.dtNgayLapHoaDon.TabIndex = 9;
@@ -207,7 +220,7 @@ namespace BTL
             // 
             this.groupBox2.Controls.Add(this.dvgDachsachthem);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 217);
+            this.groupBox2.Location = new System.Drawing.Point(0, 242);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1160, 246);
             this.groupBox2.TabIndex = 17;
@@ -216,9 +229,9 @@ namespace BTL
             // 
             // btnXoaAll
             // 
-            this.btnXoaAll.Location = new System.Drawing.Point(358, 479);
+            this.btnXoaAll.Location = new System.Drawing.Point(301, 489);
             this.btnXoaAll.Name = "btnXoaAll";
-            this.btnXoaAll.Size = new System.Drawing.Size(117, 33);
+            this.btnXoaAll.Size = new System.Drawing.Size(117, 45);
             this.btnXoaAll.TabIndex = 18;
             this.btnXoaAll.Text = "Xóa ALL dòng";
             this.btnXoaAll.UseVisualStyleBackColor = true;
@@ -226,9 +239,9 @@ namespace BTL
             // 
             // btncolse
             // 
-            this.btncolse.Location = new System.Drawing.Point(509, 479);
+            this.btncolse.Location = new System.Drawing.Point(424, 489);
             this.btncolse.Name = "btncolse";
-            this.btncolse.Size = new System.Drawing.Size(100, 33);
+            this.btncolse.Size = new System.Drawing.Size(100, 45);
             this.btncolse.TabIndex = 19;
             this.btncolse.Text = "Đóng";
             this.btncolse.UseVisualStyleBackColor = true;
@@ -246,6 +259,7 @@ namespace BTL
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Name = "LapHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LapHoaDon";
             this.Load += new System.EventHandler(this.LapHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgDachsachthem)).EndInit();
@@ -276,5 +290,6 @@ namespace BTL
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnXoaAll;
         private System.Windows.Forms.Button btncolse;
+        private System.Windows.Forms.Label label6;
     }
 }

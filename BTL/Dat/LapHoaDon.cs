@@ -10,15 +10,19 @@ namespace BTL
     {
         QLBanSachContext db = new QLBanSachContext();
         static List<Cthoadon> li = new List<Cthoadon>();
-        public LapHoaDon()
+        private int maTk;
+        public LapHoaDon(int maTK)
         {
+            this.maTk = maTK;
             InitializeComponent();
         }
         Sach sach = new Sach();
         
         private void LapHoaDon_Load(object sender, EventArgs e)
         {
-            HienThiDanhSachBookTrongHeThong();   
+            HienThiDanhSachBookTrongHeThong();
+            Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == maTk);
+            txtNguoilap.Text = tk.HoTen;
             
         }
         private bool ThemKhachHang()
@@ -37,8 +41,7 @@ namespace BTL
             else
             {
                 db.Khachhangs.Add(kh);
-                int g=db.SaveChanges();
-                g = db.SaveChanges();
+                db.SaveChanges();
                 return true;
             }                  
         }
@@ -46,7 +49,7 @@ namespace BTL
         {           
             Hoadon hd = new Hoadon();
             hd.NgayLap = dtNgayLapHoaDon.Value;
-            hd.MaTk = 1;
+            hd.MaTk = maTk;
             int k = db.Hoadons.ToList().Count;
             Khachhang khtest = db.Khachhangs.FirstOrDefault(khtest => khtest.SoDt == txtSodienThoai.Text);
             if (ThemKhachHang())
@@ -58,8 +61,7 @@ namespace BTL
                             };
                 var a = query.ToList();
                 int i = a.Count;
-                hd.MaKh = a[i - 1].MaKh;
-                
+                hd.MaKh = a[i - 1].MaKh;             
             }    
             else
             {   
@@ -80,7 +82,7 @@ namespace BTL
                         };
             var a = query.ToList();
             int dem = a.Count;
-
+            
             int sum = dvgDachsachthem.Rows.Count;      
             for (int i = 0; i < sum - 1; i++)
             {
@@ -148,7 +150,8 @@ namespace BTL
                         };
             var a = query.ToList();
             int dem = a.Count;
-
+            if (dem == 0)
+                dem++;
 
             int sum = dvgDachsachthem.Rows.Count;
             if (sum == 1)

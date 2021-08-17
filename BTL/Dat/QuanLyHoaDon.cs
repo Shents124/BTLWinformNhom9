@@ -3,16 +3,18 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using BTL.Models;
-using Microsoft.Office.Interop.Excel;
+
 
 namespace BTL
 {
     public partial class QuanLyHoaDonForm : Form
     {
         QLBanSachContext db = new QLBanSachContext();
-        private Form activeForm = null;
-        public QuanLyHoaDonForm()
+   
+        private int maTk;
+        public QuanLyHoaDonForm(int maTk)
         {
+            this.maTk = maTk;
             InitializeComponent();
         }
         int index = -1;
@@ -30,25 +32,12 @@ namespace BTL
                             h.MaKhNavigation.TenKh,
                             h.MaTkNavigation.HoTen,
                         };
-            //var ds = query.ToList();
-            //dvgDanhSachHoaDon.Rows.Clear();
-            //foreach(var item in ds)
-            //{
-            //    DataGridViewRow row = (DataGridViewRow)dvgDanhSachHoaDon.Rows[0].Clone();
-            //    row.Cells[0].Value = item.MaHd;
-            //    row.Cells[1].Value = item.NgayLap;
-            //    row.Cells[2].Value = item.TenKh;
-            //    row.Cells[3].Value = item.HoTen;
-            //    dvgDanhSachHoaDon.Rows.Add(row);
-            //}
+           
             dvgDanhSachHoaDon.DataSource = query.ToList();
-
             dvgDanhSachHoaDon.Columns[0].HeaderText = "Mã hóa đơn";
-
             dvgDanhSachHoaDon.Columns[1].HeaderText = "Ngày lập";
-
-            dvgDanhSachHoaDon.Columns[3].HeaderText = "Tên khách hàng";
-
+            dvgDanhSachHoaDon.Columns[2].HeaderText = "Tên khách hàng";
+            dvgDanhSachHoaDon.Columns[3].HeaderText = "Tên người lập";
         }
         private void HienThiChiTietHoaDon()
         {
@@ -62,12 +51,11 @@ namespace BTL
             Hoadon hd = db.Hoadons.SingleOrDefault(hd => hd.MaHd == ma);
             txtMahoadon.Text = hd.MaHd.ToString();
             txtNgaylap.Text = hd.NgayLap.ToString();
-      //      Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == hd.MaTk);
-
+            Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == hd.MaTk);
+            txtNguoilap.Text = tk.HoTen;
             
        
-            Khachhang kh = db.Khachhangs.SingleOrDefault(kh => kh.MaKh == hd.MaKh);
-            txtNguoilap.Text = kh.TenKh;
+            Khachhang kh = db.Khachhangs.SingleOrDefault(kh => kh.MaKh == hd.MaKh);     
             txtMakhachhang.Text = kh.MaKh.ToString();
             txtTenkhachhang.Text = kh.TenKh.ToString();
             txtDiachi.Text = kh.DiaChi.ToString();
@@ -201,22 +189,20 @@ namespace BTL
 
         private void btnSuahoadon_Click_1(object sender, EventArgs e)
         {
-            SuaHoaDon myform = new SuaHoaDon();
+            SuaHoaDon myform = new SuaHoaDon(maTk);
             if (index == -1)
             {
-                MessageBox.Show("Bạn chưa chọn dòng hóa đơn cần xem");
+                MessageBox.Show("Bạn chưa chọn dòng hóa đơn cần sửa");
                 return;
             }
             else
             {
                 int ma = int.Parse(dvgDanhSachHoaDon.Rows[index].Cells[0].Value.ToString());
-                Hoadon hd = db.Hoadons.SingleOrDefault(hd => hd.MaHd == ma);
+                Hoadon hd = db.Hoadons.SingleOrDefault(hd => hd.MaHd == ma);               
                 myform.Tag = hd;
                 myform.Show();
             }
-
         }
-
         private void btnXem_Click(object sender, EventArgs e)
         {
             HienThiChiTietHoaDon();
@@ -224,42 +210,40 @@ namespace BTL
 
         private void btnLapHoaDon_Click_1(object sender, EventArgs e)
         {
-            LapHoaDon myForm = new LapHoaDon();
-            // myForm.MdiParent = this;
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = myForm;
+            LapHoaDon myForm = new LapHoaDon(maTk);
+          
             myForm.Show();
         }
 
         private void btninhoadon_Click(object sender, EventArgs e)
         {
             int ma = int.Parse(dvgDanhSachHoaDon.Rows[index].Cells[0].Value.ToString());
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
-            worksheet.Name = "hoadon";
-            worksheet.Columns.AutoFit();
-            int d = 11;
-            var query = from ct in db.Cthoadons
-                        where ct.MaHd == ma
-                        select ct;
-            var cthd = query.ToList();
-            for(int i=0;i<=cthd.Count;i++)
-            {
-                worksheet.Cells[d + i, 1] = cthd[i].MaSach;
-                worksheet.Cells[d + i, 2] = cthd[i].MaSachNavigation.TenSach;
-                worksheet.Cells[d + 1, 3] = cthd[i].SoLuong;
-                worksheet.Cells[d + 1, 4] = cthd[i].MaSachNavigation.DonGia;
-                worksheet.Cells[d + 1, 5] = cthd[i].ThanhTien;
-                d++;
-            }
-            worksheet.Columns.AutoFit();
-           // string filename = "C:\Users\ADMIN\Documents\hoadon.xlsx";
-           // workbook.SaveAs(filename);
-           // workbook.Close();
-           // excel.Quit();
-           //// excel.Visible = true;
+            //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            //Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            //Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+            //worksheet.Name = "hoadon";
+            //worksheet.Columns.AutoFit();
+            //int d = 11;
+            //var query = from ct in db.Cthoadons
+            //            where ct.MaHd == ma
+            //            select ct;
+            //var cthd = query.ToList();
+            //for(int i=0;i<=cthd.Count;i++)
+            //{
+            //    worksheet.Cells[d + i, 1] = cthd[i].MaSach;
+            //    worksheet.Cells[d + i, 2] = cthd[i].MaSachNavigation.TenSach;
+            //    worksheet.Cells[d + 1, 3] = cthd[i].SoLuong;
+            //    worksheet.Cells[d + 1, 4] = cthd[i].MaSachNavigation.DonGia;
+            //    worksheet.Cells[d + 1, 5] = cthd[i].ThanhTien;
+            //    d++;
+            //}
+            //worksheet.Columns.AutoFit();
+            // string filename = "C:\Users\ADMIN\Documents\hoadon.xlsx";
+            // workbook.SaveAs(filename);
+            // workbook.Close();
+            // excel.Quit();
+            //// excel.Visible = true;
+         //   LocalReport report = new LocalReport();
         }
     }
 }
