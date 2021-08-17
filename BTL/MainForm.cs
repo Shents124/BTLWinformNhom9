@@ -40,7 +40,7 @@ namespace BTL
         #region Ẩn hiện thị subpanel
         private void CustomizeDesign()
         {
-            if(isAdmin == true)
+            if (isAdmin == true)
             {
                 panelQLTaiKhoan.Visible = false;
                 panelDHNhapXuat.Visible = false;
@@ -203,15 +203,10 @@ namespace BTL
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Quay lại màn hình đăng nhập", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Hide();
-                //DangNhap dn = new DangNhap();
-                //dn.ShowDialog();
-            }
-            else
-                e.Cancel = true;
+            DialogCustomForMainForm dcfm = new DialogCustomForMainForm();
+            dcfm.ShowDialog();
+            
+            e.Cancel = true;
         }
     }
 }

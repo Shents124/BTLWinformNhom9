@@ -368,6 +368,7 @@ namespace BTL
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.White;
+            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
@@ -382,7 +383,6 @@ namespace BTL
             // 
             this.panelChildForm.AutoScroll = true;
             this.panelChildForm.BackColor = System.Drawing.Color.White;
-            this.panelChildForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(260, 125);
             this.panelChildForm.Name = "panelChildForm";
