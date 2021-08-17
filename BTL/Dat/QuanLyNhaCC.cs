@@ -32,15 +32,10 @@ namespace BTL
             var nhacc = query.ToList();
             dvgDanhSachNhaCungCap.DataSource = nhacc;
             dvgDanhSachNhaCungCap.Columns[0].HeaderText = "Mã";
-            dvgDanhSachNhaCungCap.Columns[0].Width = 100;
             dvgDanhSachNhaCungCap.Columns[1].HeaderText = "Tên";
-            dvgDanhSachNhaCungCap.Columns[1].Width = 200;
             dvgDanhSachNhaCungCap.Columns[2].HeaderText = "Địa chị";
-            dvgDanhSachNhaCungCap.Columns[2].Width = 200;
             dvgDanhSachNhaCungCap.Columns[3].HeaderText = "Số điện thoại";
-            dvgDanhSachNhaCungCap.Columns[3].Width = 200;
             dvgDanhSachNhaCungCap.Columns[4].HeaderText = "Số đơn đặt";
-            dvgDanhSachNhaCungCap.Columns[4].Width = 200;
         }
         private void HienThiChiTietNhaCungCap()
         {
@@ -61,14 +56,11 @@ namespace BTL
                             select new
                             {
                                 ct.MaDonDh,
-                                ct.NgayDh,
-                              
+                                ct.NgayDh,                              
                             };
                 dvgDanhsachchitietdondh.DataSource = query.ToList();
                 dvgDanhsachchitietdondh.Columns[0].HeaderText = "Mã đơn đặt";
-                dvgDanhsachchitietdondh.Columns[0].Width = 100;
                 dvgDanhsachchitietdondh.Columns[1].HeaderText = "Ngày đặt";
-                dvgDanhsachchitietdondh.Columns[1].Width = 200;
             }    
             
         }
@@ -141,15 +133,11 @@ namespace BTL
                 var nhacc = query.ToList();
                 dvgDanhSachNhaCungCap.DataSource = nhacc;
                 dvgDanhSachNhaCungCap.Columns[0].HeaderText = "Mã";
-                dvgDanhSachNhaCungCap.Columns[0].Width = 100;
                 dvgDanhSachNhaCungCap.Columns[1].HeaderText = "Tên";
-                dvgDanhSachNhaCungCap.Columns[1].Width = 200;
                 dvgDanhSachNhaCungCap.Columns[2].HeaderText = "Địa chị";
-                dvgDanhSachNhaCungCap.Columns[2].Width = 200;
                 dvgDanhSachNhaCungCap.Columns[3].HeaderText = "Số điện thoại";
-                dvgDanhSachNhaCungCap.Columns[3].Width = 200;
                 dvgDanhSachNhaCungCap.Columns[4].HeaderText = "Số đơn đặt";
-                dvgDanhSachNhaCungCap.Columns[4].Width = 200;
+
             }
             else
             {
@@ -188,7 +176,6 @@ namespace BTL
                 MessageBox.Show("Bận chưa nhập số lượng đơn đặt max", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSolandatmax.Focus();
                 return;
-
             }
             else
             {
@@ -215,15 +202,11 @@ namespace BTL
             var nhacc = query.ToList();
             dvgDanhSachNhaCungCap.DataSource = nhacc;
             dvgDanhSachNhaCungCap.Columns[0].HeaderText = "Mã";
-            dvgDanhSachNhaCungCap.Columns[0].Width = 100;
             dvgDanhSachNhaCungCap.Columns[1].HeaderText = "Tên";
-            dvgDanhSachNhaCungCap.Columns[1].Width = 200;
             dvgDanhSachNhaCungCap.Columns[2].HeaderText = "Địa chị";
-            dvgDanhSachNhaCungCap.Columns[2].Width = 200;
             dvgDanhSachNhaCungCap.Columns[3].HeaderText = "Số điện thoại";
-            dvgDanhSachNhaCungCap.Columns[3].Width = 200;
             dvgDanhSachNhaCungCap.Columns[4].HeaderText = "Số đơn đặt";
-            dvgDanhSachNhaCungCap.Columns[4].Width = 200;
+
         }
 
         private void btnboloc_Click(object sender, EventArgs e)
@@ -232,28 +215,7 @@ namespace BTL
         }
         private void BoLoc()
         {
-            var query = from n in db.Nhaccs
-                       
-                        select new
-                        {
-                            n.MaNhaCc,
-                            n.TenNhaCc,
-                            n.DiaChi,
-                            n.DienThoai,
-                            n.Dondhs.Count,
-                        };
-            var nhacc = query.ToList();
-            dvgDanhSachNhaCungCap.DataSource = nhacc;
-            dvgDanhSachNhaCungCap.Columns[0].HeaderText = "Mã";
-            dvgDanhSachNhaCungCap.Columns[0].Width = 100;
-            dvgDanhSachNhaCungCap.Columns[1].HeaderText = "Tên";
-            dvgDanhSachNhaCungCap.Columns[1].Width = 200;
-            dvgDanhSachNhaCungCap.Columns[2].HeaderText = "Địa chị";
-            dvgDanhSachNhaCungCap.Columns[2].Width = 200;
-            dvgDanhSachNhaCungCap.Columns[3].HeaderText = "Số điện thoại";
-            dvgDanhSachNhaCungCap.Columns[3].Width = 200;
-            dvgDanhSachNhaCungCap.Columns[4].HeaderText = "Số đơn đặt";
-            dvgDanhSachNhaCungCap.Columns[4].Width = 200;
+            HienThiDanhSachNhaCungCap();
         }
     }
 }

@@ -57,6 +57,8 @@ namespace BTL
             kh.DiaChi = txtDiachi.Text;
             kh.SoDt = txtSodt.Text;
             db.SaveChanges();
+            MessageBox.Show("Sửa thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XoaText();
         }
 
         private void SuaThongTinKh_Load(object sender, EventArgs e)
@@ -67,6 +69,18 @@ namespace BTL
             txtTenkh.Text = kh.TenKh;
             txtSodt.Text = kh.SoDt;
             txtDiachi.Text = kh.DiaChi;
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void XoaText()
+        {
+            txtmaKh.Text = "";
+            txtTenkh.Text = "";
+            txtDiachi.Text = "";
+            txtSodt.Text = "";
         }
     }
 }

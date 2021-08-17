@@ -93,7 +93,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
-            OpenChildForm(new QuanLyHoaDonForm(), sender);
+            OpenChildForm(new QuanLyHoaDonForm(maTK),sender);          
             HideSubMenu();
         }
         #endregion

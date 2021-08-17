@@ -40,6 +40,7 @@ namespace BTL
             }
             else
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
