@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using BTL.Models;
 
-
 namespace BTL
 {
     public partial class QuanLyHoaDonForm : Form
@@ -17,6 +16,7 @@ namespace BTL
             this.maTk = maTk;
             InitializeComponent();
         }
+
         int index = -1;
         private void dvgDanhSachHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -7,11 +7,11 @@ namespace BTL
     public partial class MainForm : Form
     {
         private Form activeForm = null;
+
         private int maTK;
         private string tenDN;
         private string matKhau;
         private string hoTen;
-
         private bool isAdmin;
 
         public MainForm()
@@ -39,9 +39,23 @@ namespace BTL
         #region Ẩn hiện thị subpanel
         private void CustomizeDesign()
         {
-            panelQLTaiKhoan.Visible = false;
-            panelDHNhapXuat.Visible = false;
-            panelSach.Visible = false;
+            if (isAdmin == true)
+            {
+                panelQLTaiKhoan.Visible = false;
+                panelDHNhapXuat.Visible = false;
+                panelSach.Visible = false;
+                btnQLTK.Visible = false;
+            }
+            else
+            {
+                panelQLTaiKhoan.Visible = false;
+                panelDHNhapXuat.Visible = false;
+                panelSach.Visible = false;
+
+                btnBaoTriTK.Visible = false;
+                btnDHNhapXuat.Visible = false;
+                btnSach.Visible = false;
+            }
         }
 
         private void HideSubMenu()
@@ -191,15 +205,10 @@ namespace BTL
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Quay lại màn hình đăng nhập", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Hide();
-                DangNhap dn = new DangNhap();
-                dn.ShowDialog();
-            }
-            else
-                e.Cancel = true;
+            DialogCustomForMainForm dcfm = new DialogCustomForMainForm();
+            dcfm.ShowDialog();
+            
+            e.Cancel = true;
         }
     }
 }
