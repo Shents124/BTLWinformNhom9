@@ -1,4 +1,5 @@
 ﻿using System;
+using BTL.Son;
 using System.Windows.Forms;
 using BTL.Son;
 
@@ -19,7 +20,7 @@ namespace BTL
             InitializeComponent();
             CustomizeDesign();
         }
-        public MainForm(int maTK, string tenDN, string matKhau, string hoTen,bool admin)
+        public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
         {
             InitializeComponent();
 
@@ -99,6 +100,7 @@ namespace BTL
             HideSubMenu();
             OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), null);
             lblTitle.Text = "Quản lý thông tin cá nhân";
+
         }
         #endregion
 
