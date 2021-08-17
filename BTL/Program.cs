@@ -14,7 +14,6 @@ namespace BTL
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             DangNhap dangNhap = new DangNhap();
             if (dangNhap.ShowDialog() == DialogResult.OK)
             {
