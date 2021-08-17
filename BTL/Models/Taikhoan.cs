@@ -16,7 +16,7 @@ namespace BTL.Models
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
         public string HoTen { get; set; }
-        public string LoaiTk { get; set; }
+        public bool LoaiTk { get; set; }
 
         public virtual ICollection<Hoadon> Hoadons { get; set; }
     }

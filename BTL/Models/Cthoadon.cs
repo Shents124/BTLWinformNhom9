@@ -13,6 +13,6 @@ namespace BTL.Models
         public decimal ThanhTien { get; set; }
 
         public virtual Hoadon MaHdNavigation { get; set; }
-        public virtual Sach MaSachNavigation { get; set; }      
+        public virtual Sach MaSachNavigation { get; set; }
     }
 }

@@ -15,15 +15,13 @@ namespace BTL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //DangNhap dangNhap = new DangNhap();
-            //if (dangNhap.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new MainForm(dangNhap.MaTK));
-            //}
-            //else
-            //    Application.Exit();
-
-            Application.Run(new MainForm());
+            DangNhap dangNhap = new DangNhap();
+            if (dangNhap.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin));
+            }
+            else
+                Application.Exit();
         }
     }
 }

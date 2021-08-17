@@ -1,4 +1,5 @@
 ﻿using System;
+using BTL.Son;
 using System.Windows.Forms;
 
 namespace BTL
@@ -7,15 +8,26 @@ namespace BTL
     {
         private Form activeForm = null;
         private int maTK;
+        private string tenDN;
+        private string matKhau;
+        private string hoTen;
+
+        private bool isAdmin;
+
         public MainForm()
         {
             InitializeComponent();
             CustomizeDesign();
         }
-        public MainForm(int maTK)
+        public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
         {
             InitializeComponent();
+
             this.maTK = maTK;
+            this.tenDN = tenDN;
+            this.matKhau = matKhau;
+            this.hoTen = hoTen;
+            isAdmin = admin;
             CustomizeDesign();
         }
 
@@ -64,12 +76,16 @@ namespace BTL
         {
             // Hiển thị form bảo trì tài khoản
             HideSubMenu();
+            OpenChildForm(new frmBaoTriTK(), sender);
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý tài khoản
             HideSubMenu();
+            OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), null);
+            lblTitle.Text = "Quản lý thông tin cá nhân";
+
         }
         #endregion
 
@@ -165,7 +181,8 @@ namespace BTL
 
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = (sender as Button).Text;
+            if (sender != null)
+                lblTitle.Text = (sender as Button).Text;
         }
         #endregion
 
