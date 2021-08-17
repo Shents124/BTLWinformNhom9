@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -43,7 +45,7 @@ namespace BTL.Models
             modelBuilder.Entity<Ctdondh>(entity =>
             {
                 entity.HasKey(e => new { e.MaDonDh, e.MaSach })
-                    .HasName("PK__CTDONDH__1687C589C6BE45CB");
+                    .HasName("PK__CTDONDH__1687C589F114F751");
 
                 entity.ToTable("CTDONDH");
 
@@ -64,7 +66,7 @@ namespace BTL.Models
             modelBuilder.Entity<Cthoadon>(entity =>
             {
                 entity.HasKey(e => new { e.MaHd, e.MaSach })
-                    .HasName("PK__CTHOADON__EC06F1A29CF520E4");
+                    .HasName("PK__CTHOADON__EC06F1A2C8E076FD");
 
                 entity.ToTable("CTHOADON");
 
@@ -87,7 +89,7 @@ namespace BTL.Models
             modelBuilder.Entity<Ctpnhap>(entity =>
             {
                 entity.HasKey(e => new { e.MaPn, e.MaSach })
-                    .HasName("PK__CTPNHAP__EC06B0B2E53F6A09");
+                    .HasName("PK__CTPNHAP__EC06B0B27AB1A96E");
 
                 entity.ToTable("CTPNHAP");
 
@@ -110,7 +112,7 @@ namespace BTL.Models
             modelBuilder.Entity<Dondh>(entity =>
             {
                 entity.HasKey(e => e.MaDonDh)
-                    .HasName("PK__DONDH__DDA492CB70727973");
+                    .HasName("PK__DONDH__DDA492CB71993664");
 
                 entity.ToTable("DONDH");
 
@@ -127,7 +129,7 @@ namespace BTL.Models
             modelBuilder.Entity<Hoadon>(entity =>
             {
                 entity.HasKey(e => e.MaHd)
-                    .HasName("PK__HOADON__2725A6E0FD3F7297");
+                    .HasName("PK__HOADON__2725A6E08BB58EAE");
 
                 entity.ToTable("HOADON");
 
@@ -157,7 +159,7 @@ namespace BTL.Models
             modelBuilder.Entity<Khachhang>(entity =>
             {
                 entity.HasKey(e => e.MaKh)
-                    .HasName("PK__KHACHHAN__2725CF1E2FA0CA87");
+                    .HasName("PK__KHACHHAN__2725CF1E717E607C");
 
                 entity.ToTable("KHACHHANG");
 
@@ -178,7 +180,7 @@ namespace BTL.Models
             modelBuilder.Entity<Loaisach>(entity =>
             {
                 entity.HasKey(e => e.MaLoai)
-                    .HasName("PK__LOAISACH__730A5759A7C9EFCD");
+                    .HasName("PK__LOAISACH__730A5759EDC2EA2B");
 
                 entity.ToTable("LOAISACH");
 
@@ -190,7 +192,7 @@ namespace BTL.Models
             modelBuilder.Entity<Nhacc>(entity =>
             {
                 entity.HasKey(e => e.MaNhaCc)
-                    .HasName("PK__NHACC__C87CD311216D163B");
+                    .HasName("PK__NHACC__C87CD3118C5D633B");
 
                 entity.ToTable("NHACC");
 
@@ -211,7 +213,7 @@ namespace BTL.Models
             modelBuilder.Entity<Pnhap>(entity =>
             {
                 entity.HasKey(e => e.MaPn)
-                    .HasName("PK__PNHAP__2725E7F064315FC0");
+                    .HasName("PK__PNHAP__2725E7F096A25F60");
 
                 entity.ToTable("PNHAP");
 
@@ -230,7 +232,7 @@ namespace BTL.Models
             modelBuilder.Entity<Sach>(entity =>
             {
                 entity.HasKey(e => e.MaSach)
-                    .HasName("PK__SACH__B235742D001A7D7B");
+                    .HasName("PK__SACH__B235742D294DB88D");
 
                 entity.ToTable("SACH");
 
@@ -258,7 +260,7 @@ namespace BTL.Models
             modelBuilder.Entity<Taikhoan>(entity =>
             {
                 entity.HasKey(e => e.MaTk)
-                    .HasName("PK__TAIKHOAN__27250070BAA917D8");
+                    .HasName("PK__TAIKHOAN__27250070B81453C8");
 
                 entity.ToTable("TAIKHOAN");
 
@@ -268,10 +270,7 @@ namespace BTL.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.LoaiTk)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("LoaiTK");
+                entity.Property(e => e.LoaiTk).HasColumnName("LoaiTK");
 
                 entity.Property(e => e.MatKhau)
                     .IsRequired()

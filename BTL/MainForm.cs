@@ -1,21 +1,33 @@
 ﻿using System;
 using System.Windows.Forms;
+using BTL.Son;
 
 namespace BTL
 {
     public partial class MainForm : Form
     {
         private Form activeForm = null;
+
         private int maTK;
+        private string tenDN;
+        private string matKhau;
+        private string hoTen;
+        private bool isAdmin;
+
         public MainForm()
         {
             InitializeComponent();
             CustomizeDesign();
         }
-        public MainForm(int maTK)
+        public MainForm(int maTK, string tenDN, string matKhau, string hoTen,bool admin)
         {
             InitializeComponent();
+
             this.maTK = maTK;
+            this.tenDN = tenDN;
+            this.matKhau = matKhau;
+            this.hoTen = hoTen;
+            isAdmin = admin;
             CustomizeDesign();
         }
 
@@ -27,9 +39,23 @@ namespace BTL
         #region Ẩn hiện thị subpanel
         private void CustomizeDesign()
         {
-            panelQLTaiKhoan.Visible = false;
-            panelDHNhapXuat.Visible = false;
-            panelSach.Visible = false;
+            if(isAdmin == true)
+            {
+                panelQLTaiKhoan.Visible = false;
+                panelDHNhapXuat.Visible = false;
+                panelSach.Visible = false;
+                btnQLTK.Visible = false;
+            }
+            else
+            {
+                panelQLTaiKhoan.Visible = false;
+                panelDHNhapXuat.Visible = false;
+                panelSach.Visible = false;
+
+                btnBaoTriTK.Visible = false;
+                btnDHNhapXuat.Visible = false;
+                btnSach.Visible = false;
+            }
         }
 
         private void HideSubMenu()
@@ -64,12 +90,15 @@ namespace BTL
         {
             // Hiển thị form bảo trì tài khoản
             HideSubMenu();
+            OpenChildForm(new frmBaoTriTK(), sender);
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý tài khoản
             HideSubMenu();
+            OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), null);
+            lblTitle.Text = "Quản lý thông tin cá nhân";
         }
         #endregion
 
@@ -77,7 +106,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
-            OpenChildForm(new QuanLyHoaDonForm(), sender);
+            OpenChildForm(new QuanLyHoaDonForm(maTK), sender);
             HideSubMenu();
         }
         #endregion
@@ -165,7 +194,8 @@ namespace BTL
 
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = (sender as Button).Text;
+            if (sender != null)
+                lblTitle.Text = (sender as Button).Text;
         }
         #endregion
 
@@ -175,8 +205,8 @@ namespace BTL
             if (dr == DialogResult.Yes)
             {
                 this.Hide();
-                DangNhap dn = new DangNhap();
-                dn.ShowDialog();
+                //DangNhap dn = new DangNhap();
+                //dn.ShowDialog();
             }
             else
                 e.Cancel = true;

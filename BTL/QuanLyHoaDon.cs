@@ -10,10 +10,15 @@ namespace BTL
     {
         QLBanSachContext db = new QLBanSachContext();
         private Form activeForm = null;
-        public QuanLyHoaDonForm()
+
+        private int maTk;
+
+        public QuanLyHoaDonForm(int maTK)
         {
+            this.maTk = maTK;
             InitializeComponent();
         }
+
         int index = -1;
         private void dvgDanhSachHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
