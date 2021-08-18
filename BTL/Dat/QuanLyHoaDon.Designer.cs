@@ -63,6 +63,7 @@ namespace BTL
             this.label9 = new System.Windows.Forms.Label();
             this.btnXem = new System.Windows.Forms.Button();
             this.btninhoadon = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.grDanhSachHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachHoaDon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -313,15 +314,15 @@ namespace BTL
             // 
             this.btnboloc.Location = new System.Drawing.Point(502, 495);
             this.btnboloc.Name = "btnboloc";
-            this.btnboloc.Size = new System.Drawing.Size(94, 39);
+            this.btnboloc.Size = new System.Drawing.Size(154, 39);
             this.btnboloc.TabIndex = 44;
-            this.btnboloc.Text = "Hủy Lọc";
+            this.btnboloc.Text = "Làm mới danh sách";
             this.btnboloc.UseVisualStyleBackColor = true;
             this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click_1);
             // 
             // btnSuahoadon
             // 
-            this.btnSuahoadon.Location = new System.Drawing.Point(838, 495);
+            this.btnSuahoadon.Location = new System.Drawing.Point(526, 540);
             this.btnSuahoadon.Name = "btnSuahoadon";
             this.btnSuahoadon.Size = new System.Drawing.Size(130, 39);
             this.btnSuahoadon.TabIndex = 43;
@@ -331,7 +332,7 @@ namespace BTL
             // 
             // btnLapHoaDon
             // 
-            this.btnLapHoaDon.Location = new System.Drawing.Point(720, 495);
+            this.btnLapHoaDon.Location = new System.Drawing.Point(682, 538);
             this.btnLapHoaDon.Name = "btnLapHoaDon";
             this.btnLapHoaDon.Size = new System.Drawing.Size(112, 39);
             this.btnLapHoaDon.TabIndex = 42;
@@ -385,7 +386,7 @@ namespace BTL
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(602, 495);
+            this.btnXem.Location = new System.Drawing.Point(682, 495);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(112, 39);
             this.btnXem.TabIndex = 36;
@@ -395,7 +396,7 @@ namespace BTL
             // 
             // btninhoadon
             // 
-            this.btninhoadon.Location = new System.Drawing.Point(974, 495);
+            this.btninhoadon.Location = new System.Drawing.Point(402, 540);
             this.btninhoadon.Name = "btninhoadon";
             this.btninhoadon.Size = new System.Drawing.Size(106, 39);
             this.btninhoadon.TabIndex = 48;
@@ -403,11 +404,22 @@ namespace BTL
             this.btninhoadon.UseVisualStyleBackColor = true;
             this.btninhoadon.Click += new System.EventHandler(this.btninhoadon_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(402, 582);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(459, 17);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Chú ý: Cần chọn 1 dòng hóa đơn trong danh sách để xem, in hoặc sửa chúng";
+            // 
             // QuanLyHoaDonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 681);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btninhoadon);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.groupBox1);
@@ -472,5 +484,6 @@ namespace BTL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btninhoadon;
+        private System.Windows.Forms.Label label1;
     }
 }
