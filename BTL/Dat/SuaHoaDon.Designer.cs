@@ -69,7 +69,7 @@ namespace BTL
             this.txtNguoiLap.Location = new System.Drawing.Point(177, 162);
             this.txtNguoiLap.Name = "txtNguoiLap";
             this.txtNguoiLap.ReadOnly = true;
-            this.txtNguoiLap.Size = new System.Drawing.Size(125, 27);
+            this.txtNguoiLap.Size = new System.Drawing.Size(145, 27);
             this.txtNguoiLap.TabIndex = 25;
             // 
             // label5
@@ -136,7 +136,7 @@ namespace BTL
             this.txtDiaChi.Location = new System.Drawing.Point(177, 129);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.ReadOnly = true;
-            this.txtDiaChi.Size = new System.Drawing.Size(125, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(145, 27);
             this.txtDiaChi.TabIndex = 32;
             // 
             // txtSodienThoai
@@ -144,7 +144,7 @@ namespace BTL
             this.txtSodienThoai.Location = new System.Drawing.Point(177, 96);
             this.txtSodienThoai.Name = "txtSodienThoai";
             this.txtSodienThoai.ReadOnly = true;
-            this.txtSodienThoai.Size = new System.Drawing.Size(125, 27);
+            this.txtSodienThoai.Size = new System.Drawing.Size(145, 27);
             this.txtSodienThoai.TabIndex = 31;
             // 
             // txtTenKhachHang
@@ -152,7 +152,7 @@ namespace BTL
             this.txtTenKhachHang.Location = new System.Drawing.Point(177, 63);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.ReadOnly = true;
-            this.txtTenKhachHang.Size = new System.Drawing.Size(125, 27);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(145, 27);
             this.txtTenKhachHang.TabIndex = 30;
             // 
             // dtNgayLapHoaDon
@@ -161,7 +161,7 @@ namespace BTL
             this.dtNgayLapHoaDon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgayLapHoaDon.Location = new System.Drawing.Point(177, 195);
             this.dtNgayLapHoaDon.Name = "dtNgayLapHoaDon";
-            this.dtNgayLapHoaDon.Size = new System.Drawing.Size(125, 27);
+            this.dtNgayLapHoaDon.Size = new System.Drawing.Size(145, 27);
             this.dtNgayLapHoaDon.TabIndex = 29;
             // 
             // label4

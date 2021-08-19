@@ -83,7 +83,7 @@ namespace BTL
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 600);
+            this.panel1.Size = new System.Drawing.Size(415, 600);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -101,7 +101,7 @@ namespace BTL
             this.lbHTMK.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbHTMK.Location = new System.Drawing.Point(193, 392);
             this.lbHTMK.Name = "lbHTMK";
-            this.lbHTMK.Size = new System.Drawing.Size(72, 13);
+            this.lbHTMK.Size = new System.Drawing.Size(88, 19);
             this.lbHTMK.TabIndex = 9;
             this.lbHTMK.Text = "Ẩn mật khẩu";
             // 
@@ -121,9 +121,9 @@ namespace BTL
             this.lbQMK.AutoSize = true;
             this.lbQMK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbQMK.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lbQMK.Location = new System.Drawing.Point(135, 521);
+            this.lbQMK.Location = new System.Drawing.Point(142, 521);
             this.lbQMK.Name = "lbQMK";
-            this.lbQMK.Size = new System.Drawing.Size(118, 20);
+            this.lbQMK.Size = new System.Drawing.Size(153, 25);
             this.lbQMK.TabIndex = 7;
             this.lbQMK.Text = "Quên mật khẩu ?";
             // 
@@ -143,7 +143,7 @@ namespace BTL
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(152, 374);
+            this.label4.Location = new System.Drawing.Point(174, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(206, 1);
             this.label4.TabIndex = 5;
@@ -151,7 +151,7 @@ namespace BTL
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(152, 311);
+            this.label3.Location = new System.Drawing.Point(174, 311);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(206, 1);
             this.label3.TabIndex = 4;
@@ -159,17 +159,17 @@ namespace BTL
             // txtMatKhau
             // 
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatKhau.Location = new System.Drawing.Point(152, 352);
+            this.txtMatKhau.Location = new System.Drawing.Point(174, 352);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(206, 20);
+            this.txtMatKhau.Size = new System.Drawing.Size(206, 25);
             this.txtMatKhau.TabIndex = 3;
             // 
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenDangNhap.Location = new System.Drawing.Point(152, 289);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(174, 289);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 20);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 25);
             this.txtTenDangNhap.TabIndex = 2;
             // 
             // label2
@@ -177,7 +177,7 @@ namespace BTL
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 352);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu : ";
             // 
@@ -186,7 +186,7 @@ namespace BTL
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 289);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập : ";
             // 
@@ -198,7 +198,7 @@ namespace BTL
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(77, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 195);
+            this.pictureBox1.Size = new System.Drawing.Size(251, 195);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -212,9 +212,9 @@ namespace BTL
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(400, 0);
+            this.panel2.Location = new System.Drawing.Point(415, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 600);
+            this.panel2.Size = new System.Drawing.Size(585, 600);
             this.panel2.TabIndex = 1;
             // 
             // panel4
@@ -224,7 +224,7 @@ namespace BTL
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(598, 73);
+            this.panel4.Size = new System.Drawing.Size(583, 73);
             this.panel4.TabIndex = 4;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
@@ -266,7 +266,7 @@ namespace BTL
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 481);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(598, 117);
+            this.panel3.Size = new System.Drawing.Size(583, 117);
             this.panel3.TabIndex = 3;
             // 
             // dot4
@@ -305,7 +305,7 @@ namespace BTL
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(599, 601);
+            this.pictureBox4.Size = new System.Drawing.Size(583, 598);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
@@ -336,7 +336,7 @@ namespace BTL
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 600);

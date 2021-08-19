@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Models;
 namespace BTL
@@ -51,7 +44,7 @@ namespace BTL
             txbGia.Text = a.DonGia.ToString();
             txbNXB.Text = a.NhaXuatBan;
             txbTacGia.Text = a.TacGia;
-          
+
         }
 
         private void Update_click(object sender, EventArgs e)
@@ -64,16 +57,16 @@ namespace BTL
                 {
                     sach.TenSach = txbTenSach.Text;
                     string tenloai = cbbTenLoai.Text;
-                    foreach(var item in db.Loaisaches)
+                    foreach (var item in db.Loaisaches)
                     {
-                        if(item.TenLoai == tenloai)
+                        if (item.TenLoai == tenloai)
                         {
                             sach.MaLoai = item.MaLoai;
                             break;
                         }
                     }
                     decimal value;
-                    if(!decimal.TryParse(txbGia.Text,out value))
+                    if (!decimal.TryParse(txbGia.Text, out value))
                     {
                         throw new Exception("Lỗi nhập giá sửa không phải là số");
                     }

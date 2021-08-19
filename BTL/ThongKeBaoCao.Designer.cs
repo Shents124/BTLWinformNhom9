@@ -50,6 +50,7 @@ namespace BTL
             // 
             // dsThongKe
             // 
+            this.dsThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dsThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dsThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mahoadon,
@@ -68,28 +69,24 @@ namespace BTL
             this.mahoadon.HeaderText = "Mã hóa đơn";
             this.mahoadon.MinimumWidth = 6;
             this.mahoadon.Name = "mahoadon";
-            this.mahoadon.Width = 125;
             // 
             // ngaylap
             // 
             this.ngaylap.HeaderText = "Ngày lập";
             this.ngaylap.MinimumWidth = 6;
             this.ngaylap.Name = "ngaylap";
-            this.ngaylap.Width = 180;
             // 
             // tenkhachhang
             // 
             this.tenkhachhang.HeaderText = "Tên khách hàng";
             this.tenkhachhang.MinimumWidth = 6;
             this.tenkhachhang.Name = "tenkhachhang";
-            this.tenkhachhang.Width = 200;
             // 
             // tongtien
             // 
             this.tongtien.HeaderText = "Tổng tiền";
             this.tongtien.MinimumWidth = 6;
             this.tongtien.Name = "tongtien";
-            this.tongtien.Width = 150;
             // 
             // label1
             // 
@@ -111,7 +108,7 @@ namespace BTL
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(105, 259);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(814, 177);
+            this.groupBox2.Size = new System.Drawing.Size(752, 177);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
@@ -143,7 +140,7 @@ namespace BTL
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(351, 110);
+            this.btnThoat.Location = new System.Drawing.Point(421, 121);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(94, 29);
             this.btnThoat.TabIndex = 33;
@@ -163,7 +160,7 @@ namespace BTL
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(156, 110);
+            this.btnIn.Location = new System.Drawing.Point(226, 121);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(94, 29);
             this.btnIn.TabIndex = 28;

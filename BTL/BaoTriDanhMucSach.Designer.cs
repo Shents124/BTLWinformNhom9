@@ -48,6 +48,7 @@ namespace BTL
             // 
             // dsDanhMuc
             // 
+            this.dsDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dsDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dsDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maloai,
@@ -66,14 +67,12 @@ namespace BTL
             this.maloai.HeaderText = "Mã loại sách";
             this.maloai.MinimumWidth = 6;
             this.maloai.Name = "maloai";
-            this.maloai.Width = 200;
             // 
             // tenloaisach
             // 
             this.tenloaisach.HeaderText = "Tên loại sách";
             this.tenloaisach.MinimumWidth = 6;
             this.tenloaisach.Name = "tenloaisach";
-            this.tenloaisach.Width = 250;
             // 
             // groupBox1
             // 

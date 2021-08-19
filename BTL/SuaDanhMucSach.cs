@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Models;
 namespace BTL
 {
     public partial class SuaDanhMucSach : Form
     {
-        
+
         QLBanSachContext db = new QLBanSachContext();
         public SuaDanhMucSach()
         {
@@ -30,7 +23,7 @@ namespace BTL
         {
             int maloai = Convert.ToInt32(txbMaLoaiSach.Text);
             try
-            {   
+            {
                 var sach = db.Loaisaches.Find(maloai);
                 if (ValidateData())
                 {
@@ -38,7 +31,7 @@ namespace BTL
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");
                 }
-               
+
             }
             catch (Exception ex)
             {

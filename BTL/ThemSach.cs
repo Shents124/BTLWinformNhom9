@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Models;
 namespace BTL
@@ -59,16 +52,16 @@ namespace BTL
                         if (item.TenSach == txbTenSach.Text)
                         {
                             throw new Exception("Lỗi tên sách bị trùng !");
-                           
+
                         }
                     }
-                     decimal value;
-                        if(!decimal.TryParse(txbGia.Text,out value))
-                        {
-                            throw new Exception("Lỗi nhập giá không phải là số");
-                        }
-                    
-                   
+                    decimal value;
+                    if (!decimal.TryParse(txbGia.Text, out value))
+                    {
+                        throw new Exception("Lỗi nhập giá không phải là số");
+                    }
+
+
                     spMoi.TenSach = txbTenSach.Text;
                     int index = cbbTenLoai.SelectedIndex;
                     spMoi.TacGia = txbTacGia.Text;
@@ -157,7 +150,7 @@ namespace BTL
 
         private void tenLoai(object sender, EventArgs e)
         {
-           
+
         }
         public void XoaTrang()
         {

@@ -18,7 +18,9 @@ namespace BTL
         {
             InitializeComponent();
             CustomizeDesign();
+            
         }
+
         public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace BTL
             this.hoTen = hoTen;
             isAdmin = admin;
             CustomizeDesign();
+
+            OpenChildForm(new QuanLyHoaDonForm(this.maTK), null);
+            lblTitle.Text = "Quản lý hóa đơn";
         }
 
         private void MainForm_Load(object sender, EventArgs e)

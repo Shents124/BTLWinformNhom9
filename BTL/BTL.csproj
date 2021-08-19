@@ -35,9 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Form1.resx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -49,13 +46,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="QLBanSachThongTinDDH.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>QLBanSachThongTinDDH.Designer.cs</LastGenOutput>
     </None>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

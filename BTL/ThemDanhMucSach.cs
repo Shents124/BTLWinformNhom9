@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Models;
 namespace BTL
@@ -29,19 +22,19 @@ namespace BTL
                     {
                         if (item.TenLoai == txbTenLoaiSach.Text)
                             throw new Exception("Lỗi tên loại sách trùng !");
-                    }               
+                    }
                     spMoi.TenLoai = txbTenLoaiSach.Text;
                     db.Loaisaches.Add(spMoi);
                     db.SaveChanges();
                     MessageBox.Show("Thêm thành công");
                 }
-                
+
             }
             catch (Exception ex)
-            { 
-                MessageBox.Show(ex.Message); 
+            {
+                MessageBox.Show(ex.Message);
             }
-           
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

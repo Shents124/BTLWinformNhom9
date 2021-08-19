@@ -52,6 +52,7 @@ namespace BTL
             // 
             // dsSach
             // 
+            this.dsSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dsSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dsSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masach,
@@ -64,7 +65,7 @@ namespace BTL
             this.dsSach.Name = "dsSach";
             this.dsSach.RowHeadersWidth = 51;
             this.dsSach.RowTemplate.Height = 29;
-            this.dsSach.Size = new System.Drawing.Size(1066, 267);
+            this.dsSach.Size = new System.Drawing.Size(967, 267);
             this.dsSach.TabIndex = 28;
             this.dsSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
             this.dsSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
@@ -74,42 +75,36 @@ namespace BTL
             this.masach.HeaderText = "Mã sách";
             this.masach.MinimumWidth = 6;
             this.masach.Name = "masach";
-            this.masach.Width = 125;
             // 
             // tensach
             // 
             this.tensach.HeaderText = "Tên sách";
             this.tensach.MinimumWidth = 6;
             this.tensach.Name = "tensach";
-            this.tensach.Width = 200;
             // 
             // tenloai
             // 
             this.tenloai.HeaderText = "Tên loại sách";
             this.tenloai.MinimumWidth = 6;
             this.tenloai.Name = "tenloai";
-            this.tenloai.Width = 200;
             // 
             // giasach
             // 
             this.giasach.HeaderText = "Giá sách";
             this.giasach.MinimumWidth = 6;
             this.giasach.Name = "giasach";
-            this.giasach.Width = 125;
             // 
             // tacgia
             // 
             this.tacgia.HeaderText = "Tác giả";
             this.tacgia.MinimumWidth = 6;
             this.tacgia.Name = "tacgia";
-            this.tacgia.Width = 150;
             // 
             // nhaxuatban
             // 
             this.nhaxuatban.HeaderText = "Nhà xuất bản";
             this.nhaxuatban.MinimumWidth = 6;
             this.nhaxuatban.Name = "nhaxuatban";
-            this.nhaxuatban.Width = 200;
             // 
             // txbTim
             // 
@@ -147,7 +142,7 @@ namespace BTL
             this.groupBox1.Controls.Add(this.txbTim);
             this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(254, 373);
+            this.groupBox1.Location = new System.Drawing.Point(228, 324);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(592, 177);
             this.groupBox1.TabIndex = 29;
@@ -209,7 +204,7 @@ namespace BTL
             this.btnReset.BackColor = System.Drawing.Color.Blue;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(1084, 74);
+            this.btnReset.Location = new System.Drawing.Point(999, 112);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(102, 66);
             this.btnReset.TabIndex = 34;
@@ -221,7 +216,8 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 574);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1111, 521);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dsSach);
             this.Controls.Add(this.groupBox1);

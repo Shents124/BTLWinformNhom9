@@ -17,36 +17,36 @@ namespace BTL
             InitializeComponent();
         }
         Sach sach = new Sach();
-        
+
         private void LapHoaDon_Load(object sender, EventArgs e)
         {
             HienThiDanhSachBookTrongHeThong();
             Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == maTk);
             txtNguoilap.Text = tk.HoTen;
-            
+
         }
         private bool ThemKhachHang()
         {
             Khachhang kh = new Khachhang();
-           
+
             kh.TenKh = txtTenKhachHang.Text;
             kh.SoDt = txtSodienThoai.Text;
             kh.DiaChi = txtDiaChi.Text;
             Khachhang khtest = db.Khachhangs.FirstOrDefault(khtest => khtest.SoDt == kh.SoDt);
-            if(khtest!=null)
+            if (khtest != null)
             {
                 MessageBox.Show("Khách hàng đã từng mua sản phẩm trước đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
-            }    
+            }
             else
             {
                 db.Khachhangs.Add(kh);
                 db.SaveChanges();
                 return true;
-            }                  
+            }
         }
         private void ThemHoaDon()
-        {           
+        {
             Hoadon hd = new Hoadon();
             hd.NgayLap = dtNgayLapHoaDon.Value;
             hd.MaTk = maTk;
@@ -61,19 +61,19 @@ namespace BTL
                             };
                 var a = query.ToList();
                 int i = a.Count;
-                hd.MaKh = a[i - 1].MaKh;             
-            }    
+                hd.MaKh = a[i - 1].MaKh;
+            }
             else
-            {   
-                hd.MaKh = khtest.MaKh;               
-            }  
+            {
+                hd.MaKh = khtest.MaKh;
+            }
 
-            db.Hoadons.Add(hd);           
-            db.SaveChanges();           
+            db.Hoadons.Add(hd);
+            db.SaveChanges();
         }
         private void ThemChiTietHoaDon()
         {
-     
+
             var query = from h in db.Hoadons
                         select new
                         {
@@ -82,11 +82,11 @@ namespace BTL
                         };
             var a = query.ToList();
             int dem = a.Count;
-            
-            int sum = dvgDachsachthem.Rows.Count;      
+
+            int sum = dvgDachsachthem.Rows.Count;
             for (int i = 0; i < sum - 1; i++)
             {
-          
+
                 Cthoadon cthd = new Cthoadon();
                 cthd.MaHd = a[dem - 1].MaHd;
                 var dongia = from s in db.Saches
@@ -98,10 +98,10 @@ namespace BTL
                 var dongia2 = dongia.ToList();
                 cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
                 cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;     
+                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
                 db.Cthoadons.Add(cthd);
-                
-            }       
+
+            }
             db.SaveChanges();
         }
 
@@ -150,8 +150,6 @@ namespace BTL
                         };
             var a = query.ToList();
             int dem = a.Count;
-            if (dem == 0)
-                dem++;
 
             int sum = dvgDachsachthem.Rows.Count;
             if (sum == 1)
@@ -159,12 +157,16 @@ namespace BTL
                 MessageBox.Show("Bạn chưa nhập thông tin sản phẩm cần mua");
                 return false;
             }
-        
+
             for (int i = 0; i < sum - 1; i++)
             {
 
                 Cthoadon cthd = new Cthoadon();
-                cthd.MaHd = a[dem - 1].MaHd +1;
+                if (dem == 0)
+                    cthd.MaHd = 1;
+                else
+
+                cthd.MaHd = a[dem - 1].MaHd + 1;
                 var query1 = from s in db.Saches
                              where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
                              select new
@@ -199,8 +201,8 @@ namespace BTL
                 var dongia2 = query1.ToList();
                 cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
                 cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;            
-                if (db.Cthoadons.Find(cthd.MaHd,cthd.MaSach)!=null)
+                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
+                if (db.Cthoadons.Find(cthd.MaHd, cthd.MaSach) != null)
                 {
                     MessageBox.Show("Bạn không thể chọn 1 sản phẩm trên 2 dòng hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
@@ -209,23 +211,23 @@ namespace BTL
                 {
                     db.Cthoadons.Add(cthd);
                     li.Add(cthd);
-                }               
+                }
             }
-            if(li.Count>0)
+            if (li.Count > 0)
                 foreach (Cthoadon item in li)
                     db.Cthoadons.Remove(item);
             li.Clear();
             return true;
-        }       
-     
+        }
+
         private void HienThiDanhSachBookTrongHeThong()
         {
-           
+
             var query = from s in db.Saches
                         select new
                         {
                             s.MaSach,
-                           s.TenSach
+                            s.TenSach
                         };
             TenHang.DataSource = query.ToList();
             TenHang.ValueMember = "MaSach";
@@ -248,7 +250,7 @@ namespace BTL
                     foreach (var item in li)
                         db.Cthoadons.Remove(item);
                     li.Clear();
-                }                   
+                }
             }
         }
 
@@ -269,13 +271,13 @@ namespace BTL
             {
                 MessageBox.Show("Dòng chọn không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }         
+            }
             dvgDachsachthem.Rows.Remove(dvgDachsachthem.Rows[index]);
         }
         private void XoaText()
         {
             dtNgayLapHoaDon.Value = DateTime.Today;
-            txtDiaChi.Text = "";         
+            txtDiaChi.Text = "";
             txtSodienThoai.Text = "";
             txtTenKhachHang.Text = "";
             dvgDachsachthem.Rows.Clear();
