@@ -239,6 +239,7 @@ namespace BTL
                 ThemHoaDon();
                 ThemChiTietHoaDon();
                 XoaText();
+                MessageBox.Show("Lập hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

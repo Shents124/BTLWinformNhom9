@@ -100,7 +100,7 @@ namespace BTL
             // 
             this.btnSuaThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaThongTin.Location = new System.Drawing.Point(758, 30);
+            this.btnSuaThongTin.Location = new System.Drawing.Point(721, 37);
             this.btnSuaThongTin.Name = "btnSuaThongTin";
             this.btnSuaThongTin.Size = new System.Drawing.Size(119, 79);
             this.btnSuaThongTin.TabIndex = 7;
@@ -190,7 +190,7 @@ namespace BTL
             // 
             this.btnboloc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnboloc.Location = new System.Drawing.Point(431, 76);
+            this.btnboloc.Location = new System.Drawing.Point(424, 84);
             this.btnboloc.Name = "btnboloc";
             this.btnboloc.Size = new System.Drawing.Size(94, 53);
             this.btnboloc.TabIndex = 14;

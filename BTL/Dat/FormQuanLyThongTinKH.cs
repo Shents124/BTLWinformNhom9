@@ -166,6 +166,44 @@ namespace BTL
         }
         private void loc()
         {
+            if(txtSolanmuamin.Text=="")
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng mua nhỏ nhất", "Thông báo");
+                txtSolanmuamin.Focus();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int i = int.Parse(txtSolanmuamin.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn nhập số lượng mua nhỏ nhất không đúng định dạng", "Thông báo");
+                    txtSolanmuamin.SelectAll();
+                    return;
+                }
+            }
+            if (txtSolanmuamax.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng mua lớn nhất", "Thông báo");
+                txtSolanmuamax.Focus();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int h = int.Parse(txtSolanmuamax.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn nhập số lượng mua lớn nhất không đúng định dạng", "Thông báo");
+                    txtSolanmuamax.SelectAll();
+                    return;
+                }
+            }
             var query = from kh in db.Khachhangs
                         where kh.Hoadons.Count>=int.Parse(txtSolanmuamin.Text) && kh.Hoadons.Count<=int.Parse(txtSolanmuamax.Text)
                         select new
