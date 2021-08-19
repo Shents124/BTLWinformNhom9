@@ -140,7 +140,7 @@ namespace BTL
                                 }
                             }
                             //Saving the workbook to disk in XLSX format
-                            Stream excelstream = File.Create(Path.GetFullPath(@"D:\FileWinForm.xlsx"));
+                            Stream excelstream = File.Create(Path.GetFullPath(@"D:\ThongKeBaoCao.xlsx"));
                             workbook.SaveAs(excelstream);
                             excelstream.Dispose();
                              MessageBox.Show("In thành công");

@@ -60,7 +60,7 @@ namespace BTL
             this.giasach,
             this.tacgia,
             this.nhaxuatban});
-            this.dsSach.Location = new System.Drawing.Point(12, 28);
+            this.dsSach.Location = new System.Drawing.Point(12, 30);
             this.dsSach.Name = "dsSach";
             this.dsSach.RowHeadersWidth = 51;
             this.dsSach.RowTemplate.Height = 29;

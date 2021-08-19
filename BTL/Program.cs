@@ -16,6 +16,8 @@ namespace BTL
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new ThongKeBaoCao());
+           /* Application.Run(new BaoTriSach());*/
+            /*Application.Run(new BaoTriDanhMucSach());*/
         }
     }
 }
