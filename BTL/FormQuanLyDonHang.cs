@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,37 @@ namespace BTL
 {
     public partial class FormQuanLyDonHang : Form
     {
+        QLBanSachContext obj = new QLBanSachContext();
+        int mapn;
         public FormQuanLyDonHang()
         {
             InitializeComponent();
+        }
+        private void ShowDanhSach()
+        {
+            var query = from p in obj.Pnhaps
+                        select new
+                        {
+                            p.MaPn,
+                            p.MaDonDhNavigation.MaNhaCcNavigation.TenNhaCc,
+                            p.NgayNhap,
+                            p.MaDonDh
+                        };
+            dataGridView1.DataSource = query.ToList();
+        }
+
+        private void ShowChiTiet()
+        {
+            var query = from p in obj.Ctpnhaps
+                        where p.MaPn == mapn
+                        select new
+                        {
+                            p.MaSachNavigation.TenSach,
+                            p.SlNhap,
+                            p.DgNhap,
+                        };
+            dataGridView2.DataSource = query.ToList();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,12 +84,7 @@ namespace BTL
 
         private void FormQuanLyDonHang_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnXem_Click(object sender, EventArgs e)
-        {
-
+            ShowDanhSach();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -74,21 +98,34 @@ namespace BTL
                 Application.OpenForms[frmQLDH_Them.Name].Focus();
         }
 
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            FormQuanLyDonHang_Sua frmQLDH_Sua = new FormQuanLyDonHang_Sua();
-            if (Application.OpenForms[frmQLDH_Sua.Name] == null)
-            {
-                frmQLDH_Sua.ShowDialog();
-            }
-            else
-                Application.OpenForms[frmQLDH_Sua.Name].Focus();
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                txtMaPhieu.Text = selectedRow.Cells[0].Value.ToString();
+                mapn = int.Parse(selectedRow.Cells[0].Value.ToString());
+                txtTenNCC.Text = selectedRow.Cells[1].Value.ToString();
+                txtNgayNhap.Text = selectedRow.Cells[2].Value.ToString();
+                txtMaDonDH.Text = selectedRow.Cells[3].Value.ToString();
+                ShowChiTiet();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "Error");
+                return;
+            }
+        }
+
+        private void FormQuanLyDonHang_Activated(object sender, EventArgs e)
+        {
+            ShowDanhSach();
         }
     }
 }

@@ -44,10 +44,8 @@ namespace BTL
             this.btnRefresh = new System.Windows.Forms.Label();
             this.txtTimPhieu = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnXem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -154,7 +152,7 @@ namespace BTL
             this.label6.Size = new System.Drawing.Size(152, 37);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tìm phiếu";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
@@ -178,7 +176,7 @@ namespace BTL
             this.label8.Size = new System.Drawing.Size(152, 46);
             this.label8.TabIndex = 19;
             this.label8.Text = "Ngày bắt đầu";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnSearch
             // 
@@ -203,7 +201,7 @@ namespace BTL
             this.label9.Size = new System.Drawing.Size(152, 47);
             this.label9.TabIndex = 20;
             this.label9.Text = "Ngày kết thúc";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // dtpKT
             // 
@@ -232,7 +230,7 @@ namespace BTL
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(60, 46);
             this.btnFilter.TabIndex = 25;
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnFilter.MouseLeave += new System.EventHandler(this.btnFilter_MouseLeave);
             this.btnFilter.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnFilter_MouseMove);
             // 
@@ -247,7 +245,7 @@ namespace BTL
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(62, 46);
             this.btnRefresh.TabIndex = 26;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
             this.btnRefresh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseMove);
             // 
@@ -264,61 +262,16 @@ namespace BTL
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.btnXoa, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.btnXem, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnSua, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.btnThem, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnThem, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnXoa, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(555, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(734, 187);
             this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(370, 96);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(361, 88);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnXem
-            // 
-            this.btnXem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.ForeColor = System.Drawing.Color.Black;
-            this.btnXem.Location = new System.Drawing.Point(3, 3);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(361, 87);
-            this.btnXem.TabIndex = 0;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.AutoSize = true;
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(3, 96);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(361, 88);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -326,13 +279,27 @@ namespace BTL
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(370, 3);
+            this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(361, 87);
+            this.btnThem.Size = new System.Drawing.Size(361, 181);
             this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Lập phiếu";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Location = new System.Drawing.Point(370, 3);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(361, 181);
+            this.btnXoa.TabIndex = 3;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // groupBox1
             // 
@@ -356,6 +323,7 @@ namespace BTL
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1292, 193);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox2
             // 
@@ -527,6 +495,7 @@ namespace BTL
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormQuanLyDonHang";
             this.Text = "FormQuanLyDonHang";
+            this.Activated += new System.EventHandler(this.FormQuanLyDonHang_Activated);
             this.Load += new System.EventHandler(this.FormQuanLyDonHang_Load);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -534,7 +503,6 @@ namespace BTL
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -551,9 +519,7 @@ namespace BTL
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label btnRefresh;
         private System.Windows.Forms.Label btnFilter;
