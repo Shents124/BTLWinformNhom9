@@ -228,7 +228,7 @@ namespace BTL
                 BaseFont bf;
                 try
                 {
-                    bf= BaseFont.CreateFont(@"C:\Users\ADMIN\Source\Repos\BTLWinformNhom9\BTL\Resources\Times New Roman 400.ttf", BaseFont.IDENTITY_H, true);
+                    bf= BaseFont.CreateFont(@"D:\Nam_3_ky_2\Window\BTLWinformNhom9\BTL\Resources\Times New Roman 400.ttf", BaseFont.IDENTITY_H, true);
                 }
                 catch
                 {
@@ -298,7 +298,7 @@ namespace BTL
                     sum += item.ThanhTien;
                 }
                 tt.AddCell(new Phrase(sum.ToString(),font1));
-                string url = @"C:\Users\ADMIN\source\repos\BTLWinformNhom9\BTL\Resources\logo.png";
+                string url = @"D:\Nam_3_ky_2\Window\BTLWinformNhom9\BTL\Resources\logo.png";
                 Image jbp;
                 try
                 {
