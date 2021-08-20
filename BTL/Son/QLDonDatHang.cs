@@ -3,6 +3,7 @@ using BTL.Son;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,7 +16,9 @@ namespace BTL
         List<Dondh> dsDondh = new List<Dondh>();
         List<Ctdondh> ctdondhs = new List<Ctdondh>();
 
+        private decimal tongTien = 0;
         private int index;
+        private bool isSearchWithDate = false;
 
         public QLDonDatHang()
         {
@@ -43,8 +46,10 @@ namespace BTL
             {
                 DataGridViewRow row = (DataGridViewRow)dgvDSDonDH.Rows[0].Clone();
                 row.Cells[0].Value = item.MaDonDh;
-                row.Cells[1].Value = item.NgayDh;
+                DateTime time = (DateTime)item.NgayDh;
+                row.Cells[1].Value = time.ToShortDateString();
                 row.Cells[2].Value = item.MaNhaCcNavigation.TenNhaCc;
+                row.Cells[3].Value = item.TrangThai;
                 dgvDSDonDH.Rows.Add(row);
             }
         }
@@ -64,25 +69,35 @@ namespace BTL
             ctdondhs = GetChiTietDonHang(maDonDh);
 
             dgvThongTinSach.Rows.Clear();
+
             foreach (var item in ctdondhs)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvThongTinSach.Rows[0].Clone();
                 row.Cells[0].Value = item.MaSach;
                 row.Cells[1].Value = item.MaSachNavigation.TenSach;
                 row.Cells[2].Value = item.SlDat;
+                row.Cells[3].Value = item.MaSachNavigation.DonGiaNhap;
+                row.Cells[4].Value = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", item.ThanhTien);
+                tongTien += item.ThanhTien;
+
                 dgvThongTinSach.Rows.Add(row);
             }
+
+            lblTongTien.Text = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", tongTien);
         }
 
         private List<Dondh> LocDonDatHang()
         {
             DateTime dayFrom = dtpFrom.Value;
             DateTime dayTo = dtpTo.Value;
-
-            var ddh = qLBanSachContext.Dondhs
+            if(isSearchWithDate == true)
+            {
+                var ddh = qLBanSachContext.Dondhs
                 .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo)
                 .ToList();
-            return ddh;
+                return ddh;
+            }
+            return null; 
         }
 
         private void ThemDonDatHang()

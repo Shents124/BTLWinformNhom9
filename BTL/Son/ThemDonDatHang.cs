@@ -386,7 +386,7 @@ namespace BTL.Son
                 ctdondh.MaDonDh = d.MaDonDh;
                 ctdondh.MaSach = sachCanDat[i].MaSach;
                 ctdondh.SlDat = int.Parse(dgvSachDatHang.Rows[i].Cells[1].Value.ToString());
-
+                ctdondh.ThanhTien = decimal.Parse(dgvSachDatHang.Rows[i].Cells[3].Value.ToString());
                 qLBanSachContext.Ctdondhs.Add(ctdondh);
             }
             qLBanSachContext.SaveChanges();
