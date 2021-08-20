@@ -27,7 +27,9 @@ namespace BTL
             //Hiển thị lên datagrid view
             foreach (var item in query)
             {
-                dsThongKe.Rows.Add(item.mahd, Convert.ToDateTime(item.ngaylap), item.tenkh, item.thanhtien);
+                DateTime s = Convert.ToDateTime(item.ngaylap);
+                string nl = s.ToString("dd/MM/yyyy");
+                dsThongKe.Rows.Add(item.mahd,nl, item.tenkh, item.thanhtien);
             }
             var query2 = from a in db.Hoadons
                          join b in db.Cthoadons on a.MaHd equals b.MaHd
@@ -78,7 +80,7 @@ namespace BTL
                 //Hiển thị lên datagrid view
                 foreach (var item in query)
                 {
-                    dsThongKe.Rows.Add(item.mahd, Convert.ToDateTime(item.ngaylap), item.tenkh, item.thanhtien);
+                    dsThongKe.Rows.Add(item.mahd, Convert.ToDateTime(item.ngaylap).ToString("dd/MM/yyyy"), item.tenkh, item.thanhtien);
                     tongDoanhThu += item.thanhtien;
                 }
                 txbDoanhThu.Text = tongDoanhThu.ToString();

@@ -59,5 +59,10 @@ namespace BTL
             }
             return true;
         }
+
+        private void txbTenLoaiSach_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
