@@ -32,8 +32,7 @@ namespace BTL
             isAdmin = admin;
             CustomizeDesign();
 
-            OpenChildForm(new QuanLyHoaDonForm(this.maTK), null);
-            lblTitle.Text = "Quản lý hóa đơn";
+            OpenChildForm(new QLDonDatHang(), null);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -102,9 +101,7 @@ namespace BTL
         {
             // Hiển thị form quản lý tài khoản
             HideSubMenu();
-            OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), null);
-            lblTitle.Text = "Quản lý thông tin cá nhân";
-
+            OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), sender);
         }
         #endregion
 

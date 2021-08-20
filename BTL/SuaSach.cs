@@ -41,7 +41,7 @@ namespace BTL
                     break;
                 }
             }
-            txbGia.Text = a.DonGia.ToString();
+            txbGia.Text = a.DonGiaBan.ToString();
             txbNXB.Text = a.NhaXuatBan;
             txbTacGia.Text = a.TacGia;
 
@@ -71,7 +71,7 @@ namespace BTL
                         throw new Exception("Lỗi nhập giá sửa không phải là số");
                     }
                     sach.TacGia = txbTacGia.Text;
-                    sach.DonGia = Convert.ToDecimal(txbGia.Text);
+                    sach.DonGiaBan = Convert.ToDecimal(txbGia.Text);
                     sach.NhaXuatBan = txbNXB.Text;
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");

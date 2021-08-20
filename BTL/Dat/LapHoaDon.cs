@@ -93,12 +93,12 @@ namespace BTL
                              where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
                              select new
                              {
-                                 s.DonGia,
+                                 s.DonGiaBan,
                              };
                 var dongia2 = dongia.ToList();
                 cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
                 cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
+                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGiaBan.ToString()) * cthd.SoLuong;
                 db.Cthoadons.Add(cthd);
 
             }
@@ -171,7 +171,7 @@ namespace BTL
                              where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
                              select new
                              {
-                                 s.DonGia,
+                                 s.DonGiaBan,
                              };
 
                 if (dvgDachsachthem.Rows[i].Cells[0].Value == null)
@@ -201,7 +201,7 @@ namespace BTL
                 var dongia2 = query1.ToList();
                 cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
                 cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;
+                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGiaBan.ToString()) * cthd.SoLuong;
                 if (db.Cthoadons.Find(cthd.MaHd, cthd.MaSach) != null)
                 {
                     MessageBox.Show("Bạn không thể chọn 1 sản phẩm trên 2 dòng hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

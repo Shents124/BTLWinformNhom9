@@ -15,12 +15,12 @@ namespace BTL
         public void LoadData()
         {
             var query = from c in db.Saches
-                        select new {c.MaSach,c.TenSach,c.MaLoaiNavigation.TenLoai,c.DonGia,c.TacGia,c.NhaXuatBan};
+                        select new { c.MaSach, c.TenSach, c.MaLoaiNavigation.TenLoai, c.DonGiaBan, c.TacGia, c.NhaXuatBan };
             dsSach.Rows.Clear();
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGia, item.TacGia, item.NhaXuatBan);
-            }  
+                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan, item.TacGia, item.NhaXuatBan);
+            }
         }
 
         private void BaoTriSach_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace BTL
                             map = s.MaLoai,
                             tensp = s.TenSach,
                             tenl = s.MaLoaiNavigation.TenLoai,
-                            gia  =s.DonGia,
+                            gia = s.DonGiaBan,
                             tg = s.TacGia,
                             nxb = s.NhaXuatBan
                         };
@@ -45,18 +45,18 @@ namespace BTL
             //Hiển thị lên datagrid view
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.map, item.tensp,item.tenl,item.gia,item.gia,item.tg,item.nxb);
+                dsSach.Rows.Add(item.map, item.tensp, item.tenl, item.gia, item.gia, item.tg, item.nxb);
             }
         }
 
         private void Resert_Click(object sender, EventArgs e)
         {
             var query = from c in db.Saches
-                        select new { c.MaSach, c.TenSach, c.MaLoaiNavigation.TenLoai, c.DonGia, c.TacGia, c.NhaXuatBan };
+                        select new { c.MaSach, c.TenSach, c.MaLoaiNavigation.TenLoai, c.DonGiaBan, c.TacGia, c.NhaXuatBan };
             dsSach.Rows.Clear();
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGia, item.TacGia, item.NhaXuatBan);
+                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan, item.TacGia, item.NhaXuatBan);
             }
             txbTim.Clear();
         }
@@ -93,7 +93,7 @@ namespace BTL
                             map = s.MaLoai,
                             tensp = s.TenSach,
                             tenl = s.MaLoaiNavigation.TenLoai,
-                            gia = s.DonGia,
+                            gia = s.DonGiaBan,
                             tg = s.TacGia,
                             nxb = s.NhaXuatBan
                         };
@@ -119,10 +119,10 @@ namespace BTL
                     {
                         //lấy ra sản phẩm muốn xóa
                         Sach sachXoa = (from s in db.Saches
-                                          where s.MaSach == maSachXoa
-                                          select s).FirstOrDefault();
- 
-                        db.Saches.Remove(sachXoa); 
+                                        where s.MaSach == maSachXoa
+                                        select s).FirstOrDefault();
+
+                        db.Saches.Remove(sachXoa);
                         db.SaveChanges();
                         LoadData();
                     }

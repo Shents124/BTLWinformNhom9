@@ -296,7 +296,7 @@ namespace BTL
             this.btnQLTK.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnQLTK.Size = new System.Drawing.Size(258, 40);
             this.btnQLTK.TabIndex = 1;
-            this.btnQLTK.Text = "Quản lý tài khoản";
+            this.btnQLTK.Text = "Đổi mật khẩu";
             this.btnQLTK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLTK.UseVisualStyleBackColor = false;
             this.btnQLTK.Click += new System.EventHandler(this.btnQLTK_Click);

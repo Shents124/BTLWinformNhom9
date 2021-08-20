@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,8 +17,8 @@ namespace BTL.Son
         List<Sach> sachMoi = new List<Sach>();
 
         int index = 0;
-
         private QLDonDatHang qLDonDatHang;
+        decimal tongTien = 0;
 
         public ThemDonDatHang(QLDonDatHang qLDonDatHang)
         {
@@ -146,7 +147,8 @@ namespace BTL.Son
                 txtLoaiSachCu.Text = sach.MaLoaiNavigation.TenLoai;
                 txtCu_TacGia.Text = sach.TacGia;
                 txtCu_NXB.Text = sach.NhaXuatBan;
-                txtCu_GiaBan.Text = sach.DonGia.ToString();
+                txtCu_GiaBan.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", sach.DonGiaBan);
+                txtCu_GiaNhap.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", sach.DonGiaNhap);
             }
         }
 
@@ -244,6 +246,13 @@ namespace BTL.Son
 
                 row.Cells[0].Value = cbCu_TenSach.Text;
                 row.Cells[1].Value = txtCu_SLN.Text;
+                row.Cells[2].Value = txtCu_GiaNhap.Text;
+
+                decimal thanhTien = int.Parse(txtCu_SLN.Text) * decimal.Parse(txtCu_GiaNhap.Text);
+                row.Cells[3].Value = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", thanhTien);
+
+                tongTien += thanhTien;
+
                 dgvSachDatHang.Rows.Add(row);
             }
 
@@ -254,7 +263,8 @@ namespace BTL.Son
                 x.TacGia = txtMoi_TacGia.Text;
                 x.NhaXuatBan = txtMoi_NXB.Text;
                 x.MaLoai = int.Parse(cbMoi_LoaiSach.SelectedValue.ToString());
-                x.DonGia = decimal.Parse(txtMoi_GiaBan.Text);
+                x.DonGiaBan = decimal.Parse(txtMoi_GiaBan.Text);
+                x.DonGiaNhap = decimal.Parse(txtMoi_GiaNhap.Text);
 
                 qLBanSachContext.Saches.Add(x);
                 qLBanSachContext.SaveChanges();
@@ -269,10 +279,17 @@ namespace BTL.Son
 
                 row.Cells[0].Value = txtTenSach.Text;
                 row.Cells[1].Value = txtMoi_SLN.Text;
+                row.Cells[2].Value = txtMoi_GiaNhap.Text;
+
+                decimal thanhTien = int.Parse(txtMoi_SLN.Text) * decimal.Parse(txtMoi_GiaNhap.Text);
+                row.Cells[3].Value = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", thanhTien);
                 dgvSachDatHang.Rows.Add(row);
+
+                tongTien += thanhTien;
 
                 ClearTextBoxMoi();
             }
+            lblTongTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", tongTien);
         }
 
         private void SuaSachDat()
@@ -290,7 +307,8 @@ namespace BTL.Son
                     querySua.MaLoai = int.Parse(cbMoi_LoaiSach.SelectedValue.ToString());
                     querySua.TacGia = txtMoi_TacGia.Text;
                     querySua.NhaXuatBan = txtMoi_NXB.Text;
-                    querySua.DonGia = decimal.Parse(txtMoi_GiaBan.Text);
+                    querySua.DonGiaBan = decimal.Parse(txtMoi_GiaBan.Text);
+                    querySua.DonGiaNhap = decimal.Parse(txtMoi_GiaNhap.Text);
                 }
 
                 qLBanSachContext.SaveChanges();
@@ -321,15 +339,19 @@ namespace BTL.Son
 
             if (rs == DialogResult.Yes)
             {
+                int sld = int.Parse(dgvSachDatHang.Rows[index].Cells[1].Value.ToString());
+                decimal thanhTien = sld * x.DonGiaNhap;
+                tongTien -= thanhTien;
+
                 if (sachMoi.Contains(x) == true)
                 {
                     qLBanSachContext.Saches.Remove(queryXoa);
                     qLBanSachContext.SaveChanges();
                     sachMoi.Remove(x);
-                    dgvSachDatHang.Rows.RemoveAt(index);
                 }
 
                 sachCanDat.Remove(x);
+                dgvSachDatHang.Rows.RemoveAt(index);
 
                 if (rbSachMoi.Checked == true)
                 {
@@ -341,6 +363,8 @@ namespace BTL.Son
                     txtMoi_SLN.Clear();
                 }
             }
+
+            lblTongTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", tongTien);
         }
 
         private void ChotDonDatHang()
@@ -434,7 +458,7 @@ namespace BTL.Son
                     txtLoaiSachCu.Text = x.MaLoaiNavigation.TenLoai;
                     txtMoi_TacGia.Text = x.TacGia;
                     txtMoi_NXB.Text = x.NhaXuatBan;
-                    txtMoi_GiaBan.Text = x.DonGia.ToString();
+                    txtMoi_GiaBan.Text = x.DonGiaBan.ToString();
                     txtMoi_SLN.Text = dgvSachDatHang.Rows[index].Cells[1].Value.ToString();
                 }
             }
@@ -457,5 +481,6 @@ namespace BTL.Son
             HuyDonDatHang();
             this.Close();
         }
+
     }
 }

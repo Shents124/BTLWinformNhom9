@@ -40,10 +40,9 @@ namespace BTL.Son
             foreach (var item in tk)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvTaiKhoan.Rows[0].Clone();
-                row.Cells[0].Value = item.MaTk;
-                row.Cells[1].Value = item.TenDangNhap;
-                row.Cells[2].Value = item.HoTen;
-                row.Cells[3].Value = (item.LoaiTk == true) ? "Admin" : "User";
+                row.Cells[0].Value = item.TenDangNhap;
+                row.Cells[1].Value = item.HoTen;
+                row.Cells[2].Value = (item.LoaiTk == true) ? "Admin" : "User";
                 dgvTaiKhoan.Rows.Add(row);
             }
         }

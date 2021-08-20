@@ -66,7 +66,7 @@ namespace BTL
                     int index = cbbTenLoai.SelectedIndex;
                     spMoi.TacGia = txbTacGia.Text;
                     spMoi.NhaXuatBan = txbTacGia.Text;
-                    spMoi.DonGia = Convert.ToDecimal(txbGia.Text);
+                    spMoi.DonGiaBan = Convert.ToDecimal(txbGia.Text);
                     foreach (var item in db.Loaisaches)
                     {
                         if (item.TenLoai == cbbTenLoai.SelectedItem.ToString())

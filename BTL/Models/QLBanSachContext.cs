@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -34,7 +32,7 @@ namespace BTL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-E7KV63R;Initial Catalog=QLBanSach;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Server=ACER-A7\\SQLEXPRESS;Database=QLBanSach;Trusted_Connection=True;");
             }
         }
 
@@ -45,11 +43,13 @@ namespace BTL.Models
             modelBuilder.Entity<Ctdondh>(entity =>
             {
                 entity.HasKey(e => new { e.MaDonDh, e.MaSach })
-                    .HasName("PK__CTDONDH__1687C589F114F751");
+                    .HasName("PK__CTDONDH__1687C589E697CBF2");
 
                 entity.ToTable("CTDONDH");
 
                 entity.Property(e => e.MaDonDh).HasColumnName("MaDonDH");
+
+                entity.Property(e => e.ThanhTien).HasColumnType("money");
 
                 entity.HasOne(d => d.MaDonDhNavigation)
                     .WithMany(p => p.Ctdondhs)
@@ -66,7 +66,7 @@ namespace BTL.Models
             modelBuilder.Entity<Cthoadon>(entity =>
             {
                 entity.HasKey(e => new { e.MaHd, e.MaSach })
-                    .HasName("PK__CTHOADON__EC06F1A2C8E076FD");
+                    .HasName("PK__CTHOADON__EC06F1A22DE83C20");
 
                 entity.ToTable("CTHOADON");
 
@@ -89,7 +89,7 @@ namespace BTL.Models
             modelBuilder.Entity<Ctpnhap>(entity =>
             {
                 entity.HasKey(e => new { e.MaPn, e.MaSach })
-                    .HasName("PK__CTPNHAP__EC06B0B27AB1A96E");
+                    .HasName("PK__CTPNHAP__EC06B0B208889E67");
 
                 entity.ToTable("CTPNHAP");
 
@@ -112,13 +112,15 @@ namespace BTL.Models
             modelBuilder.Entity<Dondh>(entity =>
             {
                 entity.HasKey(e => e.MaDonDh)
-                    .HasName("PK__DONDH__DDA492CB71993664");
+                    .HasName("PK__DONDH__DDA492CBC6CC6F7F");
 
                 entity.ToTable("DONDH");
 
                 entity.Property(e => e.MaDonDh).HasColumnName("MaDonDH");
 
                 entity.Property(e => e.NgayDh).HasColumnType("datetime");
+
+                entity.Property(e => e.TrangThai).HasMaxLength(200);
 
                 entity.HasOne(d => d.MaNhaCcNavigation)
                     .WithMany(p => p.Dondhs)
@@ -129,7 +131,7 @@ namespace BTL.Models
             modelBuilder.Entity<Hoadon>(entity =>
             {
                 entity.HasKey(e => e.MaHd)
-                    .HasName("PK__HOADON__2725A6E08BB58EAE");
+                    .HasName("PK__HOADON__2725A6E0697B6EEA");
 
                 entity.ToTable("HOADON");
 
@@ -159,7 +161,7 @@ namespace BTL.Models
             modelBuilder.Entity<Khachhang>(entity =>
             {
                 entity.HasKey(e => e.MaKh)
-                    .HasName("PK__KHACHHAN__2725CF1E717E607C");
+                    .HasName("PK__KHACHHAN__2725CF1E029AFDE7");
 
                 entity.ToTable("KHACHHANG");
 
@@ -180,7 +182,7 @@ namespace BTL.Models
             modelBuilder.Entity<Loaisach>(entity =>
             {
                 entity.HasKey(e => e.MaLoai)
-                    .HasName("PK__LOAISACH__730A5759EDC2EA2B");
+                    .HasName("PK__LOAISACH__730A57591FDEA082");
 
                 entity.ToTable("LOAISACH");
 
@@ -192,7 +194,7 @@ namespace BTL.Models
             modelBuilder.Entity<Nhacc>(entity =>
             {
                 entity.HasKey(e => e.MaNhaCc)
-                    .HasName("PK__NHACC__C87CD3118C5D633B");
+                    .HasName("PK__NHACC__C87CD311517DF8B5");
 
                 entity.ToTable("NHACC");
 
@@ -213,7 +215,7 @@ namespace BTL.Models
             modelBuilder.Entity<Pnhap>(entity =>
             {
                 entity.HasKey(e => e.MaPn)
-                    .HasName("PK__PNHAP__2725E7F096A25F60");
+                    .HasName("PK__PNHAP__2725E7F0CFCF4F02");
 
                 entity.ToTable("PNHAP");
 
@@ -232,11 +234,13 @@ namespace BTL.Models
             modelBuilder.Entity<Sach>(entity =>
             {
                 entity.HasKey(e => e.MaSach)
-                    .HasName("PK__SACH__B235742D294DB88D");
+                    .HasName("PK__SACH__B235742D8BCC949A");
 
                 entity.ToTable("SACH");
 
-                entity.Property(e => e.DonGia).HasColumnType("money");
+                entity.Property(e => e.DonGiaBan).HasColumnType("money");
+
+                entity.Property(e => e.DonGiaNhap).HasColumnType("money");
 
                 entity.Property(e => e.NhaXuatBan)
                     .IsRequired()
@@ -260,7 +264,7 @@ namespace BTL.Models
             modelBuilder.Entity<Taikhoan>(entity =>
             {
                 entity.HasKey(e => e.MaTk)
-                    .HasName("PK__TAIKHOAN__27250070B81453C8");
+                    .HasName("PK__TAIKHOAN__2725007092817A0F");
 
                 entity.ToTable("TAIKHOAN");
 

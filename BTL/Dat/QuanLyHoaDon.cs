@@ -71,7 +71,7 @@ namespace BTL
                              h.MaSachNavigation.TenSach,
                              h.MaSachNavigation.TacGia,
                              h.MaSachNavigation.NhaXuatBan,
-                             h.MaSachNavigation.DonGia,
+                             h.MaSachNavigation.DonGiaBan,
                              h.SoLuong,
                              h.ThanhTien,
                          };
@@ -267,7 +267,7 @@ namespace BTL
                          {
                              cthd.MaSach,
                              cthd.MaSachNavigation.TenSach,
-                             cthd.MaSachNavigation.DonGia,
+                             cthd.MaSachNavigation.DonGiaBan,
                              cthd.SoLuong,
                              cthd.ThanhTien
                          };
@@ -276,7 +276,7 @@ namespace BTL
                 {
                     PdfPCell cell4 = new PdfPCell(new Phrase(item.MaSach.ToString(), font1));
                     PdfPCell cell = new PdfPCell(new Phrase(item.TenSach.ToString(), font1));
-                    PdfPCell cell1 = new PdfPCell(new Phrase(item.DonGia.ToString(), font1));
+                    PdfPCell cell1 = new PdfPCell(new Phrase(item.DonGiaBan.ToString(), font1));
                     PdfPCell cell2 = new PdfPCell(new Phrase(item.SoLuong.ToString(), font1));
                     PdfPCell cell3 = new PdfPCell(new Phrase(item.ThanhTien.ToString(), font1));
                     pdfPTable.AddCell(cell4);
