@@ -45,33 +45,36 @@ namespace BTL
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txbMaSach = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(463, 360);
+            this.btnHuy.Location = new System.Drawing.Point(257, 344);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(94, 29);
             this.btnHuy.TabIndex = 43;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "Thoát";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(232, 360);
+            this.btnSua.Location = new System.Drawing.Point(42, 344);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 29);
             this.btnSua.TabIndex = 42;
-            this.btnSua.Text = "Update";
+            this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.Update_click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 66);
+            this.label1.Location = new System.Drawing.Point(39, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 40;
@@ -79,7 +82,7 @@ namespace BTL
             // 
             // txbTenSach
             // 
-            this.txbTenSach.Location = new System.Drawing.Point(367, 61);
+            this.txbTenSach.Location = new System.Drawing.Point(187, 59);
             this.txbTenSach.Name = "txbTenSach";
             this.txbTenSach.Size = new System.Drawing.Size(215, 27);
             this.txbTenSach.TabIndex = 41;
@@ -91,7 +94,7 @@ namespace BTL
             // 
             // txbNXB
             // 
-            this.txbNXB.Location = new System.Drawing.Point(367, 261);
+            this.txbNXB.Location = new System.Drawing.Point(187, 259);
             this.txbNXB.Name = "txbNXB";
             this.txbNXB.Size = new System.Drawing.Size(215, 27);
             this.txbNXB.TabIndex = 51;
@@ -100,7 +103,7 @@ namespace BTL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 266);
+            this.label5.Location = new System.Drawing.Point(39, 264);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 50;
@@ -108,7 +111,7 @@ namespace BTL
             // 
             // txbTacGia
             // 
-            this.txbTacGia.Location = new System.Drawing.Point(367, 214);
+            this.txbTacGia.Location = new System.Drawing.Point(187, 212);
             this.txbTacGia.Name = "txbTacGia";
             this.txbTacGia.Size = new System.Drawing.Size(215, 27);
             this.txbTacGia.TabIndex = 49;
@@ -117,7 +120,7 @@ namespace BTL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 218);
+            this.label4.Location = new System.Drawing.Point(39, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 48;
@@ -125,7 +128,7 @@ namespace BTL
             // 
             // txbGia
             // 
-            this.txbGia.Location = new System.Drawing.Point(367, 161);
+            this.txbGia.Location = new System.Drawing.Point(187, 159);
             this.txbGia.Name = "txbGia";
             this.txbGia.Size = new System.Drawing.Size(215, 27);
             this.txbGia.TabIndex = 47;
@@ -134,7 +137,7 @@ namespace BTL
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 165);
+            this.label3.Location = new System.Drawing.Point(39, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 46;
@@ -143,7 +146,7 @@ namespace BTL
             // cbbTenLoai
             // 
             this.cbbTenLoai.FormattingEnabled = true;
-            this.cbbTenLoai.Location = new System.Drawing.Point(367, 108);
+            this.cbbTenLoai.Location = new System.Drawing.Point(187, 106);
             this.cbbTenLoai.Name = "cbbTenLoai";
             this.cbbTenLoai.Size = new System.Drawing.Size(215, 28);
             this.cbbTenLoai.TabIndex = 45;
@@ -151,7 +154,7 @@ namespace BTL
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 114);
+            this.label2.Location = new System.Drawing.Point(39, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 44;
@@ -160,7 +163,7 @@ namespace BTL
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 25);
+            this.label6.Location = new System.Drawing.Point(40, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 52;
@@ -168,35 +171,56 @@ namespace BTL
             // 
             // txbMaSach
             // 
-            this.txbMaSach.Location = new System.Drawing.Point(367, 22);
+            this.txbMaSach.Location = new System.Drawing.Point(187, 20);
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.ReadOnly = true;
             this.txbMaSach.Size = new System.Drawing.Size(215, 27);
             this.txbMaSach.TabIndex = 53;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txbMaSach);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.cbbTenLoai);
+            this.panel1.Controls.Add(this.btnHuy);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.txbGia);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txbTenSach);
+            this.panel1.Controls.Add(this.txbTacGia);
+            this.panel1.Controls.Add(this.txbNXB);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(12, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(428, 407);
+            this.panel1.TabIndex = 54;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(128, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 41);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Cập nhật sách";
+            // 
             // SuaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txbMaSach);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txbTenSach);
-            this.Controls.Add(this.txbNXB);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txbTacGia);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txbGia);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbbTenLoai);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(465, 484);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel1);
             this.Name = "SuaSach";
             this.Text = "SuaSach";
             this.Load += new System.EventHandler(this.LoadForm_Sua);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +243,7 @@ namespace BTL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbMaSach;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
     }
 }

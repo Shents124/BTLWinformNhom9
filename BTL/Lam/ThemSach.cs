@@ -79,7 +79,7 @@ namespace BTL
                     db.Saches.Add(spMoi);
                     db.SaveChanges();
                     MessageBox.Show("Thêm thành công");
-                    XoaTrang();
+                    
                 }
 
             }
@@ -160,6 +160,11 @@ namespace BTL
             cbbTenLoai.SelectedIndex = -1;
             txbTenSach.Clear();
 
+        }
+
+        private void XoaTrang(object sender, EventArgs e)
+        {
+            XoaTrang();
         }
     }
 }

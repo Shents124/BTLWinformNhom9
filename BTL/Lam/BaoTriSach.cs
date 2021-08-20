@@ -8,6 +8,7 @@ namespace BTL
     public partial class BaoTriSach : Form
     {
         QLBanSachContext db = new QLBanSachContext();
+
         public BaoTriSach()
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace BTL
                 dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGia, item.TacGia, item.NhaXuatBan);
             }
             txbTim.Clear();
+            
         }
 
         private void ChonDong(object sender, DataGridViewCellEventArgs e)
@@ -84,26 +86,7 @@ namespace BTL
             }
         }
 
-        private void SapXep_Click(object sender, EventArgs e)
-        {
-            var query = from s in db.Saches
-                        orderby s.TenSach
-                        select new
-                        {
-                            map = s.MaLoai,
-                            tensp = s.TenSach,
-                            tenl = s.MaLoaiNavigation.TenLoai,
-                            gia = s.DonGia,
-                            tg = s.TacGia,
-                            nxb = s.NhaXuatBan
-                        };
-            dsSach.Rows.Clear();
-            //Hiển thị lên datagrid view
-            foreach (var item in query)
-            {
-                dsSach.Rows.Add(item.map, item.tensp, item.tenl, item.gia, item.gia, item.tg, item.nxb);
-            }
-        }
+        
 
         private void Xoa_Click(object sender, EventArgs e)
         {
@@ -171,6 +154,11 @@ namespace BTL
 
                 MessageBox.Show(e1.Message);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
