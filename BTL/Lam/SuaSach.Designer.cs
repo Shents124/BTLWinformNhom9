@@ -47,6 +47,8 @@ namespace BTL
             this.txbMaSach = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtGiaNhap = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +96,7 @@ namespace BTL
             // 
             // txbNXB
             // 
-            this.txbNXB.Location = new System.Drawing.Point(187, 259);
+            this.txbNXB.Location = new System.Drawing.Point(187, 298);
             this.txbNXB.Name = "txbNXB";
             this.txbNXB.Size = new System.Drawing.Size(215, 27);
             this.txbNXB.TabIndex = 51;
@@ -103,7 +105,7 @@ namespace BTL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 264);
+            this.label5.Location = new System.Drawing.Point(39, 303);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 50;
@@ -111,7 +113,7 @@ namespace BTL
             // 
             // txbTacGia
             // 
-            this.txbTacGia.Location = new System.Drawing.Point(187, 212);
+            this.txbTacGia.Location = new System.Drawing.Point(187, 251);
             this.txbTacGia.Name = "txbTacGia";
             this.txbTacGia.Size = new System.Drawing.Size(215, 27);
             this.txbTacGia.TabIndex = 49;
@@ -120,7 +122,7 @@ namespace BTL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 216);
+            this.label4.Location = new System.Drawing.Point(39, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 48;
@@ -137,11 +139,11 @@ namespace BTL
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 163);
+            this.label3.Location = new System.Drawing.Point(42, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 46;
-            this.label3.Text = "Giá sách";
+            this.label3.Text = "Giá bán";
             // 
             // cbbTenLoai
             // 
@@ -179,6 +181,8 @@ namespace BTL
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtGiaNhap);
             this.panel1.Controls.Add(this.txbMaSach);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
@@ -207,6 +211,22 @@ namespace BTL
             this.label7.Size = new System.Drawing.Size(213, 41);
             this.label7.TabIndex = 55;
             this.label7.Text = "Cập nhật sách";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 20);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Giá nhập";
+            // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.Location = new System.Drawing.Point(187, 209);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Size = new System.Drawing.Size(215, 27);
+            this.txtGiaNhap.TabIndex = 55;
             // 
             // SuaSach
             // 
@@ -245,5 +265,7 @@ namespace BTL
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtGiaNhap;
     }
 }

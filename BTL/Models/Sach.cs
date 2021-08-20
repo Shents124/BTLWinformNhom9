@@ -19,7 +19,8 @@ namespace BTL.Models
         public int MaLoai { get; set; }
         public string TacGia { get; set; }
         public string NhaXuatBan { get; set; }
-        public decimal DonGia { get; set; }
+        public decimal DonGiaBan { get; set; }
+        public decimal DonGiaNhap { get; set; }
 
         public virtual Loaisach MaLoaiNavigation { get; set; }
         public virtual ICollection<Ctdondh> Ctdondhs { get; set; }

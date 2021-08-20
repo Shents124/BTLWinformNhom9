@@ -41,7 +41,8 @@ namespace BTL
                     break;
                 }
             }
-            txbGia.Text = a.DonGia.ToString();
+            txbGia.Text = a.DonGiaBan.ToString();
+            txtGiaNhap.Text = a.DonGiaNhap.ToString();
             txbNXB.Text = a.NhaXuatBan;
             txbTacGia.Text = a.TacGia;
 
@@ -68,10 +69,16 @@ namespace BTL
                     decimal value;
                     if (!decimal.TryParse(txbGia.Text, out value))
                     {
-                        throw new Exception("Lỗi nhập giá sửa không phải là số");
+                        throw new Exception("Lỗi nhập giá bán không phải là số");
+                    }
+                    decimal value1;
+                    if (!decimal.TryParse(txtGiaNhap.Text, out value1))
+                    {
+                        throw new Exception("Lỗi nhập giá nhập không phải là số");
                     }
                     sach.TacGia = txbTacGia.Text;
-                    sach.DonGia = Convert.ToDecimal(txbGia.Text);
+                    sach.DonGiaBan = Convert.ToDecimal(txbGia.Text);
+                    sach.DonGiaNhap = Convert.ToDecimal(txtGiaNhap.Text);
                     sach.NhaXuatBan = txbNXB.Text;
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");
@@ -116,7 +123,12 @@ namespace BTL
             }
             if (txbGia.Text == "")
             {
-                errorProvider1.SetError(txbGia, "Bạn phải nhập giá sách trước khi sửa");
+                errorProvider1.SetError(txbGia, "Bạn phải nhập giá bán trước khi sửa");
+                return false;
+            }
+            if (txtGiaNhap.Text == "")
+            {
+                errorProvider1.SetError(txbGia, "Bạn phải nhập giá nhập trước khi sửa");
                 return false;
             }
             if (txbTacGia.Text == "")

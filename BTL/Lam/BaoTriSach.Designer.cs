@@ -30,12 +30,6 @@ namespace BTL
         private void InitializeComponent()
         {
             this.dsSach = new System.Windows.Forms.DataGridView();
-            this.masach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giasach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nhaxuatban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txbTim = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +41,13 @@ namespace BTL
             this.btnReset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.masach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giasach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhaxuatban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsSach)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,6 +62,7 @@ namespace BTL
             this.tensach,
             this.tenloai,
             this.giasach,
+            this.giaban,
             this.tacgia,
             this.nhaxuatban});
             this.dsSach.Location = new System.Drawing.Point(8, 55);
@@ -71,42 +73,6 @@ namespace BTL
             this.dsSach.TabIndex = 28;
             this.dsSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
             this.dsSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChonDong);
-            // 
-            // masach
-            // 
-            this.masach.HeaderText = "Mã sách";
-            this.masach.MinimumWidth = 6;
-            this.masach.Name = "masach";
-            // 
-            // tensach
-            // 
-            this.tensach.HeaderText = "Tên sách";
-            this.tensach.MinimumWidth = 6;
-            this.tensach.Name = "tensach";
-            // 
-            // tenloai
-            // 
-            this.tenloai.HeaderText = "Tên loại sách";
-            this.tenloai.MinimumWidth = 6;
-            this.tenloai.Name = "tenloai";
-            // 
-            // giasach
-            // 
-            this.giasach.HeaderText = "Giá sách";
-            this.giasach.MinimumWidth = 6;
-            this.giasach.Name = "giasach";
-            // 
-            // tacgia
-            // 
-            this.tacgia.HeaderText = "Tác giả";
-            this.tacgia.MinimumWidth = 6;
-            this.tacgia.Name = "tacgia";
-            // 
-            // nhaxuatban
-            // 
-            this.nhaxuatban.HeaderText = "Nhà xuất bản";
-            this.nhaxuatban.MinimumWidth = 6;
-            this.nhaxuatban.Name = "nhaxuatban";
             // 
             // txbTim
             // 
@@ -234,6 +200,48 @@ namespace BTL
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm sách";
             // 
+            // masach
+            // 
+            this.masach.HeaderText = "Mã sách";
+            this.masach.MinimumWidth = 6;
+            this.masach.Name = "masach";
+            // 
+            // tensach
+            // 
+            this.tensach.HeaderText = "Tên sách";
+            this.tensach.MinimumWidth = 6;
+            this.tensach.Name = "tensach";
+            // 
+            // tenloai
+            // 
+            this.tenloai.HeaderText = "Tên loại sách";
+            this.tenloai.MinimumWidth = 6;
+            this.tenloai.Name = "tenloai";
+            // 
+            // giasach
+            // 
+            this.giasach.HeaderText = "Giá bán";
+            this.giasach.MinimumWidth = 6;
+            this.giasach.Name = "giasach";
+            // 
+            // giaban
+            // 
+            this.giaban.HeaderText = "Giá nhập";
+            this.giaban.MinimumWidth = 6;
+            this.giaban.Name = "giaban";
+            // 
+            // tacgia
+            // 
+            this.tacgia.HeaderText = "Tác giả";
+            this.tacgia.MinimumWidth = 6;
+            this.tacgia.Name = "tacgia";
+            // 
+            // nhaxuatban
+            // 
+            this.nhaxuatban.HeaderText = "Nhà xuất bản";
+            this.nhaxuatban.MinimumWidth = 6;
+            this.nhaxuatban.Name = "nhaxuatban";
+            // 
             // BaoTriSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -268,14 +276,15 @@ namespace BTL
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn masach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tensach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn giasach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaban;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhaxuatban;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

@@ -16,6 +16,7 @@ namespace BTL.Models
         public int MaDonDh { get; set; }
         public DateTime? NgayDh { get; set; }
         public int? MaNhaCc { get; set; }
+        public string TrangThai { get; set; }
 
         public virtual Nhacc MaNhaCcNavigation { get; set; }
         public virtual ICollection<Ctdondh> Ctdondhs { get; set; }

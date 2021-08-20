@@ -16,11 +16,11 @@ namespace BTL
         public void LoadData()
         {
             var query = from c in db.Saches
-                        select new {c.MaSach,c.TenSach,c.MaLoaiNavigation.TenLoai,c.DonGia,c.TacGia,c.NhaXuatBan};
+                        select new {c.MaSach,c.TenSach,c.MaLoaiNavigation.TenLoai,c.DonGiaBan,c.DonGiaNhap,c.TacGia,c.NhaXuatBan};
             dsSach.Rows.Clear();
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGia, item.TacGia, item.NhaXuatBan);
+                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan,item.DonGiaNhap, item.TacGia, item.NhaXuatBan);
             }  
         }
 
@@ -38,7 +38,8 @@ namespace BTL
                             map = s.MaLoai,
                             tensp = s.TenSach,
                             tenl = s.MaLoaiNavigation.TenLoai,
-                            gia  =s.DonGia,
+                            giab  =s.DonGiaBan,
+                            gian = s.DonGiaNhap,
                             tg = s.TacGia,
                             nxb = s.NhaXuatBan
                         };
@@ -46,18 +47,18 @@ namespace BTL
             //Hiển thị lên datagrid view
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.map, item.tensp,item.tenl,item.gia,item.gia,item.tg,item.nxb);
+                dsSach.Rows.Add(item.map, item.tensp,item.tenl,item.giab,item.gian,item.tg,item.nxb);
             }
         }
 
         private void Resert_Click(object sender, EventArgs e)
         {
             var query = from c in db.Saches
-                        select new { c.MaSach, c.TenSach, c.MaLoaiNavigation.TenLoai, c.DonGia, c.TacGia, c.NhaXuatBan };
+                        select new { c.MaSach, c.TenSach, c.MaLoaiNavigation.TenLoai, c.DonGiaBan, c.DonGiaNhap, c.TacGia, c.NhaXuatBan };
             dsSach.Rows.Clear();
             foreach (var item in query)
             {
-                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGia, item.TacGia, item.NhaXuatBan);
+                dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan,item.DonGiaNhap, item.TacGia, item.NhaXuatBan);
             }
             txbTim.Clear();
             

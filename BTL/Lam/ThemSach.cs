@@ -66,7 +66,8 @@ namespace BTL
                     int index = cbbTenLoai.SelectedIndex;
                     spMoi.TacGia = txbTacGia.Text;
                     spMoi.NhaXuatBan = txbTacGia.Text;
-                    spMoi.DonGia = Convert.ToDecimal(txbGia.Text);
+                    spMoi.DonGiaBan = Convert.ToDecimal(txbGia.Text);
+                    spMoi.DonGiaNhap = Convert.ToDecimal(txbGiaNhap.Text);
                     foreach (var item in db.Loaisaches)
                     {
                         if (item.TenLoai == cbbTenLoai.SelectedItem.ToString())
@@ -132,7 +133,12 @@ namespace BTL
             }
             if (txbGia.Text == "")
             {
-                errorProvider1.SetError(txbGia, "Bạn phải nhập giá sách trước khi thêm");
+                errorProvider1.SetError(txbGia, "Bạn phải nhập giá bán trước khi thêm");
+                return false;
+            }
+            if (txbGiaNhap.Text == "")
+            {
+                errorProvider1.SetError(txbGia, "Bạn phải nhập giá nhập trước khi thêm");
                 return false;
             }
             if (txbTacGia.Text == "")
@@ -155,6 +161,7 @@ namespace BTL
         public void XoaTrang()
         {
             txbGia.Clear();
+            txbGiaNhap.Clear();
             txbNXB.Clear();
             txbTacGia.Clear();
             cbbTenLoai.SelectedIndex = -1;
