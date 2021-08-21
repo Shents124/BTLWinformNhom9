@@ -13,8 +13,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1449.0" />
-    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.14" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000">
       <GeneratePathProperty>true</GeneratePathProperty>
     </PackageReference>
