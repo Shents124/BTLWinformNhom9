@@ -30,6 +30,7 @@ namespace BTL
                     sach.TenLoai = txbTenLoaiSach.Text;
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");
+                    Close();
                 }
 
             }
@@ -37,6 +38,7 @@ namespace BTL
             {
                 MessageBox.Show(ex.Message);
             }
+           
 
         }
         private void btnHuy_Click(object sender, EventArgs e)

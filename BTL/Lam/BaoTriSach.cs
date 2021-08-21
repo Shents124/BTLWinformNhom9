@@ -129,7 +129,8 @@ namespace BTL
         private void Them_Click(object sender, EventArgs e)
         {
             ThemSach f = new ThemSach();
-            f.Show();
+            f.ShowDialog();
+            LoadData();
         }
 
         private void SuaClick(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace BTL
                 Sach a = (Sach)item;
                 SuaSach f = new SuaSach();
                 f.Tag = a;
-                f.Show();
+                f.ShowDialog();
 
             }
 
@@ -155,6 +156,7 @@ namespace BTL
 
                 MessageBox.Show(e1.Message);
             }
+            LoadData();
         }
 
         private void label1_Click(object sender, EventArgs e)

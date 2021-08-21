@@ -80,7 +80,7 @@ namespace BTL
                     db.Saches.Add(spMoi);
                     db.SaveChanges();
                     MessageBox.Show("Thêm thành công");
-                    
+                    Close();
                 }
 
             }

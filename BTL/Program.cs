@@ -23,9 +23,9 @@ namespace BTL
             else
                 Application.Exit();*/
 
-            /* Application.Run(new BaoTriSach());*/
+            Application.Run(new BaoTriSach());
             /* Application.Run(new BaoTriDanhMucSach());*/
-            Application.Run(new ThongKeBaoCao());
+            /* Application.Run(new ThongKeBaoCao());*/
 
         }
     }

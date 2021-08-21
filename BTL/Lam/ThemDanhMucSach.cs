@@ -27,6 +27,7 @@ namespace BTL
                     db.Loaisaches.Add(spMoi);
                     db.SaveChanges();
                     MessageBox.Show("Thêm thành công");
+                    Close();
                 }
 
             }
@@ -34,6 +35,7 @@ namespace BTL
             {
                 MessageBox.Show(ex.Message);
             }
+           
 
         }
 

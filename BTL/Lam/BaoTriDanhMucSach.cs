@@ -61,7 +61,8 @@ namespace BTL
         private void btnThem_Click(object sender, EventArgs e)
         {
             ThemDanhMucSach f = new ThemDanhMucSach();
-            f.Show();
+            f.ShowDialog();
+            LoadData();
            
         }
 
@@ -124,7 +125,7 @@ namespace BTL
 
                 MessageBox.Show(e1.Message);
             }
-
+           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -141,7 +142,7 @@ namespace BTL
                 Loaisach a = (Loaisach)item;
                 SuaDanhMucSach f = new SuaDanhMucSach();
                 f.Tag = a;
-                f.Show();
+                f.ShowDialog();
 
             }
 
@@ -150,6 +151,7 @@ namespace BTL
 
                 MessageBox.Show(e1.Message);
             }
+            LoadData();
         }
 
         private void btnReset_Click(object sender, EventArgs e)

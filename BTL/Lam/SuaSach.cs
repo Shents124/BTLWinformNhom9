@@ -82,6 +82,7 @@ namespace BTL
                     sach.NhaXuatBan = txbNXB.Text;
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");
+                    Close();
                 }
             }
             catch (Exception ex)
