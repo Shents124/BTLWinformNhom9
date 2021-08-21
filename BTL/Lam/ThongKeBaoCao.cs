@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BTL.Models;
+using Microsoft.Reporting.WinForms;
 /*using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;*/
 using Syncfusion.XlsIO;
@@ -150,6 +151,10 @@ namespace BTL
             {
                 MessageBox.Show(ex.Message);
             }
+
+            LocalReport localReport = new LocalReport();
+            localReport.ReportPath = Application.StartupPath + "\\ThongKeBaoCao.rdlc";
+           
 
         }
     }
