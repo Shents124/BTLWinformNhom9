@@ -19,6 +19,7 @@ namespace BTL
         private decimal tongTien = 0;
         private int index;
         private bool isSearchWithDate = false;
+        private List<string> trangThai = new List<string>();
 
         public QLDonDatHang()
         {
@@ -93,11 +94,21 @@ namespace BTL
             if(isSearchWithDate == true)
             {
                 var ddh = qLBanSachContext.Dondhs
-                .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo)
+                .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo &&
+                (s.TrangThai == trangThai[0] || s.TrangThai == trangThai[1] || s.TrangThai == trangThai[2] || s.TrangThai == trangThai[3]))
                 .ToList();
                 return ddh;
             }
             return null; 
+        }
+
+        private void SetListTrangThai()
+        {
+            trangThai.Add("Chưa nhập");
+            trangThai.Add("Nhập đủ");
+            trangThai.Add("Chưa nhập đủ");
+            trangThai.Add("Đã hủy");
+
         }
 
         private void ThemDonDatHang()
@@ -118,7 +129,7 @@ namespace BTL
 
             if (rs == DialogResult.Yes)
             {
-                qLBanSachContext.Dondhs.Remove(xoa);
+                xoa.TrangThai = "Đã hủy";
                 qLBanSachContext.SaveChanges();
             }
 

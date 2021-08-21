@@ -176,13 +176,15 @@ namespace BTL.Son
             // cbNCC
             // 
             this.cbNCC.AllowDrop = true;
-            this.cbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbNCC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbNCC.FormattingEnabled = true;
             this.cbNCC.Location = new System.Drawing.Point(306, 7);
             this.cbNCC.Name = "cbNCC";
             this.cbNCC.Size = new System.Drawing.Size(250, 31);
             this.cbNCC.TabIndex = 12;
+            this.cbNCC.TextChanged += new System.EventHandler(this.cbNCC_TextChanged);
             // 
             // dtpNgayLap
             // 
@@ -287,7 +289,8 @@ namespace BTL.Son
             // 
             // cbMoi_LoaiSach
             // 
-            this.cbMoi_LoaiSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMoi_LoaiSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbMoi_LoaiSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbMoi_LoaiSach.FormattingEnabled = true;
             this.cbMoi_LoaiSach.Location = new System.Drawing.Point(306, 64);
             this.cbMoi_LoaiSach.Name = "cbMoi_LoaiSach";
@@ -402,7 +405,8 @@ namespace BTL.Son
             // 
             // cbCu_TenSach
             // 
-            this.cbCu_TenSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCu_TenSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCu_TenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbCu_TenSach.FormattingEnabled = true;
             this.cbCu_TenSach.Items.AddRange(new object[] {
             "1"});

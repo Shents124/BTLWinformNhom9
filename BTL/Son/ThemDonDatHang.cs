@@ -32,6 +32,7 @@ namespace BTL.Son
             GetComboBoxLoaiSach();
             GetComboBoxNCC();
             GetComboBoxSach();
+
         }
 
         private void ThemDonDatHang_Load(object sender, EventArgs e)
@@ -372,6 +373,7 @@ namespace BTL.Son
             Dondh dondh = new Dondh();
             dondh.MaNhaCc = int.Parse(cbNCC.SelectedValue.ToString());
             dondh.NgayDh = dtpNgayLap.Value;
+            dondh.TrangThai = "Chưa nhập";
 
             qLBanSachContext.Dondhs.Add(dondh);
             qLBanSachContext.SaveChanges();
@@ -482,5 +484,26 @@ namespace BTL.Son
             this.Close();
         }
 
+        private void cbNCC_TextChanged(object sender, EventArgs e)
+        {
+            //if(lbxNCC.Visible == false)
+            //    lbxNCC.Visible = true;
+
+            //string textToSearch = cbNCC.Text.ToLower();
+            //if (String.IsNullOrEmpty(textToSearch))
+            //    return;
+
+            //var ncc = qLBanSachContext.Nhaccs
+            //    .Where(s => s.TenNhaCc.ToLower().Contains(textToSearch))
+            //    .ToArray();
+
+            //if (ncc.Length == 0)
+            //    return;
+
+            //lbxNCC.Items.Clear();
+            //lbxNCC.DataSource = ncc;
+            //lbxNCC.DisplayMember = "TenNhaCc";
+            //lbxNCC.ValueMember = "MaNhaCc";
+        }
     }
 }
