@@ -29,9 +29,6 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            this.dvgDachsachthem = new System.Windows.Forms.DataGridView();
-            this.TenHang = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,40 +44,20 @@ namespace BTL
             this.label5 = new System.Windows.Forms.Label();
             this.dtNgayLapHoaDon = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dvgDansachthem = new System.Windows.Forms.DataGridView();
+            this.SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoaAll = new System.Windows.Forms.Button();
             this.btncolse = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgDachsachthem)).BeginInit();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDansachthem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dvgDachsachthem
-            // 
-            this.dvgDachsachthem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dvgDachsachthem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDachsachthem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenHang,
-            this.SoLuong});
-            this.dvgDachsachthem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgDachsachthem.Location = new System.Drawing.Point(3, 23);
-            this.dvgDachsachthem.Name = "dvgDachsachthem";
-            this.dvgDachsachthem.RowHeadersWidth = 51;
-            this.dvgDachsachthem.RowTemplate.Height = 29;
-            this.dvgDachsachthem.Size = new System.Drawing.Size(1154, 220);
-            this.dvgDachsachthem.TabIndex = 8;
-            this.dvgDachsachthem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDachsachthem_CellClick);
-            // 
-            // TenHang
-            // 
-            this.TenHang.HeaderText = "Tên sản phẩm";
-            this.TenHang.MinimumWidth = 6;
-            this.TenHang.Name = "TenHang";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
             // 
             // btnThem
             // 
@@ -218,7 +195,7 @@ namespace BTL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dvgDachsachthem);
+            this.groupBox2.Controls.Add(this.dvgDansachthem);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 242);
             this.groupBox2.Name = "groupBox2";
@@ -226,6 +203,59 @@ namespace BTL
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm";
+            // 
+            // dvgDansachthem
+            // 
+            this.dvgDansachthem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgDansachthem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDansachthem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SanPham,
+            this.dataGridViewTextBoxColumn1,
+            this.DonGia,
+            this.ThanhTien,
+            this.Button});
+            this.dvgDansachthem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgDansachthem.Location = new System.Drawing.Point(3, 23);
+            this.dvgDansachthem.Name = "dvgDansachthem";
+            this.dvgDansachthem.RowHeadersWidth = 51;
+            this.dvgDansachthem.RowTemplate.Height = 29;
+            this.dvgDansachthem.Size = new System.Drawing.Size(1154, 220);
+            this.dvgDansachthem.TabIndex = 0;
+            // 
+            // SanPham
+            // 
+            this.SanPham.HeaderText = "Tên Sản Phẩm";
+            this.SanPham.MinimumWidth = 6;
+            this.SanPham.Name = "SanPham";
+            this.SanPham.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // DonGia
+            // 
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.MinimumWidth = 6;
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.MinimumWidth = 6;
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
+            // Button
+            // 
+            this.Button.HeaderText = "";
+            this.Button.MinimumWidth = 6;
+            this.Button.Name = "Button";
+            this.Button.Text = "Xóa";
+            this.Button.UseColumnTextForButtonValue = true;
             // 
             // btnXoaAll
             // 
@@ -247,6 +277,26 @@ namespace BTL
             this.btncolse.UseVisualStyleBackColor = true;
             this.btncolse.Click += new System.EventHandler(this.btncolse_Click);
             // 
+            // TenHang
+            // 
+            this.TenHang.FillWeight = 141.9786F;
+            this.TenHang.HeaderText = "Tên sản phẩm";
+            this.TenHang.MinimumWidth = 6;
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TenHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TenHang.Width = 521;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.FillWeight = 141.9786F;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 521;
+            // 
             // LapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -262,20 +312,17 @@ namespace BTL
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LapHoaDon";
             this.Load += new System.EventHandler(this.LapHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgDachsachthem)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDansachthem)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dvgDachsachthem;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label1;
@@ -291,5 +338,13 @@ namespace BTL
         private System.Windows.Forms.Button btnXoaAll;
         private System.Windows.Forms.Button btncolse;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridView dvgDansachthem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewButtonColumn Button;
     }
 }

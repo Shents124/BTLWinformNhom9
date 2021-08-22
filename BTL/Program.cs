@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-
+using BTL.Models;
 namespace BTL
 {
     static class Program

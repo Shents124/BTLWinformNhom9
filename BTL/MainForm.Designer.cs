@@ -83,7 +83,7 @@ namespace BTL
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 650);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 659);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(260, 45);
@@ -99,7 +99,7 @@ namespace BTL
             this.btnQLKhachHang.FlatAppearance.BorderSize = 0;
             this.btnQLKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 605);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 614);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
             this.btnQLKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLKhachHang.Size = new System.Drawing.Size(260, 45);
@@ -115,7 +115,7 @@ namespace BTL
             this.panelSach.Controls.Add(this.btnBaoTriDMSach);
             this.panelSach.Controls.Add(this.btnBaoTriSach);
             this.panelSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSach.Location = new System.Drawing.Point(0, 520);
+            this.panelSach.Location = new System.Drawing.Point(0, 529);
             this.panelSach.Name = "panelSach";
             this.panelSach.Size = new System.Drawing.Size(260, 85);
             this.panelSach.TabIndex = 8;
@@ -158,7 +158,7 @@ namespace BTL
             this.btnSach.FlatAppearance.BorderSize = 0;
             this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSach.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSach.Location = new System.Drawing.Point(0, 475);
+            this.btnSach.Location = new System.Drawing.Point(0, 484);
             this.btnSach.Name = "btnSach";
             this.btnSach.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSach.Size = new System.Drawing.Size(260, 45);
@@ -175,7 +175,7 @@ namespace BTL
             this.panelDHNhapXuat.Controls.Add(this.btnQLDonNhapHang);
             this.panelDHNhapXuat.Controls.Add(this.btnQLDonDatHang);
             this.panelDHNhapXuat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDHNhapXuat.Location = new System.Drawing.Point(0, 345);
+            this.panelDHNhapXuat.Location = new System.Drawing.Point(0, 354);
             this.panelDHNhapXuat.Name = "panelDHNhapXuat";
             this.panelDHNhapXuat.Size = new System.Drawing.Size(260, 130);
             this.panelDHNhapXuat.TabIndex = 6;
@@ -234,7 +234,7 @@ namespace BTL
             this.btnDHNhapXuat.FlatAppearance.BorderSize = 0;
             this.btnDHNhapXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDHNhapXuat.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDHNhapXuat.Location = new System.Drawing.Point(0, 300);
+            this.btnDHNhapXuat.Location = new System.Drawing.Point(0, 309);
             this.btnDHNhapXuat.Name = "btnDHNhapXuat";
             this.btnDHNhapXuat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDHNhapXuat.Size = new System.Drawing.Size(260, 45);
@@ -253,7 +253,7 @@ namespace BTL
             this.btnQLHoaDon.Location = new System.Drawing.Point(0, 255);
             this.btnQLHoaDon.Name = "btnQLHoaDon";
             this.btnQLHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnQLHoaDon.Size = new System.Drawing.Size(260, 45);
+            this.btnQLHoaDon.Size = new System.Drawing.Size(260, 54);
             this.btnQLHoaDon.TabIndex = 3;
             this.btnQLHoaDon.Text = "Quản Lý Hóa Đơn";
             this.btnQLHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

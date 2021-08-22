@@ -407,10 +407,10 @@ namespace BTL
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(402, 582);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(459, 17);
+            this.label1.Size = new System.Drawing.Size(499, 20);
             this.label1.TabIndex = 49;
             this.label1.Text = "Chú ý: Cần chọn 1 dòng hóa đơn trong danh sách để xem, in hoặc sửa chúng";
             // 
@@ -418,7 +418,7 @@ namespace BTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 681);
+            this.ClientSize = new System.Drawing.Size(1304, 641);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btninhoadon);
             this.Controls.Add(this.btnTim);

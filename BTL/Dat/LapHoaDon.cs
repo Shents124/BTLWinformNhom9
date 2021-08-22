@@ -71,6 +71,7 @@ namespace BTL
             db.Hoadons.Add(hd);           
             db.SaveChanges();           
         }
+      
         private void ThemChiTietHoaDon()
         {
      
@@ -83,25 +84,25 @@ namespace BTL
             var a = query.ToList();
             int dem = a.Count;
             
-            int sum = dvgDachsachthem.Rows.Count;      
-            for (int i = 0; i < sum - 1; i++)
-            {
+            //int sum = dvgDachsachthem.Rows.Count;      
+            //for (int i = 0; i < sum - 1; i++)
+            //{
           
-                Cthoadon cthd = new Cthoadon();
-                cthd.MaHd = a[dem - 1].MaHd;
-                var dongia = from s in db.Saches
-                             where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
-                             select new
-                             {
-                                 s.DonGia,
-                             };
-                var dongia2 = dongia.ToList();
-                cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
-                cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;     
-                db.Cthoadons.Add(cthd);
+            //    Cthoadon cthd = new Cthoadon();
+            //    cthd.MaHd = a[dem - 1].MaHd;
+            //    var dongia = from s in db.Saches
+            //                 where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
+            //                 select new
+            //                 {
+            //                     s.DonGia,
+            //                 };
+            //    var dongia2 = dongia.ToList();
+            //    cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
+            //    cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
+            //    cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;     
+            //    db.Cthoadons.Add(cthd);
                 
-            }       
+            //}       
             db.SaveChanges();
         }
 
@@ -153,83 +154,86 @@ namespace BTL
             if (dem == 0)
                 dem++;
 
-            int sum = dvgDachsachthem.Rows.Count;
-            if (sum == 1)
-            {
-                MessageBox.Show("Bạn chưa nhập thông tin sản phẩm cần mua");
-                return false;
-            }
-        
-            for (int i = 0; i < sum - 1; i++)
-            {
+            //int sum = dvgDachsachthem.Rows.Count;
+            //if (sum == 1)
+            //{
+            //    MessageBox.Show("Bạn chưa nhập thông tin sản phẩm cần mua");
+            //    return false;
+            //}
 
-                Cthoadon cthd = new Cthoadon();
-                cthd.MaHd = a[dem - 1].MaHd +1;
-                var query1 = from s in db.Saches
-                             where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
-                             select new
-                             {
-                                 s.DonGia,
-                             };
+            //for (int i = 0; i < sum - 1; i++)
+            //{
+            //    Cthoadon cthd = new Cthoadon();
+            //    if (dem == 0)
+            //        cthd.MaHd = 1;
+            //    else
+            //        cthd.MaHd = a[dem - 1].MaHd +1;
 
-                if (dvgDachsachthem.Rows[i].Cells[0].Value == null)
-                {
-                    MessageBox.Show("Bạn chưa lựa chọn tên sản phẩm mua");
-                    return false;
-                }
-                if (dvgDachsachthem.Rows[i].Cells[1].Value == null)
-                {
-                    MessageBox.Show("Bạn chưa nhập số lượng sản phẩm mua");
-                    return false;
-                }
-                else
-                {
-                    try
-                    {
-                        int d = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Bạn nhập số lượng sản phẩm mua không đúng định dạng");
+            //    var query1 = from s in db.Saches
+            //                 where s.MaSach == int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString())
+            //                 select new
+            //                 {
+            //                     s.DonGia,
+            //                 };
 
-                        return false;
-                    }
-                }
+            //    if (dvgDachsachthem.Rows[i].Cells[0].Value == null)
+            //    {
+            //        MessageBox.Show("Bạn chưa lựa chọn tên sản phẩm mua");
+            //        return false;
+            //    }
+            //    if (dvgDachsachthem.Rows[i].Cells[1].Value == null)
+            //    {
+            //        MessageBox.Show("Bạn chưa nhập số lượng sản phẩm mua");
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        try
+            //        {
+            //            int d = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
+            //        }
+            //        catch
+            //        {
+            //            MessageBox.Show("Bạn nhập số lượng sản phẩm mua không đúng định dạng");
 
-                var dongia2 = query1.ToList();
-                cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
-                cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
-                cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;            
-                if (db.Cthoadons.Find(cthd.MaHd,cthd.MaSach)!=null)
-                {
-                    MessageBox.Show("Bạn không thể chọn 1 sản phẩm trên 2 dòng hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return false;
-                }
-                else
-                {
-                    db.Cthoadons.Add(cthd);
-                    li.Add(cthd);
-                }               
-            }
-            if(li.Count>0)
-                foreach (Cthoadon item in li)
-                    db.Cthoadons.Remove(item);
-            li.Clear();
+            //            return false;
+            //        }
+            //    }
+
+            //    var dongia2 = query1.ToList();
+            //    cthd.MaSach = int.Parse(dvgDachsachthem.Rows[i].Cells[0].Value.ToString());
+            //    cthd.SoLuong = int.Parse(dvgDachsachthem.Rows[i].Cells[1].Value.ToString());
+            //    cthd.ThanhTien = decimal.Parse(dongia2[0].DonGia.ToString()) * cthd.SoLuong;            
+            //    if (db.Cthoadons.Find(cthd.MaHd,cthd.MaSach)!=null)
+            //    {
+            //        MessageBox.Show("Bạn không thể chọn 1 sản phẩm trên 2 dòng hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        db.Cthoadons.Add(cthd);
+            //        li.Add(cthd);
+            //    }               
+            //}
+            //if(li.Count>0)
+            //    foreach (Cthoadon item in li)
+            //        db.Cthoadons.Remove(item);
+            //li.Clear();
             return true;
-        }       
-     
+        }
+
         private void HienThiDanhSachBookTrongHeThong()
         {
            
-            var query = from s in db.Saches
-                        select new
-                        {
-                            s.MaSach,
-                           s.TenSach
-                        };
-            TenHang.DataSource = query.ToList();
-            TenHang.ValueMember = "MaSach";
-            TenHang.DisplayMember = "TenSach";
+            //var query = from s in db.Saches
+            //            select new
+            //            {
+            //                s.MaSach,
+            //               s.TenSach
+            //            };
+            //TenHang.DataSource = query.ToList();
+            //TenHang.ValueMember = "MaSach";
+            //TenHang.DisplayMember = "TenSach";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -265,12 +269,12 @@ namespace BTL
                 MessageBox.Show("Bạn chưa chọn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (index == (dvgDachsachthem.RowCount - 1))
+            if (index == (dvgDansachthem.RowCount - 1))
             {
                 MessageBox.Show("Dòng chọn không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }         
-            dvgDachsachthem.Rows.Remove(dvgDachsachthem.Rows[index]);
+            dvgDansachthem.Rows.Remove(dvgDansachthem.Rows[index]);
         }
         private void XoaText()
         {
@@ -278,12 +282,12 @@ namespace BTL
             txtDiaChi.Text = "";         
             txtSodienThoai.Text = "";
             txtTenKhachHang.Text = "";
-            dvgDachsachthem.Rows.Clear();
+            dvgDansachthem.Rows.Clear();
         }
 
         private void btnXoaAll_Click(object sender, EventArgs e)
         {
-            dvgDachsachthem.Rows.Clear();
+            dvgDansachthem.Rows.Clear();
         }
 
         private void btncolse_Click(object sender, EventArgs e)
