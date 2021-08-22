@@ -60,6 +60,10 @@ namespace BTL
             this.txtMaPhieu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -151,7 +155,7 @@ namespace BTL
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 37);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Tìm phiếu";
+            this.label6.Text = "Tìm theo mã phiếu";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
@@ -188,6 +192,7 @@ namespace BTL
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(36, 36);
             this.btnSearch.TabIndex = 24;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
             this.btnSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSearch_MouseMove);
             // 
@@ -231,6 +236,7 @@ namespace BTL
             this.btnFilter.Size = new System.Drawing.Size(60, 46);
             this.btnFilter.TabIndex = 25;
             this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             this.btnFilter.MouseLeave += new System.EventHandler(this.btnFilter_MouseLeave);
             this.btnFilter.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnFilter_MouseMove);
             // 
@@ -246,6 +252,7 @@ namespace BTL
             this.btnRefresh.Size = new System.Drawing.Size(62, 46);
             this.btnRefresh.TabIndex = 26;
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
             this.btnRefresh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseMove);
             // 
@@ -321,6 +328,7 @@ namespace BTL
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1292, 193);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -453,12 +461,39 @@ namespace BTL
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(555, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(734, 187);
             this.dataGridView2.TabIndex = 3;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên sách";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Số lượng nhập";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Đơn giá nhập (VNĐ)";
+            this.Column3.Name = "Column3";
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Thành tiền";
+            this.Column4.Name = "Column4";
             // 
             // tableLayoutPanel1
             // 
@@ -549,5 +584,9 @@ namespace BTL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

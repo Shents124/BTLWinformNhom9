@@ -29,16 +29,17 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.txtMaDonHang = new System.Windows.Forms.TextBox();
             this.txtMaPhieu = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbbNhaCC = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -58,6 +59,9 @@ namespace BTL
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMaxSL = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTacgia = new System.Windows.Forms.TextBox();
@@ -66,17 +70,18 @@ namespace BTL
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtDongia = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +111,7 @@ namespace BTL
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(454, 36);
+            this.label3.Location = new System.Drawing.Point(538, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 21);
             this.label3.TabIndex = 0;
@@ -117,7 +122,7 @@ namespace BTL
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(454, 77);
+            this.label4.Location = new System.Drawing.Point(538, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 21);
             this.label4.TabIndex = 0;
@@ -132,34 +137,45 @@ namespace BTL
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 186);
+            this.panel1.Size = new System.Drawing.Size(995, 186);
             this.panel1.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTenNCC);
             this.groupBox1.Controls.Add(this.txtMaDonHang);
             this.groupBox1.Controls.Add(this.txtMaPhieu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cbbNhaCC);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(3, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(893, 118);
+            this.groupBox1.Size = new System.Drawing.Size(987, 123);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu nhập";
             // 
+            // txtTenNCC
+            // 
+            this.txtTenNCC.Location = new System.Drawing.Point(129, 74);
+            this.txtTenNCC.Name = "txtTenNCC";
+            this.txtTenNCC.ReadOnly = true;
+            this.txtTenNCC.Size = new System.Drawing.Size(173, 29);
+            this.txtTenNCC.TabIndex = 7;
+            // 
             // txtMaDonHang
             // 
-            this.txtMaDonHang.Location = new System.Drawing.Point(570, 74);
+            this.txtMaDonHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtMaDonHang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtMaDonHang.Location = new System.Drawing.Point(654, 74);
             this.txtMaDonHang.Name = "txtMaDonHang";
-            this.txtMaDonHang.ReadOnly = true;
-            this.txtMaDonHang.Size = new System.Drawing.Size(200, 29);
+            this.txtMaDonHang.Size = new System.Drawing.Size(182, 29);
             this.txtMaDonHang.TabIndex = 6;
+            this.txtMaDonHang.TextChanged += new System.EventHandler(this.txtMaDonHang_TextChanged);
+            this.txtMaDonHang.DoubleClick += new System.EventHandler(this.txtMaDonHang_DoubleClick);
             // 
             // txtMaPhieu
             // 
@@ -173,24 +189,16 @@ namespace BTL
             // 
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(570, 30);
+            this.dateTimePicker1.Location = new System.Drawing.Point(654, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 29);
             this.dateTimePicker1.TabIndex = 3;
-            // 
-            // cbbNhaCC
-            // 
-            this.cbbNhaCC.FormattingEnabled = true;
-            this.cbbNhaCC.Location = new System.Drawing.Point(129, 74);
-            this.cbbNhaCC.Name = "cbbNhaCC";
-            this.cbbNhaCC.Size = new System.Drawing.Size(252, 29);
-            this.cbbNhaCC.TabIndex = 2;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(348, 8);
+            this.label12.Location = new System.Drawing.Point(425, 8);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(206, 47);
             this.label12.TabIndex = 5;
@@ -205,7 +213,7 @@ namespace BTL
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 183);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(901, 544);
+            this.panel2.Size = new System.Drawing.Size(995, 544);
             this.panel2.TabIndex = 2;
             // 
             // groupBox3
@@ -219,7 +227,7 @@ namespace BTL
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(3, 166);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(893, 365);
+            this.groupBox3.Size = new System.Drawing.Size(987, 365);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết";
@@ -227,7 +235,7 @@ namespace BTL
             // btnLuuIn
             // 
             this.btnLuuIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuIn.Location = new System.Drawing.Point(785, 325);
+            this.btnLuuIn.Location = new System.Drawing.Point(878, 328);
             this.btnLuuIn.Name = "btnLuuIn";
             this.btnLuuIn.Size = new System.Drawing.Size(100, 30);
             this.btnLuuIn.TabIndex = 20;
@@ -237,7 +245,7 @@ namespace BTL
             // btnLuu
             // 
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Location = new System.Drawing.Point(654, 325);
+            this.btnLuu.Location = new System.Drawing.Point(747, 328);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 30);
             this.btnLuu.TabIndex = 19;
@@ -248,7 +256,7 @@ namespace BTL
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(843, 287);
+            this.label14.Location = new System.Drawing.Point(936, 290);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(43, 21);
             this.label14.TabIndex = 18;
@@ -256,7 +264,7 @@ namespace BTL
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(654, 284);
+            this.txtTongTien.Location = new System.Drawing.Point(747, 287);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(182, 29);
@@ -265,7 +273,7 @@ namespace BTL
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(554, 287);
+            this.label13.Location = new System.Drawing.Point(647, 290);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 21);
             this.label13.TabIndex = 16;
@@ -289,7 +297,7 @@ namespace BTL
             this.dataGridView1.Location = new System.Drawing.Point(11, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(874, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 244);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -340,6 +348,9 @@ namespace BTL
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtMaxSL);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtTenSach);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.txtTacgia);
@@ -348,18 +359,43 @@ namespace BTL
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtSoluong);
             this.groupBox2.Controls.Add(this.txtDongia);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(893, 157);
+            this.groupBox2.Size = new System.Drawing.Size(987, 157);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(306, 114);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 21);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "VNĐ";
+            // 
+            // txtMaxSL
+            // 
+            this.txtMaxSL.Location = new System.Drawing.Point(328, 70);
+            this.txtMaxSL.Name = "txtMaxSL";
+            this.txtMaxSL.ReadOnly = true;
+            this.txtMaxSL.Size = new System.Drawing.Size(76, 29);
+            this.txtMaxSL.TabIndex = 21;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(306, 73);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(16, 21);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "/";
             // 
             // txtTenSach
             // 
@@ -367,7 +403,7 @@ namespace BTL
             this.txtTenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtTenSach.Location = new System.Drawing.Point(129, 30);
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(252, 29);
+            this.txtTenSach.Size = new System.Drawing.Size(275, 29);
             this.txtTenSach.TabIndex = 19;
             this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
@@ -376,7 +412,7 @@ namespace BTL
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Location = new System.Drawing.Point(756, 43);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(80, 80);
+            this.btnThem.Size = new System.Drawing.Size(173, 80);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -438,16 +474,6 @@ namespace BTL
             this.label6.TabIndex = 2;
             this.label6.Text = "Số lượng :";
             // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(130, 137);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(170, 1);
-            this.label10.TabIndex = 9;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -479,24 +505,29 @@ namespace BTL
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(170, 22);
             this.txtSoluong.TabIndex = 5;
+            this.txtSoluong.TextChanged += new System.EventHandler(this.txtSoluong_TextChanged);
             // 
             // txtDongia
             // 
             this.txtDongia.BackColor = System.Drawing.Color.White;
-            this.txtDongia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDongia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDongia.ForeColor = System.Drawing.Color.Black;
-            this.txtDongia.Location = new System.Drawing.Point(130, 114);
+            this.txtDongia.Location = new System.Drawing.Point(129, 111);
             this.txtDongia.Name = "txtDongia";
-            this.txtDongia.Size = new System.Drawing.Size(170, 22);
+            this.txtDongia.ReadOnly = true;
+            this.txtDongia.Size = new System.Drawing.Size(170, 29);
             this.txtDongia.TabIndex = 6;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormQuanLyDonHang_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(901, 727);
+            this.ClientSize = new System.Drawing.Size(995, 727);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -515,6 +546,7 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,9 +564,7 @@ namespace BTL
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.TextBox txtSoluong;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbbNhaCC;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -563,5 +593,10 @@ namespace BTL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.TextBox txtTenSach;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtTenNCC;
+        private System.Windows.Forms.TextBox txtMaxSL;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label10;
     }
 }
