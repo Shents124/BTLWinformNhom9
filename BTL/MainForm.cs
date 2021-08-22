@@ -48,6 +48,7 @@ namespace BTL
                 panelQLTaiKhoan.Visible = false;
                 panelDHNhapXuat.Visible = false;
                 panelSach.Visible = false;
+                panelQLHoaDon.Visible = false;
                 btnQLTK.Visible = false;
             }
             else
@@ -55,6 +56,7 @@ namespace BTL
                 panelQLTaiKhoan.Visible = false;
                 panelDHNhapXuat.Visible = false;
                 panelSach.Visible = false;
+                panelQLHoaDon.Visible = false;
 
                 btnBaoTriTK.Visible = false;
                 btnDHNhapXuat.Visible = false;
@@ -70,6 +72,8 @@ namespace BTL
                 panelDHNhapXuat.Visible = false;
             if (panelSach.Visible == true)
                 panelSach.Visible = false;
+            if(panelQLHoaDon.Visible == true)
+                panelQLHoaDon.Visible = false;
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -109,8 +113,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
-            OpenChildForm(new QuanLyHoaDonForm(maTK),sender);          
-            HideSubMenu();
+            ShowSubMenu(panelQLHoaDon);         
         }
         #endregion
 

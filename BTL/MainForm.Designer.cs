@@ -41,6 +41,9 @@ namespace BTL
             this.btnQLDonNhapHang = new System.Windows.Forms.Button();
             this.btnQLDonDatHang = new System.Windows.Forms.Button();
             this.btnDHNhapXuat = new System.Windows.Forms.Button();
+            this.panelQLHoaDon = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnQLHoaDon = new System.Windows.Forms.Button();
             this.panelQLTaiKhoan = new System.Windows.Forms.Panel();
             this.btnQLTK = new System.Windows.Forms.Button();
@@ -54,6 +57,7 @@ namespace BTL
             this.panelSildeMenu.SuspendLayout();
             this.panelSach.SuspendLayout();
             this.panelDHNhapXuat.SuspendLayout();
+            this.panelQLHoaDon.SuspendLayout();
             this.panelQLTaiKhoan.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +75,7 @@ namespace BTL
             this.panelSildeMenu.Controls.Add(this.btnSach);
             this.panelSildeMenu.Controls.Add(this.panelDHNhapXuat);
             this.panelSildeMenu.Controls.Add(this.btnDHNhapXuat);
+            this.panelSildeMenu.Controls.Add(this.panelQLHoaDon);
             this.panelSildeMenu.Controls.Add(this.btnQLHoaDon);
             this.panelSildeMenu.Controls.Add(this.panelQLTaiKhoan);
             this.panelSildeMenu.Controls.Add(this.btnTaiKhoan);
@@ -87,7 +92,7 @@ namespace BTL
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 650);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 735);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(258, 45);
@@ -104,7 +109,7 @@ namespace BTL
             this.btnQLKhachHang.FlatAppearance.BorderSize = 0;
             this.btnQLKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 605);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 690);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
             this.btnQLKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLKhachHang.Size = new System.Drawing.Size(258, 45);
@@ -120,7 +125,7 @@ namespace BTL
             this.panelSach.Controls.Add(this.btnBaoTriDMSach);
             this.panelSach.Controls.Add(this.btnBaoTriSach);
             this.panelSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSach.Location = new System.Drawing.Point(0, 520);
+            this.panelSach.Location = new System.Drawing.Point(0, 605);
             this.panelSach.Name = "panelSach";
             this.panelSach.Size = new System.Drawing.Size(258, 85);
             this.panelSach.TabIndex = 8;
@@ -166,7 +171,7 @@ namespace BTL
             this.btnSach.FlatAppearance.BorderSize = 0;
             this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSach.ForeColor = System.Drawing.Color.White;
-            this.btnSach.Location = new System.Drawing.Point(0, 475);
+            this.btnSach.Location = new System.Drawing.Point(0, 560);
             this.btnSach.Name = "btnSach";
             this.btnSach.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSach.Size = new System.Drawing.Size(258, 45);
@@ -183,7 +188,7 @@ namespace BTL
             this.panelDHNhapXuat.Controls.Add(this.btnQLDonNhapHang);
             this.panelDHNhapXuat.Controls.Add(this.btnQLDonDatHang);
             this.panelDHNhapXuat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDHNhapXuat.Location = new System.Drawing.Point(0, 345);
+            this.panelDHNhapXuat.Location = new System.Drawing.Point(0, 430);
             this.panelDHNhapXuat.Name = "panelDHNhapXuat";
             this.panelDHNhapXuat.Size = new System.Drawing.Size(258, 130);
             this.panelDHNhapXuat.TabIndex = 6;
@@ -246,7 +251,7 @@ namespace BTL
             this.btnDHNhapXuat.FlatAppearance.BorderSize = 0;
             this.btnDHNhapXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDHNhapXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDHNhapXuat.Location = new System.Drawing.Point(0, 300);
+            this.btnDHNhapXuat.Location = new System.Drawing.Point(0, 385);
             this.btnDHNhapXuat.Name = "btnDHNhapXuat";
             this.btnDHNhapXuat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDHNhapXuat.Size = new System.Drawing.Size(258, 45);
@@ -255,6 +260,49 @@ namespace BTL
             this.btnDHNhapXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDHNhapXuat.UseVisualStyleBackColor = false;
             this.btnDHNhapXuat.Click += new System.EventHandler(this.btnDHNhapXuat_Click);
+            // 
+            // panelQLHoaDon
+            // 
+            this.panelQLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.panelQLHoaDon.Controls.Add(this.button1);
+            this.panelQLHoaDon.Controls.Add(this.button2);
+            this.panelQLHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelQLHoaDon.Location = new System.Drawing.Point(0, 300);
+            this.panelQLHoaDon.Name = "panelQLHoaDon";
+            this.panelQLHoaDon.Size = new System.Drawing.Size(258, 85);
+            this.panelQLHoaDon.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 40);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(258, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Xem hóa đơn";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(258, 40);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Lập hóa đơn";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnQLHoaDon
             // 
@@ -408,6 +456,7 @@ namespace BTL
             this.panelSildeMenu.ResumeLayout(false);
             this.panelSach.ResumeLayout(false);
             this.panelDHNhapXuat.ResumeLayout(false);
+            this.panelQLHoaDon.ResumeLayout(false);
             this.panelQLTaiKhoan.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -440,5 +489,8 @@ namespace BTL
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panelQLHoaDon;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
