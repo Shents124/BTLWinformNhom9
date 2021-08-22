@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 
+
 namespace BTL
 {
     public partial class QLDonDatHang : Form
@@ -15,6 +16,12 @@ namespace BTL
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
         List<Dondh> dsDondh = new List<Dondh>();
         List<Ctdondh> ctdondhs = new List<Ctdondh>();
+
+        private int maDonDh;
+        private string tenNCC;
+        private string diaChiNCC;
+        private string soDT;
+        private string ngayLap;
 
         private decimal tongTien = 0;
         private int index;
@@ -91,7 +98,7 @@ namespace BTL
         {
             DateTime dayFrom = dtpFrom.Value;
             DateTime dayTo = dtpTo.Value;
-            if(isSearchWithDate == true)
+            if (isSearchWithDate == true)
             {
                 var ddh = qLBanSachContext.Dondhs
                 .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo &&
@@ -99,7 +106,7 @@ namespace BTL
                 .ToList();
                 return ddh;
             }
-            return null; 
+            return null;
         }
 
         private void SetListTrangThai()
@@ -134,7 +141,8 @@ namespace BTL
             }
 
             LoadDonDatHang(GetDonDatHang());
-            dgvThongTinSach.Rows.Clear();       }
+            dgvThongTinSach.Rows.Clear();
+        }
 
         private void InDonDatHang()
         {
@@ -148,7 +156,7 @@ namespace BTL
             {
                 if (index < 0 || index > dgvDSDonDH.RowCount - 1)
                     throw new Exception("Dòng bạn chọn không tồn tại");
-                int maDonDh = int.Parse(dgvDSDonDH.Rows[index].Cells[0].Value.ToString());
+                maDonDh = int.Parse(dgvDSDonDH.Rows[index].Cells[0].Value.ToString());
                 HienThiChiTietDDH(maDonDh);
             }
             catch (Exception ex)
@@ -175,6 +183,24 @@ namespace BTL
         private void button2_Click(object sender, EventArgs e)
         {
             HuyDonDH();
+        }
+        //in đơn đặt hàng
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var ddh = qLBanSachContext.Dondhs
+                .Include("MaNhaCcNavigation")
+                .Where(s => s.MaDonDh == maDonDh)
+                .SingleOrDefault();
+
+            tenNCC = ddh.MaNhaCcNavigation.TenNhaCc;
+            diaChiNCC = ddh.MaNhaCcNavigation.DiaChi;
+            soDT = ddh.MaNhaCcNavigation.DienThoai;
+            DateTime nl = (DateTime)ddh.NgayDh;
+            ngayLap = nl.ToShortDateString();
+            string TT = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", tongTien);
+
+            InDonDatHang inDonDatHang = new InDonDatHang(maDonDh, tenNCC, diaChiNCC, soDT, ngayLap, TT, ctdondhs);
+            inDonDatHang.ShowDialog();
         }
     }
 }
