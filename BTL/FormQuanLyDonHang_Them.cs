@@ -224,9 +224,6 @@ namespace BTL
                 .OrderBy(s => s.MaPn)
                 .LastOrDefault();
 
-            int d = 0;
-            Dondh dh = obj.Dondhs.SingleOrDefault(s => s.MaDonDh == p.MaDonDh);
-
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 Ctpnhap ctpn = new Ctpnhap();
@@ -235,23 +232,8 @@ namespace BTL
                 ctpn.SlNhap = sl[i];
                 ctpn.DgNhap = dg[i];
                 
-                
-                Ctdondh ctdh = obj.Ctdondhs.SingleOrDefault(s => s.MaDonDh == p.MaDonDh && s.MaSach == ms[i]);
-                if (ctdh.SlDat != sl[i])
-                {
-                    dh.TrangThai = "Nhập thiếu";
-                    ctdh.SlDat -= sl[i];
-                    obj.SaveChanges();
-                }
-                else
-                    d++;
-
                 obj.Ctpnhaps.Add(ctpn);
             }
-            
-            if (d == dataGridView1.Rows.Count - 1)
-                dh.TrangThai = "Nhập đủ";
-
             obj.SaveChanges();
 
             //dong form sau khi them

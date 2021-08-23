@@ -99,9 +99,9 @@ namespace BTL
             // 
             this.lbHTMK.AutoSize = true;
             this.lbHTMK.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbHTMK.Location = new System.Drawing.Point(193, 392);
+            this.lbHTMK.Location = new System.Drawing.Point(215, 391);
             this.lbHTMK.Name = "lbHTMK";
-            this.lbHTMK.Size = new System.Drawing.Size(88, 19);
+            this.lbHTMK.Size = new System.Drawing.Size(72, 13);
             this.lbHTMK.TabIndex = 9;
             this.lbHTMK.Text = "Ẩn mật khẩu";
             // 
@@ -109,7 +109,7 @@ namespace BTL
             // 
             this.toggleMK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toggleMK.Image = global::BTL.Properties.Resources.icons8_toggle_off_30;
-            this.toggleMK.Location = new System.Drawing.Point(152, 387);
+            this.toggleMK.Location = new System.Drawing.Point(174, 386);
             this.toggleMK.Name = "toggleMK";
             this.toggleMK.Size = new System.Drawing.Size(35, 24);
             this.toggleMK.TabIndex = 8;
@@ -123,7 +123,7 @@ namespace BTL
             this.lbQMK.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lbQMK.Location = new System.Drawing.Point(142, 521);
             this.lbQMK.Name = "lbQMK";
-            this.lbQMK.Size = new System.Drawing.Size(153, 25);
+            this.lbQMK.Size = new System.Drawing.Size(118, 20);
             this.lbQMK.TabIndex = 7;
             this.lbQMK.Text = "Quên mật khẩu ?";
             // 
@@ -161,7 +161,7 @@ namespace BTL
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau.Location = new System.Drawing.Point(174, 352);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(206, 25);
+            this.txtMatKhau.Size = new System.Drawing.Size(206, 20);
             this.txtMatKhau.TabIndex = 3;
             // 
             // txtTenDangNhap
@@ -169,7 +169,7 @@ namespace BTL
             this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenDangNhap.Location = new System.Drawing.Point(174, 289);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 25);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 20);
             this.txtTenDangNhap.TabIndex = 2;
             // 
             // label2
@@ -177,7 +177,7 @@ namespace BTL
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 352);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 25);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu : ";
             // 
@@ -186,7 +186,7 @@ namespace BTL
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 289);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập : ";
             // 
@@ -233,7 +233,7 @@ namespace BTL
             this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAn.ForeColor = System.Drawing.Color.Black;
-            this.btnAn.Location = new System.Drawing.Point(521, 11);
+            this.btnAn.Location = new System.Drawing.Point(506, 11);
             this.btnAn.Name = "btnAn";
             this.btnAn.Size = new System.Drawing.Size(30, 30);
             this.btnAn.TabIndex = 1;
@@ -248,7 +248,7 @@ namespace BTL
             // 
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDong.ForeColor = System.Drawing.Color.Black;
-            this.btnDong.Location = new System.Drawing.Point(557, 11);
+            this.btnDong.Location = new System.Drawing.Point(542, 11);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(30, 30);
             this.btnDong.TabIndex = 0;
@@ -336,7 +336,7 @@ namespace BTL
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 600);
