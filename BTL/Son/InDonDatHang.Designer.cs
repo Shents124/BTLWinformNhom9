@@ -103,7 +103,7 @@ namespace BTL.Son
             // 
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTongTien.Location = new System.Drawing.Point(648, 589);
+            this.lblTongTien.Location = new System.Drawing.Point(631, 759);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(82, 28);
             this.lblTongTien.TabIndex = 7;
@@ -113,7 +113,7 @@ namespace BTL.Son
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(609, 833);
+            this.label14.Location = new System.Drawing.Point(588, 877);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(140, 23);
             this.label14.TabIndex = 7;
@@ -123,7 +123,7 @@ namespace BTL.Son
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(74, 833);
+            this.label13.Location = new System.Drawing.Point(81, 877);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 23);
             this.label13.TabIndex = 7;
@@ -133,7 +133,7 @@ namespace BTL.Son
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(534, 589);
+            this.label12.Location = new System.Drawing.Point(517, 759);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 28);
             this.label12.TabIndex = 7;
@@ -180,7 +180,7 @@ namespace BTL.Son
             this.dgvSachDat.ReadOnly = true;
             this.dgvSachDat.RowHeadersWidth = 51;
             this.dgvSachDat.RowTemplate.Height = 29;
-            this.dgvSachDat.Size = new System.Drawing.Size(756, 188);
+            this.dgvSachDat.Size = new System.Drawing.Size(756, 358);
             this.dgvSachDat.TabIndex = 4;
             // 
             // Column1
@@ -476,17 +476,17 @@ namespace BTL.Son
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label15;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

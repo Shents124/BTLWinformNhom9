@@ -17,8 +17,7 @@ namespace BTL
         public MainForm()
         {
             InitializeComponent();
-            CustomizeDesign();
-            
+            CustomizeDesign();         
         }
 
         public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
@@ -32,7 +31,8 @@ namespace BTL
             isAdmin = admin;
             CustomizeDesign();
 
-            OpenChildForm(new QLDonDatHang(), null);
+            OpenChildForm(new frmLapHoaDon(maTK), null);
+            lblTitle.Text = "Lập hóa đơn";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -114,6 +114,17 @@ namespace BTL
         {
             // Hiển thị form quản lý hóa đơn
             ShowSubMenu(panelQLHoaDon);         
+        }
+        private void btnLapHoaDon_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmLapHoaDon(maTK), sender);
+            HideSubMenu();
+        }
+
+        private void btnXemHoaDon_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmXemHoaDon(maTK), sender);
+            HideSubMenu();
         }
         #endregion
 
@@ -210,10 +221,26 @@ namespace BTL
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogCustomForMainForm dcfm = new DialogCustomForMainForm();
-            dcfm.ShowDialog();
-            
-            e.Cancel = true;
+            //DialogCustomForMainForm dcfm = new DialogCustomForMainForm(this);
+
+            //if (dcfm.ShowDialog() == DialogResult.Yes)
+            //{
+            //    this.Dispose();
+            //}
+            //else
+            //{
+            //    dcfm.Close();
+            //    this.Close();
+
+            //    //DangNhap dangNhap = new DangNhap();
+            //    //if (dangNhap.ShowDialog() == DialogResult.OK)
+            //    //{
+            //    //    Program.mainForm = new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin);
+            //    //    Program.mainForm.Show();
+            //    //}
+            //    //else
+            //    //    Application.Exit();
+            //}
         }
     }
 }

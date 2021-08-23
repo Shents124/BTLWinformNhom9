@@ -53,7 +53,7 @@ namespace BTL.Son
                 row.Cells[1].Value = item.MaSach;
                 row.Cells[2].Value = item.MaSachNavigation.TenSach;
                 row.Cells[3].Value = item.SlDat;
-                row.Cells[4].Value = item.MaSachNavigation.DonGiaNhap;
+                row.Cells[4].Value = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", item.MaSachNavigation.DonGiaNhap);
                 row.Cells[5].Value = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", item.ThanhTien);
 
                 dgvSachDat.Rows.Add(row);
@@ -71,7 +71,10 @@ namespace BTL.Son
             GetPrintArea(panel);
             printPreviewDialog1.Document = printDocument1;
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            printPreviewDialog1.WindowState = FormWindowState.Maximized;
             printPreviewDialog1.ShowDialog();
+            
         }
 
         private Bitmap memorying;
@@ -85,8 +88,8 @@ namespace BTL.Son
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             Rectangle pageArea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (pageArea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
-
+            //e.Graphics.DrawImage(memorying, (pageArea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
+            e.Graphics.DrawImage(memorying, 0, 0, 840, 1120);
         }
 
         private void button1_Click(object sender, EventArgs e)
