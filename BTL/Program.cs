@@ -22,6 +22,8 @@ namespace BTL
             }
             else
                 Application.Exit();
+
+            //Application.Run(new FormQuanLyDonHang());
         }
     }
 }

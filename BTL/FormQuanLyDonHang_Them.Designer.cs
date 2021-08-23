@@ -29,7 +29,6 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@ namespace BTL
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSua = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtMaxSL = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -74,14 +74,12 @@ namespace BTL
             this.label9 = new System.Windows.Forms.Label();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtDongia = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -348,6 +346,7 @@ namespace BTL
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtMaxSL);
             this.groupBox2.Controls.Add(this.label15);
@@ -370,6 +369,17 @@ namespace BTL
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
+            // 
+            // btnSua
+            // 
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Location = new System.Drawing.Point(781, 47);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(66, 72);
+            this.btnSua.TabIndex = 23;
+            this.btnSua.Text = "Thêm";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label10
             // 
@@ -403,6 +413,7 @@ namespace BTL
             this.txtTenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtTenSach.Location = new System.Drawing.Point(129, 30);
             this.txtTenSach.Name = "txtTenSach";
+            this.txtTenSach.ReadOnly = true;
             this.txtTenSach.Size = new System.Drawing.Size(275, 29);
             this.txtTenSach.TabIndex = 19;
             this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
@@ -410,11 +421,11 @@ namespace BTL
             // btnThem
             // 
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(756, 43);
+            this.btnThem.Location = new System.Drawing.Point(878, 47);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(173, 80);
+            this.btnThem.Size = new System.Drawing.Size(66, 72);
             this.btnThem.TabIndex = 18;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Sửa";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -518,10 +529,6 @@ namespace BTL
             this.txtDongia.Size = new System.Drawing.Size(170, 29);
             this.txtDongia.TabIndex = 6;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // FormQuanLyDonHang_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -546,7 +553,6 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -593,10 +599,10 @@ namespace BTL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.TextBox txtTenSach;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.TextBox txtMaxSL;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnSua;
     }
 }

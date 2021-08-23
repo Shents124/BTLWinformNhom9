@@ -16,6 +16,7 @@ namespace BTL
         QLBanSachContext obj = new QLBanSachContext();
         int index;
         int mapn;
+        int madondh;
         public FormQuanLyDonHang()
         {
             InitializeComponent();
@@ -67,6 +68,20 @@ namespace BTL
             dataGridView2.Rows.Add(rw);
         }
 
+        private void GetDSDonDH()
+        {
+            var query = from s in obj.Dondhs
+                        where s.TrangThai == "Chưa nhập" || s.TrangThai == "Nhập thiếu"
+                        select new
+                        {
+                            s.MaDonDh,
+                            s.NgayDh,
+                            s.MaNhaCcNavigation.TenNhaCc,
+                            s.TrangThai
+                        };
+            dgvDSDH.DataSource = query.ToList();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -106,6 +121,8 @@ namespace BTL
         private void FormQuanLyDonHang_Load(object sender, EventArgs e)
         {
             ShowDanhSach();
+            GetDSDonDH();
+            btnThem.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -113,6 +130,7 @@ namespace BTL
             FormQuanLyDonHang_Them frmQLDH_Them = new FormQuanLyDonHang_Them();
             if (Application.OpenForms[frmQLDH_Them.Name] == null)
             {
+                frmQLDH_Them.Tag = madondh;
                 frmQLDH_Them.ShowDialog();
             }
             else
@@ -129,10 +147,6 @@ namespace BTL
                 obj.Pnhaps.Remove(pn);
                 obj.SaveChanges();
                 ShowDanhSach();
-                txtMaPhieu.Text = "...";
-                txtTenNCC.Text = "...";
-                txtNgayNhap.Text = "...";
-                txtMaDonDH.Text = "...";
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
                 dataGridView1.CurrentCell = null;
@@ -145,11 +159,7 @@ namespace BTL
             {
                 index = e.RowIndex;
                 DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                txtMaPhieu.Text = selectedRow.Cells[0].Value.ToString();
                 mapn = int.Parse(selectedRow.Cells[0].Value.ToString());
-                txtTenNCC.Text = selectedRow.Cells[1].Value.ToString();
-                txtNgayNhap.Text = selectedRow.Cells[2].Value.ToString();
-                txtMaDonDH.Text = selectedRow.Cells[3].Value.ToString();
                 ShowChiTiet();
             }
             catch (Exception ex)
@@ -179,10 +189,6 @@ namespace BTL
                         dataGridView1.ClearSelection();
                         dataGridView1.Rows[i].Cells[0].Selected = true;
                         dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[0];
-                        txtMaPhieu.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                        txtTenNCC.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                        txtNgayNhap.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                        txtMaDonDH.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
                         ShowChiTiet();
                         txtTimPhieu.Clear();
                     }
@@ -212,13 +218,19 @@ namespace BTL
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ShowDanhSach();
-            txtMaPhieu.Text = "...";
-            txtTenNCC.Text = "...";
-            txtNgayNhap.Text = "...";
-            txtMaDonDH.Text = "...";
             dataGridView2.DataSource = null;
             dataGridView2.Rows.Clear();
             dataGridView1.CurrentCell = null;
+        }
+
+        private void dgvDSDH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                btnThem.Enabled = true;
+                DataGridViewRow selectedRow = dgvDSDH.Rows[e.RowIndex];
+                madondh = int.Parse(selectedRow.Cells[0].Value.ToString());
+            }    
         }
     }
 }

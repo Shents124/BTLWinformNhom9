@@ -26,6 +26,8 @@ namespace BTL
         AutoCompleteStringCollection collection1 = new AutoCompleteStringCollection();
         int[] codelist; //chua tat ca ma don dat hang
         string[] bookslist; //chua ten sach trong ctdondh
+        int madondh;
+        int index;
         #endregion
 
         public FormQuanLyDonHang_Them()
@@ -61,6 +63,7 @@ namespace BTL
 
             //goi y ma don dat hang
             var dh = (from d in obj.Dondhs
+                      where d.TrangThai == "Chưa nhập" || d.TrangThai == "Nhập thiếu"
                       select d.MaDonDh);
             codelist = dh.ToArray();
             for (int i = 0; i < codelist.Length; i++)
@@ -69,6 +72,7 @@ namespace BTL
 
             //lay thong tin ctdondh
             var ct = from c in obj.Ctdondhs
+                     where c.MaDonDh == madondh
                      select c;
             li4 = ct.ToList();
         }
@@ -91,84 +95,106 @@ namespace BTL
             txtMaxSL.Clear();
             txtTenSach.Focus();
         }
-        #endregion
 
-        private void FormQuanLyDonHang_Them_Load(object sender, EventArgs e)
+        private void LoadBooksList()
         {
-            GetData();
-            panel2.Hide();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            bool k = false;
-            foreach (Sach item in li)
-                if (item.TenSach == txtTenSach.Text)
-                {
-                    k = true;
-                    masach = item.MaSach;
-                }
-            if (k)
+            for (int i = 0; i < li4.Count; i++)
             {
-                Sach s = obj.Saches.SingleOrDefault(s => s.MaSach == masach);
+                Sach s = obj.Saches.SingleOrDefault(s => s.MaSach == li4[i].MaSach);
                 DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
                 row.Cells[0].Value = s.MaSach;
                 row.Cells[1].Value = s.TenSach;
-                row.Cells[2].Value = txtTheloai.Text;
-                row.Cells[3].Value = txtTacgia.Text;
+                Loaisach l = obj.Loaisaches.SingleOrDefault(l => l.MaLoai == s.MaLoai);
+                row.Cells[2].Value = l.TenLoai;
+                row.Cells[3].Value = s.TacGia;
                 row.Cells[4].Value = s.NhaXuatBan;
-                row.Cells[5].Value = txtSoluong.Text;
-                row.Cells[6].Value = double.Parse(txtDongia.Text);
-                double tt = int.Parse(txtSoluong.Text) * double.Parse(txtDongia.Text);
+                row.Cells[5].Value = li4[i].SlDat;
+                row.Cells[6].Value = s.DonGiaNhap;
+                double tt = int.Parse(li4[i].SlDat.ToString()) * double.Parse(s.DonGiaNhap.ToString());
                 row.Cells[7].Value = tt.ToString("N1");
                 row.Cells[8].Value = "Xóa";
                 dataGridView1.Rows.Add(row);
                 TongTien();
-                ClearTextBox();
             }
-            else
-                MessageBox.Show("Không tồn tại sách trong đơn đặt hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        #endregion
+
+        private void FormQuanLyDonHang_Them_Load(object sender, EventArgs e)
+        {
+            madondh = (int)this.Tag;
+            GetData();
+            panel2.Hide();
+            txtMaDonHang.Text = madondh.ToString();
+            txtMaDonHang.ReadOnly = true;
+            LoadBooksList();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e) //nut Sua
+        {
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
+            int mas = int.Parse(selectedRow.Cells[0].Value.ToString());
+            int sldRAW = 0;
+
+            selectedRow.Cells[5].Value = txtSoluong.Text;
+            double tt = int.Parse(txtSoluong.Text) * double.Parse(selectedRow.Cells[6].Value.ToString());
+            selectedRow.Cells[7].Value = tt.ToString("N1");
+            TongTien();
+            foreach (Ctdondh c in li4)
+                if (c.MaSach == mas)
+                    c.SlDat -= 1;
+            ClearTextBox();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            if (e.ColumnIndex == dataGridView1.Columns["Column9"].Index)
+            try
             {
-                DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
+                index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                txtTenSach.Text = selectedRow.Cells[1].Value.ToString();
+                txtTheloai.Text = selectedRow.Cells[2].Value.ToString();
+                txtTacgia.Text = selectedRow.Cells[3].Value.ToString();
+                foreach (Ctdondh item in li4)
+                    if (item.MaSach == int.Parse(selectedRow.Cells[0].Value.ToString()))
+                        txtMaxSL.Text = item.SlDat + "";
+                txtSoluong.Text = selectedRow.Cells[5].Value.ToString();
+                txtDongia.Text = selectedRow.Cells[6].Value.ToString();
+                if (e.ColumnIndex == dataGridView1.Columns["Column9"].Index)
                 {
-                    dataGridView1.Rows.Remove(selectedRow);
-                    TongTien();
+                    DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        dataGridView1.Rows.Remove(selectedRow);
+                        TongTien();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                return;
             }
         }
 
         private void txtTenSach_TextChanged(object sender, EventArgs e)
         {
-            TextBox t = sender as TextBox;
-            
-            for (int i = 0; i < bookslist.Length; i++)
-                if (t.Text == bookslist[i])
-                {
-                    foreach (Ctdondh c in li4)
-                    {
-                        Sach s = obj.Saches.SingleOrDefault(sa => sa.TenSach == bookslist[i]);
-                        if (s != null && s.MaSach == c.MaSach)
-                        {
-                            Loaisach ls = obj.Loaisaches.SingleOrDefault(l => l.MaLoai == s.MaLoai);
-                            txtTheloai.Text = ls.TenLoai;
-                            txtTacgia.Text = s.TacGia;
-                            txtMaxSL.Text = Convert.ToString(c.SlDat);
-                            txtDongia.Text = (s.DonGiaNhap).ToString("N1");
-                        }
-                    }
-                    errorProvider1.SetError(txtTenSach, null);
-                }
-                else
-                    errorProvider1.SetError(txtTenSach, "Sai tên sách hoặc không có sách này");
-            if(txtTenSach.Text == bookslist[0]) errorProvider1.SetError(txtTenSach, null);
+            //TextBox t = sender as TextBox;
+
+            //for (int i = 0; i < bookslist.Length; i++)
+            //    if (t.Text == bookslist[i])
+            //    {
+            //        foreach (Ctdondh c in li4)
+            //        {
+            //            Sach s = obj.Saches.SingleOrDefault(sa => sa.TenSach == bookslist[i]);
+            //            if (s != null && s.MaSach == c.MaSach)
+            //            {
+            //                Loaisach ls = obj.Loaisaches.SingleOrDefault(l => l.MaLoai == s.MaLoai);
+            //                txtTheloai.Text = ls.TenLoai;
+            //                txtTacgia.Text = s.TacGia;
+            //                txtMaxSL.Text = Convert.ToString(c.SlDat);
+            //                txtDongia.Text = (s.DonGiaNhap).ToString("N1");
+            //            }
+            //        }
+            //    }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -197,6 +223,10 @@ namespace BTL
             var p = obj.Pnhaps
                 .OrderBy(s => s.MaPn)
                 .LastOrDefault();
+
+            int d = 0;
+            Dondh dh = obj.Dondhs.SingleOrDefault(s => s.MaDonDh == p.MaDonDh);
+
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 Ctpnhap ctpn = new Ctpnhap();
@@ -204,9 +234,24 @@ namespace BTL
                 ctpn.MaSach = ms[i];
                 ctpn.SlNhap = sl[i];
                 ctpn.DgNhap = dg[i];
+                
+                
+                Ctdondh ctdh = obj.Ctdondhs.SingleOrDefault(s => s.MaDonDh == p.MaDonDh && s.MaSach == ms[i]);
+                if (ctdh.SlDat != sl[i])
+                {
+                    dh.TrangThai = "Nhập thiếu";
+                    ctdh.SlDat -= sl[i];
+                    obj.SaveChanges();
+                }
+                else
+                    d++;
 
                 obj.Ctpnhaps.Add(ctpn);
             }
+            
+            if (d == dataGridView1.Rows.Count - 1)
+                dh.TrangThai = "Nhập đủ";
+
             obj.SaveChanges();
 
             //dong form sau khi them
@@ -264,7 +309,7 @@ namespace BTL
         {
             string s = "";
             for (int i = 0; i < bookslist.Length; i++)
-                s += i +" - "+ bookslist[i] + "\n";
+                s += i + " - " + bookslist[i] + "\n";
             MessageBox.Show(s);
         }
 
@@ -287,6 +332,18 @@ namespace BTL
             {
                 return;
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            var r = from vr in obj.Ctdondhs
+                    where vr.MaDonDh == madondh
+                    select new
+                    {
+                        vr.MaSach,
+                        vr.SlDat
+                    };
+            var raw = r.ToList();
         }
     }
 }
