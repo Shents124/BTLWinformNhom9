@@ -16,10 +16,16 @@ namespace BTL.Son
         List<Sach> sachCanDat = new List<Sach>();
         List<Sach> sachMoi = new List<Sach>();
 
-        int index = 0;
-        private QLDonDatHang qLDonDatHang;
+        private int maDonDh;
+        private string tenNCC;
+        private string diaChiNCC;
+        private string soDT;
+        private string ngayLap;
         decimal tongTien = 0;
 
+        int index = 0;
+        private QLDonDatHang qLDonDatHang;
+        
         public ThemDonDatHang(QLDonDatHang qLDonDatHang)
         {
             this.qLDonDatHang = qLDonDatHang;
@@ -380,7 +386,16 @@ namespace BTL.Son
 
             var d = qLBanSachContext.Dondhs
                 .OrderBy(x => x.MaDonDh)
+                .Include("MaNhaCcNavigation")
                 .LastOrDefault();
+
+            maDonDh = d.MaDonDh;
+            tenNCC = d.MaNhaCcNavigation.TenNhaCc;
+            diaChiNCC = d.MaNhaCcNavigation.DiaChi;
+            soDT = d.MaNhaCcNavigation.DienThoai;
+
+            DateTime nl = (DateTime)d.NgayDh;
+            ngayLap = nl.ToShortDateString();
 
             for(int i = 0; i < sachCanDat.Count; i++)
             {
@@ -484,26 +499,18 @@ namespace BTL.Son
             this.Close();
         }
 
-        private void cbNCC_TextChanged(object sender, EventArgs e)
+        private void btnDatHangVaIn_Click(object sender, EventArgs e)
         {
-            //if(lbxNCC.Visible == false)
-            //    lbxNCC.Visible = true;
+            ChotDonDatHang();
+            qLDonDatHang.LoadDonDatHang(qLDonDatHang.GetDonDatHang());
 
-            //string textToSearch = cbNCC.Text.ToLower();
-            //if (String.IsNullOrEmpty(textToSearch))
-            //    return;
+            var ddh = qLBanSachContext.Ctdondhs
+                .Where(s => s.MaDonDh == maDonDh)
+                .ToList();               ;
 
-            //var ncc = qLBanSachContext.Nhaccs
-            //    .Where(s => s.TenNhaCc.ToLower().Contains(textToSearch))
-            //    .ToArray();
-
-            //if (ncc.Length == 0)
-            //    return;
-
-            //lbxNCC.Items.Clear();
-            //lbxNCC.DataSource = ncc;
-            //lbxNCC.DisplayMember = "TenNhaCc";
-            //lbxNCC.ValueMember = "MaNhaCc";
+            string TT = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", tongTien);
+            InDonDatHang inDonDatHang = new InDonDatHang(maDonDh, tenNCC, diaChiNCC, soDT, ngayLap, TT, ddh);
+            inDonDatHang.ShowDialog();
         }
     }
 }

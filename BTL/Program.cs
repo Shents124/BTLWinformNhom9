@@ -8,6 +8,9 @@ namespace BTL
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        
+        public static MainForm mainForm;
+
         [STAThread]
         static void Main()
         {
@@ -18,7 +21,8 @@ namespace BTL
             DangNhap dangNhap = new DangNhap();
             if (dangNhap.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin));
+                mainForm = new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin);
+                Application.Run(mainForm);
             }
             else
                 Application.Exit();

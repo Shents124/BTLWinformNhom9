@@ -42,8 +42,8 @@ namespace BTL
             this.btnQLDonDatHang = new System.Windows.Forms.Button();
             this.btnDHNhapXuat = new System.Windows.Forms.Button();
             this.panelQLHoaDon = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnXemHoaDon = new System.Windows.Forms.Button();
+            this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.btnQLHoaDon = new System.Windows.Forms.Button();
             this.panelQLTaiKhoan = new System.Windows.Forms.Panel();
             this.btnQLTK = new System.Windows.Forms.Button();
@@ -264,45 +264,47 @@ namespace BTL
             // panelQLHoaDon
             // 
             this.panelQLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.panelQLHoaDon.Controls.Add(this.button1);
-            this.panelQLHoaDon.Controls.Add(this.button2);
+            this.panelQLHoaDon.Controls.Add(this.btnXemHoaDon);
+            this.panelQLHoaDon.Controls.Add(this.btnLapHoaDon);
             this.panelQLHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLHoaDon.Location = new System.Drawing.Point(0, 300);
             this.panelQLHoaDon.Name = "panelQLHoaDon";
             this.panelQLHoaDon.Size = new System.Drawing.Size(258, 85);
             this.panelQLHoaDon.TabIndex = 12;
             // 
-            // button1
+            // btnXemHoaDon
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 40);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(258, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Xem hóa đơn";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnXemHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.btnXemHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnXemHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnXemHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnXemHoaDon.Location = new System.Drawing.Point(0, 40);
+            this.btnXemHoaDon.Name = "btnXemHoaDon";
+            this.btnXemHoaDon.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnXemHoaDon.Size = new System.Drawing.Size(258, 40);
+            this.btnXemHoaDon.TabIndex = 1;
+            this.btnXemHoaDon.Text = "Xem hóa đơn";
+            this.btnXemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemHoaDon.UseVisualStyleBackColor = false;
+            this.btnXemHoaDon.Click += new System.EventHandler(this.btnXemHoaDon_Click);
             // 
-            // button2
+            // btnLapHoaDon
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(258, 40);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Lập hóa đơn";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLapHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.btnLapHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLapHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnLapHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnLapHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.btnLapHoaDon.Name = "btnLapHoaDon";
+            this.btnLapHoaDon.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnLapHoaDon.Size = new System.Drawing.Size(258, 40);
+            this.btnLapHoaDon.TabIndex = 0;
+            this.btnLapHoaDon.Text = "Lập hóa đơn";
+            this.btnLapHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapHoaDon.UseVisualStyleBackColor = false;
+            this.btnLapHoaDon.Click += new System.EventHandler(this.btnLapHoaDon_Click);
             // 
             // btnQLHoaDon
             // 
@@ -490,7 +492,7 @@ namespace BTL
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelQLHoaDon;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXemHoaDon;
+        private System.Windows.Forms.Button btnLapHoaDon;
     }
 }

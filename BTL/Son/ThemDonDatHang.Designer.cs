@@ -74,6 +74,7 @@ namespace BTL.Son
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDatHangVaIn = new System.Windows.Forms.Button();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -184,7 +185,6 @@ namespace BTL.Son
             this.cbNCC.Name = "cbNCC";
             this.cbNCC.Size = new System.Drawing.Size(250, 31);
             this.cbNCC.TabIndex = 12;
-            this.cbNCC.TextChanged += new System.EventHandler(this.cbNCC_TextChanged);
             // 
             // dtpNgayLap
             // 
@@ -528,6 +528,7 @@ namespace BTL.Son
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnDatHangVaIn);
             this.panel3.Controls.Add(this.lblTongTien);
             this.panel3.Controls.Add(this.btnXoaSach);
             this.panel3.Controls.Add(this.label20);
@@ -542,6 +543,16 @@ namespace BTL.Son
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1182, 352);
             this.panel3.TabIndex = 12;
+            // 
+            // btnDatHangVaIn
+            // 
+            this.btnDatHangVaIn.Location = new System.Drawing.Point(469, 291);
+            this.btnDatHangVaIn.Name = "btnDatHangVaIn";
+            this.btnDatHangVaIn.Size = new System.Drawing.Size(167, 40);
+            this.btnDatHangVaIn.TabIndex = 17;
+            this.btnDatHangVaIn.Text = "Đặt hàng và In ";
+            this.btnDatHangVaIn.UseVisualStyleBackColor = true;
+            this.btnDatHangVaIn.Click += new System.EventHandler(this.btnDatHangVaIn_Click);
             // 
             // lblTongTien
             // 
@@ -563,7 +574,7 @@ namespace BTL.Son
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(615, 291);
+            this.button2.Location = new System.Drawing.Point(685, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(167, 40);
             this.button2.TabIndex = 9;
@@ -573,7 +584,7 @@ namespace BTL.Son
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(315, 291);
+            this.button1.Location = new System.Drawing.Point(253, 291);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 40);
             this.button1.TabIndex = 9;
@@ -728,5 +739,6 @@ namespace BTL.Son
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnDatHangVaIn;
     }
 }
