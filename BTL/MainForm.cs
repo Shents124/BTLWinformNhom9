@@ -17,7 +17,7 @@ namespace BTL
         public MainForm()
         {
             InitializeComponent();
-            CustomizeDesign();         
+            CustomizeDesign();
         }
 
         public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
@@ -72,7 +72,7 @@ namespace BTL
                 panelDHNhapXuat.Visible = false;
             if (panelSach.Visible == true)
                 panelSach.Visible = false;
-            if(panelQLHoaDon.Visible == true)
+            if (panelQLHoaDon.Visible == true)
                 panelQLHoaDon.Visible = false;
         }
 
@@ -113,7 +113,7 @@ namespace BTL
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý hóa đơn
-            ShowSubMenu(panelQLHoaDon);         
+            ShowSubMenu(panelQLHoaDon);
         }
         private void btnLapHoaDon_Click(object sender, EventArgs e)
         {
@@ -214,9 +214,7 @@ namespace BTL
 
             childForm.BringToFront();
             childForm.Show();
-            if (sender == "qldnh") //label thay đổi khi quản lí đơn nhập hàng refresh
-                lblTitle.Text = "Quản lý đơn nhập hàng";
-            else if (sender != null)
+            if (sender != null)
                 lblTitle.Text = (sender as Button).Text;
         }
         #endregion
@@ -243,11 +241,6 @@ namespace BTL
             //    //else
             //    //    Application.Exit();
             //}
-        }
-
-        private void MainForm_Activated(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormQuanLyDonHang(), "qldnh"); //refresh FromQuanLyDonNhapHang mỗi khi thay đổi
         }
     }
 }

@@ -74,14 +74,12 @@ namespace BTL
             this.label9 = new System.Windows.Forms.Label();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtDongia = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -218,7 +216,6 @@ namespace BTL
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Controls.Add(this.btnLuuIn);
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.label14);
@@ -532,15 +529,6 @@ namespace BTL
             this.txtDongia.Size = new System.Drawing.Size(170, 29);
             this.txtDongia.TabIndex = 6;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(73, 16);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(856, 229);
-            this.dataGridView2.TabIndex = 21;
-            // 
             // FormQuanLyDonHang_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -565,7 +553,6 @@ namespace BTL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -617,6 +604,5 @@ namespace BTL
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

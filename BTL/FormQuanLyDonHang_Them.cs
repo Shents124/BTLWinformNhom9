@@ -21,6 +21,13 @@ namespace BTL
         List<Nhacc> li2 = new List<Nhacc>();
         List<Dondh> li3 = new List<Dondh>();
         List<Ctdondh> li4 = new List<Ctdondh>();
+
+        int[] mpn;
+        List<Ctpnhap[]> p2 = new List<Ctpnhap[]>();
+        List<int[]> tongsldd = new List<int[]>();
+        int[] masach;
+        int[] slct;
+
         AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
         AutoCompleteStringCollection collection1 = new AutoCompleteStringCollection();
         int[] codelist; //chua tat ca ma don dat hang
@@ -76,14 +83,22 @@ namespace BTL
                      where c.MaDonDh == madondh
                      select c;
             li4 = ct.ToList();
+            //-----
+            masach = new int[li4.Count];
+            for (int i = 0; i < li4.Count; i++)
+                masach[i] = li4[i].MaSach;
+            //-------------------------------------------------------
 
             //kiem tra trang thai
             trangthai = (from x in obj.Dondhs
                          where x.MaDonDh == madondh
                          select x.TrangThai).ToString();
 
-            //teetstt dinhcao
-
+            //lay ma phieu nhap co ma don dat hang duoc chon
+            var p1 = from p in obj.Pnhaps
+                     where p.MaDonDh == madondh
+                     select p.MaPn;
+            mpn = p1.ToArray();
         }
 
         private void TongTien()
@@ -130,9 +145,61 @@ namespace BTL
             }
             else
             {
-                
+                thuNghiem();
+                for (int i = 0; i < li4.Count; i++)
+                {
+                    Sach s = obj.Saches.SingleOrDefault(s => s.MaSach == li4[i].MaSach);
+                    DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+                    row.Cells[0].Value = s.MaSach;
+                    row.Cells[1].Value = s.TenSach;
+                    Loaisach l = obj.Loaisaches.SingleOrDefault(l => l.MaLoai == s.MaLoai);
+                    row.Cells[2].Value = l.TenLoai;
+                    row.Cells[3].Value = s.TacGia;
+                    row.Cells[4].Value = s.NhaXuatBan;
+                    row.Cells[5].Value = slct[i];
+                    row.Cells[6].Value = double.Parse(s.DonGiaNhap.ToString());
+                    double tt = int.Parse(li4[i].SlDat.ToString()) * double.Parse(s.DonGiaNhap.ToString());
+                    row.Cells[7].Value = tt.ToString("N1");
+                    row.Cells[8].Value = "Xóa";
+                    if (slct[i] > 0)
+                        dataGridView1.Rows.Add(row);
+                    TongTien();
+                }
             }
         }
+
+        private void thuNghiem()
+        {
+            //Danh sach cac mang ctpnhap
+            for (int i = 0; i < mpn.Length; i++)
+            {
+                var xyz = from p in obj.Ctpnhaps
+                          where p.MaPn == mpn[i]
+                          select p;
+                p2.Add(xyz.ToArray());
+            }
+
+            //Them gia tri vao mang
+            slct = new int[masach.Length];
+            for (int i = 0; i < slct.Length; i++)
+            {
+                slct[i] = li4[i].SlDat;
+            }
+
+            //Mang so luong sach con thieu
+            foreach (Ctpnhap[] item in p2)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    for (int j = 0; j < masach.Length; j++)
+                    {
+                        if (item[i].MaSach == masach[j])
+                            slct[j] -= item[i].SlNhap;
+                    }
+                }
+            }
+        }
+
         #endregion
 
         private void FormQuanLyDonHang_Them_Load(object sender, EventArgs e)
@@ -161,23 +228,46 @@ namespace BTL
         {
             try
             {
-                index = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                txtTenSach.Text = selectedRow.Cells[1].Value.ToString();
-                txtTheloai.Text = selectedRow.Cells[2].Value.ToString();
-                txtTacgia.Text = selectedRow.Cells[3].Value.ToString();
-                foreach (Ctdondh item in li4)
-                    if (item.MaSach == int.Parse(selectedRow.Cells[0].Value.ToString()))
-                        txtMaxSL.Text = item.SlDat + "";
-                txtSoluong.Text = selectedRow.Cells[5].Value.ToString();
-                txtDongia.Text = selectedRow.Cells[6].Value.ToString();
-                if (e.ColumnIndex == dataGridView1.Columns["Column9"].Index)
+                if (trangthai == "Nhập đủ")
                 {
-                    DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dr == DialogResult.Yes)
+                    index = e.RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                    txtTenSach.Text = selectedRow.Cells[1].Value.ToString();
+                    txtTheloai.Text = selectedRow.Cells[2].Value.ToString();
+                    txtTacgia.Text = selectedRow.Cells[3].Value.ToString();
+                    foreach (Ctdondh item in li4)
+                        if (item.MaSach == int.Parse(selectedRow.Cells[0].Value.ToString()))
+                            txtMaxSL.Text = item.SlDat + "";
+                    txtSoluong.Text = selectedRow.Cells[5].Value.ToString();
+                    txtDongia.Text = selectedRow.Cells[6].Value.ToString();
+                    if (e.ColumnIndex == dataGridView1.Columns["Column9"].Index)
                     {
-                        dataGridView1.Rows.Remove(selectedRow);
-                        TongTien();
+                        DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dr == DialogResult.Yes)
+                        {
+                            dataGridView1.Rows.Remove(selectedRow);
+                            TongTien();
+                        }
+                    } 
+                }
+                else
+                {
+                    index = e.RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                    txtTenSach.Text = selectedRow.Cells[1].Value.ToString();
+                    txtTheloai.Text = selectedRow.Cells[2].Value.ToString();
+                    txtTacgia.Text = selectedRow.Cells[3].Value.ToString();
+                    txtMaxSL.Text = slct[index].ToString();
+                    txtSoluong.Text = selectedRow.Cells[5].Value.ToString();
+                    txtDongia.Text = selectedRow.Cells[6].Value.ToString();
+                    if (e.ColumnIndex == dataGridView1.Columns["Column9"].Index)
+                    {
+                        DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dr == DialogResult.Yes)
+                        {
+                            dataGridView1.Rows.Remove(selectedRow);
+                            TongTien();
+                        }
                     }
                 }
             }
@@ -246,7 +336,7 @@ namespace BTL
                 ctpn.DgNhap = dg[i];
 
                 obj.Ctpnhaps.Add(ctpn);
-                if (li4[i].SlDat != sl[i])
+                if (slct[i] != sl[i])
                     d++;
             }
             obj.SaveChanges();
@@ -341,7 +431,7 @@ namespace BTL
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            dataGridView2.Hide();
+
         }
     }
 }
