@@ -168,12 +168,12 @@ namespace BTL
             // 
             this.txtMaDonHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtMaDonHang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtMaDonHang.BackColor = System.Drawing.SystemColors.Control;
             this.txtMaDonHang.Location = new System.Drawing.Point(654, 74);
             this.txtMaDonHang.Name = "txtMaDonHang";
             this.txtMaDonHang.Size = new System.Drawing.Size(182, 29);
             this.txtMaDonHang.TabIndex = 6;
             this.txtMaDonHang.TextChanged += new System.EventHandler(this.txtMaDonHang_TextChanged);
-            this.txtMaDonHang.DoubleClick += new System.EventHandler(this.txtMaDonHang_DoubleClick);
             // 
             // txtMaPhieu
             // 
@@ -294,6 +294,7 @@ namespace BTL
             this.Column9});
             this.dataGridView1.Location = new System.Drawing.Point(11, 28);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(970, 244);
             this.dataGridView1.TabIndex = 15;
@@ -303,46 +304,63 @@ namespace BTL
             // 
             this.Column1.HeaderText = "Mã sách";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên sách";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Thể loại";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Tác giả";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Nhà xuất bản";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Số lượng nhập";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Đơn giá nhập";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Thành tiền (VNĐ)";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "";
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -517,12 +535,13 @@ namespace BTL
             this.txtSoluong.Size = new System.Drawing.Size(170, 22);
             this.txtSoluong.TabIndex = 5;
             this.txtSoluong.TextChanged += new System.EventHandler(this.txtSoluong_TextChanged);
+            this.txtSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoluong_KeyPress);
             // 
             // txtDongia
             // 
-            this.txtDongia.BackColor = System.Drawing.Color.White;
+            this.txtDongia.BackColor = System.Drawing.SystemColors.Control;
             this.txtDongia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDongia.ForeColor = System.Drawing.Color.Black;
+            this.txtDongia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDongia.Location = new System.Drawing.Point(129, 111);
             this.txtDongia.Name = "txtDongia";
             this.txtDongia.ReadOnly = true;
@@ -589,6 +608,12 @@ namespace BTL
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnLuuIn;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.TextBox txtTenSach;
+        private System.Windows.Forms.TextBox txtTenNCC;
+        private System.Windows.Forms.TextBox txtMaxSL;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -598,11 +623,5 @@ namespace BTL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
-        private System.Windows.Forms.TextBox txtTenSach;
-        private System.Windows.Forms.TextBox txtTenNCC;
-        private System.Windows.Forms.TextBox txtMaxSL;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnSua;
     }
 }

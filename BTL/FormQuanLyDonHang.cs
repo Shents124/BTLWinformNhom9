@@ -133,6 +133,9 @@ namespace BTL
             {
                 frmQLDH_Them.Tag = madondh;
                 frmQLDH_Them.ShowDialog();
+                ShowDanhSach();
+                GetDSDonDH();
+                btnThem.Enabled = false;
             }
             else
                 Application.OpenForms[frmQLDH_Them.Name].Focus();
