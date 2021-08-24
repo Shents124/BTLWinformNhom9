@@ -173,7 +173,6 @@ namespace BTL
             this.txtMaDonHang.Name = "txtMaDonHang";
             this.txtMaDonHang.Size = new System.Drawing.Size(182, 29);
             this.txtMaDonHang.TabIndex = 6;
-            this.txtMaDonHang.TextChanged += new System.EventHandler(this.txtMaDonHang_TextChanged);
             // 
             // txtMaPhieu
             // 
@@ -434,7 +433,6 @@ namespace BTL
             this.txtTenSach.ReadOnly = true;
             this.txtTenSach.Size = new System.Drawing.Size(275, 29);
             this.txtTenSach.TabIndex = 19;
-            this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
             // btnThem
             // 

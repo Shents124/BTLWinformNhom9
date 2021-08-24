@@ -1,13 +1,8 @@
 ﻿using BTL.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL
@@ -16,23 +11,15 @@ namespace BTL
     {
         #region Declaration
         QLBanSachContext obj = new QLBanSachContext();
-        List<Sach> li = new List<Sach>();
-        List<Loaisach> li1 = new List<Loaisach>();
-        List<Nhacc> li2 = new List<Nhacc>();
-        List<Dondh> li3 = new List<Dondh>();
         List<Ctdondh> li4 = new List<Ctdondh>();
 
         int[] mpn;
         List<Ctpnhap[]> p2 = new List<Ctpnhap[]>();
-        List<int[]> tongsldd = new List<int[]>();
         int[] masach;
         int[] slct;
         List<int> masachND = new List<int>();
 
-        AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
         AutoCompleteStringCollection collection1 = new AutoCompleteStringCollection();
-        int[] codelist; //chua tat ca ma don dat hang
-        string[] bookslist; //chua ten sach trong ctdondh
         int madondh;
         int index;
         string trangthai;
@@ -54,32 +41,6 @@ namespace BTL
                         orderby m.MaPn
                         select m.MaPn).LastOrDefault();
             txtMaPhieu.Text = maph + 1 + "";
-            //thong tin nha cung cap
-            var ncc = from n in obj.Nhaccs
-                      select n;
-            li2 = ncc.ToList();
-
-            //thong tin sach, loai sach
-            var sach = from s in obj.Saches
-                       select s;
-            li = sach.ToList();
-            var loai = from l in obj.Loaisaches
-                       select l;
-            li1 = loai.ToList();
-
-            //thong tin don dat hang
-            var dondh = from d in obj.Dondhs
-                        select d;
-            li3 = dondh.ToList();
-
-            //goi y ma don dat hang
-            var dh = (from d in obj.Dondhs
-                      where d.TrangThai == "Chưa nhập" || d.TrangThai == "Nhập thiếu"
-                      select d.MaDonDh);
-            codelist = dh.ToArray();
-            for (int i = 0; i < codelist.Length; i++)
-                collection1.Add(codelist[i].ToString());
-            this.txtMaDonHang.AutoCompleteCustomSource = collection1;
 
             //lay thong tin ctdondh
             var ct = from c in obj.Ctdondhs
@@ -301,30 +262,6 @@ namespace BTL
             }
         }
 
-
-
-        private void txtTenSach_TextChanged(object sender, EventArgs e)
-        {
-            //TextBox t = sender as TextBox;
-
-            //for (int i = 0; i < bookslist.Length; i++)
-            //    if (t.Text == bookslist[i])
-            //    {
-            //        foreach (Ctdondh c in li4)
-            //        {
-            //            Sach s = obj.Saches.SingleOrDefault(sa => sa.TenSach == bookslist[i]);
-            //            if (s != null && s.MaSach == c.MaSach)
-            //            {
-            //                Loaisach ls = obj.Loaisaches.SingleOrDefault(l => l.MaLoai == s.MaLoai);
-            //                txtTheloai.Text = ls.TenLoai;
-            //                txtTacgia.Text = s.TacGia;
-            //                txtMaxSL.Text = Convert.ToString(c.SlDat);
-            //                txtDongia.Text = (s.DonGiaNhap).ToString("N1");
-            //            }
-            //        }
-            //    }
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int d = 0;
@@ -377,43 +314,6 @@ namespace BTL
 
             //dong form sau khi them
             this.Close();
-        }
-
-        private void txtMaDonHang_TextChanged(object sender, EventArgs e)
-        {
-            //int x = -1;
-            //string name = "";
-            //bool k = false;
-            //TextBox t = sender as TextBox;
-            //for (int i = 0; i < codelist.Length; i++)
-            //    if (t.Text == codelist[i].ToString())
-            //    {
-            //        foreach (Dondh d in li3)
-            //            if (d.MaDonDh == codelist[i])
-            //            {
-            //                x = (int)d.MaNhaCc;
-            //            }
-            //        k = true;
-            //    }
-            //foreach (Nhacc n in li2)
-            //    if (n.MaNhaCc == x)
-            //        name = n.TenNhaCc;
-            //txtTenNCC.Text = name;
-
-            //if (k)
-            //{
-            //    txtMaDonHang.ReadOnly = true;
-
-            //    //goi y ten sach co trong ctdondh
-            //    var ts = from s in obj.Ctdondhs
-            //             where s.MaSach == s.MaSachNavigation.MaSach && s.MaDonDh == int.Parse(txtMaDonHang.Text)
-            //             select s.MaSachNavigation.TenSach;
-            //    bookslist = ts.ToArray();
-            //    collection.AddRange(bookslist);
-            //    this.txtTenSach.AutoCompleteCustomSource = collection;
-
-            //    panel2.Show();
-            //}
         }
 
         private void txtSoluong_TextChanged(object sender, EventArgs e)
