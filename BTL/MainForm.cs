@@ -214,7 +214,9 @@ namespace BTL
 
             childForm.BringToFront();
             childForm.Show();
-            if (sender != null)
+            if (sender == "qldnh") //label thay đổi khi quản lí đơn nhập hàng refresh
+                lblTitle.Text = "Quản lý đơn nhập hàng";
+            else if (sender != null)
                 lblTitle.Text = (sender as Button).Text;
         }
         #endregion
@@ -241,6 +243,11 @@ namespace BTL
             //    //else
             //    //    Application.Exit();
             //}
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormQuanLyDonHang(), "qldnh"); //refresh FromQuanLyDonNhapHang mỗi khi thay đổi
         }
     }
 }

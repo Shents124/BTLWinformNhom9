@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -172,6 +173,7 @@ namespace BTL
         private void FormQuanLyDonHang_Activated(object sender, EventArgs e)
         {
             ShowDanhSach();
+            GetDSDonDH();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
