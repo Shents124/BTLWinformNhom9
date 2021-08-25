@@ -29,10 +29,10 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gboxDSDonDatHang = new System.Windows.Forms.GroupBox();
             this.dgvDSDonDH = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,10 @@ namespace BTL
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clbxTrangThai = new System.Windows.Forms.CheckedListBox();
+            this.cbxDaHuy = new System.Windows.Forms.CheckBox();
+            this.cbxChuaNhapDu = new System.Windows.Forms.CheckBox();
+            this.cbxNhapDu = new System.Windows.Forms.CheckBox();
+            this.cbxChuaNhap = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
@@ -86,14 +89,14 @@ namespace BTL
             // 
             // dgvDSDonDH
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSDonDH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSDonDH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSDonDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSDonDH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -101,20 +104,20 @@ namespace BTL
             this.Column3,
             this.Column8});
             this.dgvDSDonDH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDSDonDH.Location = new System.Drawing.Point(3, 25);
+            this.dgvDSDonDH.Location = new System.Drawing.Point(3, 30);
             this.dgvDSDonDH.Name = "dgvDSDonDH";
             this.dgvDSDonDH.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSDonDH.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSDonDH.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDSDonDH.RowHeadersWidth = 51;
             this.dgvDSDonDH.RowTemplate.Height = 29;
-            this.dgvDSDonDH.Size = new System.Drawing.Size(1042, 278);
+            this.dgvDSDonDH.Size = new System.Drawing.Size(1042, 273);
             this.dgvDSDonDH.TabIndex = 0;
             this.dgvDSDonDH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDonDH_CellClick);
             // 
@@ -140,7 +143,7 @@ namespace BTL
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 450;
+            this.Column3.Width = 550;
             // 
             // Column8
             // 
@@ -164,14 +167,14 @@ namespace BTL
             // 
             // dgvThongTinSach
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThongTinSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThongTinSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvThongTinSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongTinSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -180,20 +183,20 @@ namespace BTL
             this.Column9,
             this.Column7});
             this.dgvThongTinSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvThongTinSach.Location = new System.Drawing.Point(3, 25);
+            this.dgvThongTinSach.Location = new System.Drawing.Point(3, 30);
             this.dgvThongTinSach.Name = "dgvThongTinSach";
             this.dgvThongTinSach.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThongTinSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThongTinSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvThongTinSach.RowHeadersWidth = 51;
             this.dgvThongTinSach.RowTemplate.Height = 29;
-            this.dgvThongTinSach.Size = new System.Drawing.Size(1042, 297);
+            this.dgvThongTinSach.Size = new System.Drawing.Size(1042, 292);
             this.dgvThongTinSach.TabIndex = 0;
             // 
             // Column4
@@ -242,7 +245,7 @@ namespace BTL
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 21);
+            this.label1.Size = new System.Drawing.Size(86, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Từ ngày:";
             // 
@@ -252,7 +255,7 @@ namespace BTL
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(6, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.Size = new System.Drawing.Size(99, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Đến ngày:";
             // 
@@ -261,7 +264,7 @@ namespace BTL
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(18, 88);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(182, 29);
+            this.dtpFrom.Size = new System.Drawing.Size(182, 34);
             this.dtpFrom.TabIndex = 4;
             // 
             // dtpTo
@@ -269,7 +272,7 @@ namespace BTL
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(18, 170);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(182, 29);
+            this.dtpTo.Size = new System.Drawing.Size(182, 34);
             this.dtpTo.TabIndex = 5;
             // 
             // btnLoc
@@ -359,32 +362,62 @@ namespace BTL
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.clbxTrangThai);
+            this.groupBox3.Controls.Add(this.cbxDaHuy);
+            this.groupBox3.Controls.Add(this.cbxChuaNhapDu);
+            this.groupBox3.Controls.Add(this.cbxNhapDu);
+            this.groupBox3.Controls.Add(this.cbxChuaNhap);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(3, 300);
+            this.groupBox3.Location = new System.Drawing.Point(3, 305);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(206, 175);
+            this.groupBox3.Size = new System.Drawing.Size(206, 170);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Theo trạng thái";
             // 
-            // clbxTrangThai
+            // cbxDaHuy
             // 
-            this.clbxTrangThai.BackColor = System.Drawing.Color.White;
-            this.clbxTrangThai.CheckOnClick = true;
-            this.clbxTrangThai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clbxTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.clbxTrangThai.FormattingEnabled = true;
-            this.clbxTrangThai.Items.AddRange(new object[] {
-            "Chưa nhập",
-            "Nhập đủ",
-            "Chưa nhập đủ",
-            "Đã hủy"});
-            this.clbxTrangThai.Location = new System.Drawing.Point(3, 25);
-            this.clbxTrangThai.Name = "clbxTrangThai";
-            this.clbxTrangThai.Size = new System.Drawing.Size(200, 147);
-            this.clbxTrangThai.TabIndex = 0;
+            this.cbxDaHuy.AutoSize = true;
+            this.cbxDaHuy.Location = new System.Drawing.Point(11, 132);
+            this.cbxDaHuy.Name = "cbxDaHuy";
+            this.cbxDaHuy.Size = new System.Drawing.Size(95, 32);
+            this.cbxDaHuy.TabIndex = 4;
+            this.cbxDaHuy.Text = "Đã hủy";
+            this.cbxDaHuy.UseVisualStyleBackColor = true;
+            this.cbxDaHuy.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // cbxChuaNhapDu
+            // 
+            this.cbxChuaNhapDu.AutoSize = true;
+            this.cbxChuaNhapDu.Location = new System.Drawing.Point(11, 99);
+            this.cbxChuaNhapDu.Name = "cbxChuaNhapDu";
+            this.cbxChuaNhapDu.Size = new System.Drawing.Size(156, 32);
+            this.cbxChuaNhapDu.TabIndex = 3;
+            this.cbxChuaNhapDu.Text = "Chưa nhập đủ";
+            this.cbxChuaNhapDu.UseVisualStyleBackColor = true;
+            this.cbxChuaNhapDu.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // cbxNhapDu
+            // 
+            this.cbxNhapDu.AutoSize = true;
+            this.cbxNhapDu.Location = new System.Drawing.Point(11, 66);
+            this.cbxNhapDu.Name = "cbxNhapDu";
+            this.cbxNhapDu.Size = new System.Drawing.Size(110, 32);
+            this.cbxNhapDu.TabIndex = 2;
+            this.cbxNhapDu.Text = "Nhập đủ";
+            this.cbxNhapDu.UseVisualStyleBackColor = true;
+            this.cbxNhapDu.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // cbxChuaNhap
+            // 
+            this.cbxChuaNhap.AutoSize = true;
+            this.cbxChuaNhap.Location = new System.Drawing.Point(11, 33);
+            this.cbxChuaNhap.Name = "cbxChuaNhap";
+            this.cbxChuaNhap.Size = new System.Drawing.Size(128, 32);
+            this.cbxChuaNhap.TabIndex = 1;
+            this.cbxChuaNhap.Text = "Chưa nhập";
+            this.cbxChuaNhap.UseVisualStyleBackColor = true;
+            this.cbxChuaNhap.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // groupBox2
             // 
@@ -396,7 +429,7 @@ namespace BTL
             this.groupBox2.Controls.Add(this.dtpTo);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(3, 25);
+            this.groupBox2.Location = new System.Drawing.Point(3, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(206, 275);
             this.groupBox2.TabIndex = 0;
@@ -410,7 +443,7 @@ namespace BTL
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(945, 644);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
+            this.label3.Size = new System.Drawing.Size(99, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tổng tiền:";
             // 
@@ -421,13 +454,13 @@ namespace BTL
             this.lblTongTien.ForeColor = System.Drawing.Color.Black;
             this.lblTongTien.Location = new System.Drawing.Point(1067, 644);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(19, 21);
+            this.lblTongTien.Size = new System.Drawing.Size(23, 28);
             this.lblTongTien.TabIndex = 3;
             this.lblTongTien.Text = "0";
             // 
             // QLDonDatHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
@@ -449,6 +482,7 @@ namespace BTL
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -475,17 +509,20 @@ namespace BTL
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox clbxTrangThai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.CheckBox cbxDaHuy;
+        private System.Windows.Forms.CheckBox cbxChuaNhapDu;
+        private System.Windows.Forms.CheckBox cbxNhapDu;
+        private System.Windows.Forms.CheckBox cbxChuaNhap;
     }
 }

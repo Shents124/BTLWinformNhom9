@@ -45,6 +45,7 @@ namespace BTL.Son
                 row.Cells[2].Value = (item.LoaiTk == true) ? "Admin" : "User";
                 dgvTaiKhoan.Rows.Add(row);
             }
+            dgvTaiKhoan.RowHeadersVisible = false;
         }
 
         private bool isValid()

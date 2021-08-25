@@ -7,12 +7,12 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-
-
 namespace BTL
 {
     public partial class QLDonDatHang : Form
     {
+        private readonly string[] trangThai = new string[4] { "Chưa nhập", "Nhập đủ", "Chưa nhập đủ", "Đã hủy" };
+
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
         List<Dondh> dsDondh = new List<Dondh>();
         List<Ctdondh> ctdondhs = new List<Ctdondh>();
@@ -22,11 +22,13 @@ namespace BTL
         private string diaChiNCC;
         private string soDT;
         private string ngayLap;
-
         private decimal tongTien = 0;
+
         private int index;
+
         private bool isSearchWithDate = false;
-        private List<string> trangThai = new List<string>();
+
+        private string[] trangThaiLoc = new string[4];
 
         public QLDonDatHang()
         {
@@ -60,6 +62,7 @@ namespace BTL
                 row.Cells[3].Value = item.TrangThai;
                 dgvDSDonDH.Rows.Add(row);
             }
+            dgvDSDonDH.RowHeadersVisible = false;
         }
 
         private List<Ctdondh> GetChiTietDonHang(int maDonDh)
@@ -84,7 +87,7 @@ namespace BTL
                 row.Cells[0].Value = item.MaSach;
                 row.Cells[1].Value = item.MaSachNavigation.TenSach;
                 row.Cells[2].Value = item.SlDat;
-                row.Cells[3].Value = item.MaSachNavigation.DonGiaNhap;
+                row.Cells[3].Value = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", item.MaSachNavigation.DonGiaNhap);
                 row.Cells[4].Value = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", item.ThanhTien);
                 tongTien += item.ThanhTien;
 
@@ -92,32 +95,93 @@ namespace BTL
             }
 
             lblTongTien.Text = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", tongTien);
+
+            dgvThongTinSach.RowHeadersVisible = false;
         }
 
+        #region Lọc đơn đặt hàng
         private List<Dondh> LocDonDatHang()
         {
             DateTime dayFrom = dtpFrom.Value;
             DateTime dayTo = dtpTo.Value;
+
             if (isSearchWithDate == true)
             {
-                var ddh = qLBanSachContext.Dondhs
-                .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo &&
-                (s.TrangThai == trangThai[0] || s.TrangThai == trangThai[1] || s.TrangThai == trangThai[2] || s.TrangThai == trangThai[3]))
-                .ToList();
-                return ddh;
+                if (IsSearchWithStatus() == true)
+                {
+                    SetListTrangThaiLoc();
+
+                    var ddh = qLBanSachContext.Dondhs
+                        .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo &&
+                        (s.TrangThai == trangThaiLoc[0] || s.TrangThai == trangThaiLoc[1] || s.TrangThai == trangThaiLoc[2] || s.TrangThai == trangThaiLoc[3]))
+                        .ToList();
+                    return ddh;
+                }
+                else
+                {
+                    var ddh = qLBanSachContext.Dondhs
+                        .Where(s => s.NgayDh >= dayFrom && s.NgayDh <= dayTo)
+                        .ToList();
+                    return ddh;
+                }
+
             }
-            return null;
+            else
+            {
+                if (IsSearchWithStatus() == true)
+                {
+                    SetListTrangThaiLoc();
+
+                    var ddh = qLBanSachContext.Dondhs
+                       .Where(s => s.TrangThai == trangThaiLoc[0] || s.TrangThai == trangThaiLoc[1] || s.TrangThai == trangThaiLoc[2] || s.TrangThai == trangThaiLoc[3])
+                       .ToList();
+                    return ddh;
+                }
+                else
+                    return GetDonDatHang();               
+            }
         }
 
-        private void SetListTrangThai()
+        private void SetListTrangThaiLoc()
         {
-            trangThai.Add("Chưa nhập");
-            trangThai.Add("Nhập đủ");
-            trangThai.Add("Chưa nhập đủ");
-            trangThai.Add("Đã hủy");
-
+            trangThaiLoc[0] = cbxChuaNhap.Checked == true ? trangThai[0] : "";
+            trangThaiLoc[1] = cbxNhapDu.Checked == true ? trangThai[1] : "";
+            trangThaiLoc[2] = cbxChuaNhapDu.Checked == true ? trangThai[2] : "";
+            trangThaiLoc[3] = cbxDaHuy.Checked == true ? trangThai[3] : "";
         }
 
+        private bool IsSearchWithStatus()
+        {
+            if (cbxChuaNhap.Checked == true)
+                return true;
+            if (cbxNhapDu.Checked == true)
+                return true;
+            if (cbxChuaNhapDu.Checked == true)
+                return true;
+            if (cbxDaHuy.Checked == true)
+                return true;
+
+            return false;
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            isSearchWithDate = true;
+            LoadDonDatHang(LocDonDatHang());
+        }
+
+        private void btnHuyLoc_Click(object sender, EventArgs e)
+        {
+            isSearchWithDate = false;
+            LoadDonDatHang(GetDonDatHang());
+        }
+
+        private void CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDonDatHang(LocDonDatHang());
+        }
+
+        #endregion
         private void ThemDonDatHang()
         {
             ThemDonDatHang themDonDatHang = new ThemDonDatHang(this);
@@ -144,20 +208,16 @@ namespace BTL
             dgvThongTinSach.Rows.Clear();
         }
 
-        private void InDonDatHang()
-        {
-
-        }
-
         private void dgvDSDonDH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
             try
             {
-                if (index < 0 || index > dgvDSDonDH.RowCount - 1)
+                if (index < 0 || index > dgvDSDonDH.RowCount - 2)
                     throw new Exception("Dòng bạn chọn không tồn tại");
                 maDonDh = int.Parse(dgvDSDonDH.Rows[index].Cells[0].Value.ToString());
                 HienThiChiTietDDH(maDonDh);
+
             }
             catch (Exception ex)
             {
@@ -168,16 +228,6 @@ namespace BTL
         private void button1_Click(object sender, EventArgs e)
         {
             ThemDonDatHang();
-        }
-
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            LoadDonDatHang(LocDonDatHang());
-        }
-
-        private void btnHuyLoc_Click(object sender, EventArgs e)
-        {
-            LoadDonDatHang(GetDonDatHang());
         }
 
         private void button2_Click(object sender, EventArgs e)
