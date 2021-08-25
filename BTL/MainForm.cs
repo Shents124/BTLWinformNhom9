@@ -13,7 +13,7 @@ namespace BTL
         private string matKhau;
         private string hoTen;
         private bool isAdmin;
-
+        public static string ten;
         public MainForm()
         {
             InitializeComponent();
@@ -24,21 +24,20 @@ namespace BTL
         {
             InitializeComponent();
             this.Icon = Properties.Resources.logo;
-            lblTitle.Image = Properties.Resources.labelBG;
             this.maTK = maTK;
             this.tenDN = tenDN;
             this.matKhau = matKhau;
             this.hoTen = hoTen;
+            ten = hoTen;
             isAdmin = admin;
             CustomizeDesign();
 
-            OpenChildForm(new frmLapHoaDon(maTK), null);
-            lblTitle.Text = "Lập hóa đơn";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormTrangChu(), null);
+            lblTitle.Text = "Trang chủ";
         }
 
         #region Ẩn hiện thị subpanel
@@ -218,7 +217,9 @@ namespace BTL
 
             childForm.BringToFront();
             childForm.Show();
-            if (sender != null)
+            if (sender == "trangchu")
+                lblTitle.Text = "Trang chủ";
+            else if (sender != null)
                 lblTitle.Text = (sender as Button).Text;
         }
         #endregion
@@ -245,6 +246,11 @@ namespace BTL
             //    //else
             //    //    Application.Exit();
             //}
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTrangChu(), "trangchu");
         }
     }
 }
