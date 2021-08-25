@@ -1,13 +1,8 @@
 ﻿using BTL.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL
@@ -18,6 +13,7 @@ namespace BTL
         int index;
         int mapn;
         int madondh;
+        public static bool isAdmin;
         public FormQuanLyDonHang()
         {
             InitializeComponent();
@@ -121,9 +117,11 @@ namespace BTL
 
         private void FormQuanLyDonHang_Load(object sender, EventArgs e)
         {
+            isAdmin = (bool)this.Tag;
             ShowDanhSach();
             GetDSDonDH();
             btnThem.Enabled = false;
+            if (!isAdmin) btnXoa.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

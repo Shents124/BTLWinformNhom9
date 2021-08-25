@@ -23,7 +23,8 @@ namespace BTL
         public MainForm(int maTK, string tenDN, string matKhau, string hoTen, bool admin)
         {
             InitializeComponent();
-
+            this.Icon = Properties.Resources.logo;
+            lblTitle.Image = Properties.Resources.labelBG;
             this.maTK = maTK;
             this.tenDN = tenDN;
             this.matKhau = matKhau;
@@ -57,9 +58,10 @@ namespace BTL
                 panelDHNhapXuat.Visible = false;
                 panelSach.Visible = false;
                 panelQLHoaDon.Visible = false;
-
                 btnBaoTriTK.Visible = false;
-                btnDHNhapXuat.Visible = false;
+                btnDHNhapXuat.Visible = true;
+                btnQLDonDatHang.Visible = false;
+                btnQLNhaCungCap.Visible = false;
                 btnSach.Visible = false;
             }
         }
@@ -144,7 +146,9 @@ namespace BTL
         private void btnQLDonNhapHang_Click(object sender, EventArgs e)
         {
             // Hiển thị form quản lý đơn nhập hàng
-            OpenChildForm(new FormQuanLyDonHang(), sender);
+            FormQuanLyDonHang frmQLDNH = new FormQuanLyDonHang();
+            frmQLDNH.Tag = isAdmin;
+            OpenChildForm(frmQLDNH, sender);
             HideSubMenu();
         }
 

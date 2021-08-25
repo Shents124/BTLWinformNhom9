@@ -58,7 +58,6 @@ namespace BTL
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSua = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtMaxSL = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -238,6 +237,7 @@ namespace BTL
             this.btnLuuIn.TabIndex = 20;
             this.btnLuuIn.Text = "Lưu và in";
             this.btnLuuIn.UseVisualStyleBackColor = true;
+            this.btnLuuIn.Click += new System.EventHandler(this.btnLuuIn_Click);
             // 
             // btnLuu
             // 
@@ -363,7 +363,6 @@ namespace BTL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtMaxSL);
             this.groupBox2.Controls.Add(this.label15);
@@ -386,17 +385,6 @@ namespace BTL
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
-            // 
-            // btnSua
-            // 
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(781, 47);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(66, 72);
-            this.btnSua.TabIndex = 23;
-            this.btnSua.Text = "Thêm";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label10
             // 
@@ -437,9 +425,9 @@ namespace BTL
             // btnThem
             // 
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(878, 47);
+            this.btnThem.Location = new System.Drawing.Point(776, 47);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(66, 72);
+            this.btnThem.Size = new System.Drawing.Size(153, 72);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Sửa";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -611,7 +599,6 @@ namespace BTL
         private System.Windows.Forms.TextBox txtMaxSL;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

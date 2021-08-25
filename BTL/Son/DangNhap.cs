@@ -21,6 +21,7 @@ namespace BTL
         public DangNhap()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.logo;
             txtMatKhau.PasswordChar = '*';
         }
 
