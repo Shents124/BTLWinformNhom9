@@ -163,10 +163,14 @@ namespace BTL
                         {
                             h.MaHd,
                             h.NgayLap,
-                            h.MaKh,
-                            h.MaTk,
+                            h.MaKhNavigation.TenKh,
+                            h.MaTkNavigation.HoTen
                         };
             dvgDanhSachHoaDon.DataSource = query.ToList();
+            dvgDanhSachHoaDon.Columns[0].HeaderText = "Mã hóa đơn";
+            dvgDanhSachHoaDon.Columns[1].HeaderText = "Ngày lập";
+            dvgDanhSachHoaDon.Columns[2].HeaderText = "Tên khách hàng";
+            dvgDanhSachHoaDon.Columns[3].HeaderText = "Tên người lập";
         }
 
         private void btnboloc_Click_1(object sender, EventArgs e)

@@ -54,15 +54,12 @@ namespace BTL
             this.txtMahdtim = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnboloc = new System.Windows.Forms.Button();
-            this.btnSuahoadon = new System.Windows.Forms.Button();
-            this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.dtNgayketthuc = new System.Windows.Forms.DateTimePicker();
             this.dtNgaybatdau = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnXem = new System.Windows.Forms.Button();
-            this.btninhoadon = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.grDanhSachHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhSachHoaDon)).BeginInit();
@@ -320,26 +317,6 @@ namespace BTL
             this.btnboloc.UseVisualStyleBackColor = true;
             this.btnboloc.Click += new System.EventHandler(this.btnboloc_Click_1);
             // 
-            // btnSuahoadon
-            // 
-            this.btnSuahoadon.Location = new System.Drawing.Point(526, 540);
-            this.btnSuahoadon.Name = "btnSuahoadon";
-            this.btnSuahoadon.Size = new System.Drawing.Size(130, 39);
-            this.btnSuahoadon.TabIndex = 43;
-            this.btnSuahoadon.Text = "Sửa Hóa Đơn";
-            this.btnSuahoadon.UseVisualStyleBackColor = true;
-            this.btnSuahoadon.Click += new System.EventHandler(this.btnSuahoadon_Click_1);
-            // 
-            // btnLapHoaDon
-            // 
-            this.btnLapHoaDon.Location = new System.Drawing.Point(682, 538);
-            this.btnLapHoaDon.Name = "btnLapHoaDon";
-            this.btnLapHoaDon.Size = new System.Drawing.Size(112, 39);
-            this.btnLapHoaDon.TabIndex = 42;
-            this.btnLapHoaDon.Text = "Lập Hóa Đơn";
-            this.btnLapHoaDon.UseVisualStyleBackColor = true;
-            this.btnLapHoaDon.Click += new System.EventHandler(this.btnLapHoaDon_Click_1);
-            // 
             // btnLoc
             // 
             this.btnLoc.Location = new System.Drawing.Point(402, 495);
@@ -394,16 +371,6 @@ namespace BTL
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // btninhoadon
-            // 
-            this.btninhoadon.Location = new System.Drawing.Point(402, 540);
-            this.btninhoadon.Name = "btninhoadon";
-            this.btninhoadon.Size = new System.Drawing.Size(106, 39);
-            this.btninhoadon.TabIndex = 48;
-            this.btninhoadon.Text = "In Hóa Đơn";
-            this.btninhoadon.UseVisualStyleBackColor = true;
-            this.btninhoadon.Click += new System.EventHandler(this.btninhoadon_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -421,7 +388,6 @@ namespace BTL
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1304, 641);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btninhoadon);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtMahdtim);
@@ -430,9 +396,7 @@ namespace BTL
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.btnboloc);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.btnSuahoadon);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btnLapHoaDon);
             this.Controls.Add(this.dtNgaybatdau);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.dtNgayketthuc);
@@ -476,15 +440,12 @@ namespace BTL
         private System.Windows.Forms.TextBox txtMahdtim;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnboloc;
-        private System.Windows.Forms.Button btnSuahoadon;
-        private System.Windows.Forms.Button btnLapHoaDon;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.DateTimePicker dtNgayketthuc;
         private System.Windows.Forms.DateTimePicker dtNgaybatdau;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnXem;
-        private System.Windows.Forms.Button btninhoadon;
         private System.Windows.Forms.Label label1;
     }
 }
