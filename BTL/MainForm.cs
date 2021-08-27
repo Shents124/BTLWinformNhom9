@@ -1,5 +1,6 @@
 ﻿using System;
 using BTL.Son;
+using BTL.Lam;
 using System.Windows.Forms;
 
 namespace BTL
@@ -194,7 +195,7 @@ namespace BTL
         {
             // Hiển thị form thống kê báo cáo
             HideSubMenu();
-           // OpenChildForm(new BieuMauThongKe(), sender);
+            OpenChildForm(new ThongKeQuy(), sender);
 
         }
         #endregion
