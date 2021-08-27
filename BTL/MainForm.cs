@@ -194,7 +194,8 @@ namespace BTL
         {
             // Hiển thị form thống kê báo cáo
             HideSubMenu();
-            OpenChildForm(new ThongKeBaoCao(), sender);
+           // OpenChildForm(new BieuMauThongKe(), sender);
+
         }
         #endregion
 
