@@ -31,9 +31,7 @@ namespace BTL.Lam
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BieuMauThongKe));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,10 +40,6 @@ namespace BTL.Lam
             this.lblQuy = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbngaytk2 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -72,9 +66,13 @@ namespace BTL.Lam
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panelPrint = new System.Windows.Forms.Panel();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -82,13 +80,9 @@ namespace BTL.Lam
             ((System.ComponentModel.ISupportInitialize)(this.dataThongKe)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelPrint.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // pictureBox1
             // 
@@ -99,15 +93,6 @@ namespace BTL.Lam
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chú thích:";
             // 
             // label2
             // 
@@ -181,50 +166,10 @@ namespace BTL.Lam
             // 
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(26, 12);
+            this.panel1.Location = new System.Drawing.Point(13, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 158);
             this.panel1.TabIndex = 12;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 68);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(231, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "(1) Tên viết tắt của cơ sở báo cáo;";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 103);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(836, 20);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "(2) Mẫu này áp dụng đối với cơ sở phát hành có trụ sở chính và chi nhánh tại cùng" +
-    " một tỉnh, thành phố trực thuộc Trung ương.";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(3, 134);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(986, 153);
-            this.panel2.TabIndex = 15;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(873, 20);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "---------------------------------------------------------------------------------" +
-    "---------------------------------------------------------------";
             // 
             // panel3
             // 
@@ -279,7 +224,7 @@ namespace BTL.Lam
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(681, 27);
+            this.panel4.Location = new System.Drawing.Point(692, 10);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 130);
             this.panel4.TabIndex = 17;
@@ -299,7 +244,7 @@ namespace BTL.Lam
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.lblQuy);
-            this.panel5.Location = new System.Drawing.Point(254, 176);
+            this.panel5.Location = new System.Drawing.Point(286, 157);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(486, 91);
             this.panel5.TabIndex = 18;
@@ -307,7 +252,7 @@ namespace BTL.Lam
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataThongKe);
-            this.groupBox1.Location = new System.Drawing.Point(26, 288);
+            this.groupBox1.Location = new System.Drawing.Point(28, 277);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(975, 344);
             this.groupBox1.TabIndex = 19;
@@ -323,11 +268,13 @@ namespace BTL.Lam
             this.dataGridViewTextBoxColumn4,
             this.quytrc,
             this.quynamtrc});
-            this.dataThongKe.Location = new System.Drawing.Point(44, 26);
+            this.dataThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataThongKe.Location = new System.Drawing.Point(3, 23);
             this.dataThongKe.Name = "dataThongKe";
             this.dataThongKe.RowHeadersWidth = 51;
             this.dataThongKe.RowTemplate.Height = 29;
-            this.dataThongKe.Size = new System.Drawing.Size(873, 284);
+            this.dataThongKe.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataThongKe.Size = new System.Drawing.Size(969, 284);
             this.dataThongKe.TabIndex = 0;
             this.dataThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -361,14 +308,14 @@ namespace BTL.Lam
             // 
             // quytrc
             // 
-            this.quytrc.HeaderText = "% so với quý trước năm ....";
+            this.quytrc.HeaderText = "% so với quý trước ";
             this.quytrc.MinimumWidth = 6;
             this.quytrc.Name = "quytrc";
             this.quytrc.Width = 125;
             // 
             // quynamtrc
             // 
-            this.quynamtrc.HeaderText = "% so với cùng kỳ năm trước .......";
+            this.quynamtrc.HeaderText = "% so với cùng kỳ năm trước";
             this.quynamtrc.MinimumWidth = 6;
             this.quynamtrc.Name = "quynamtrc";
             this.quynamtrc.Width = 125;
@@ -449,30 +396,62 @@ namespace BTL.Lam
             // 
             this.panel7.Controls.Add(this.panel3);
             this.panel7.Controls.Add(this.panel6);
-            this.panel7.Controls.Add(this.panel2);
-            this.panel7.Location = new System.Drawing.Point(12, 724);
+            this.panel7.Location = new System.Drawing.Point(28, 643);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(996, 319);
+            this.panel7.Size = new System.Drawing.Size(996, 147);
             this.panel7.TabIndex = 20;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1250, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(74, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseHover += new System.EventHandler(this.Print);
+            // 
+            // panelPrint
+            // 
+            this.panelPrint.Controls.Add(this.panel1);
+            this.panelPrint.Controls.Add(this.panel4);
+            this.panelPrint.Controls.Add(this.panel7);
+            this.panelPrint.Controls.Add(this.panel5);
+            this.panelPrint.Controls.Add(this.groupBox1);
+            this.panelPrint.Location = new System.Drawing.Point(26, 12);
+            this.panelPrint.Name = "panelPrint";
+            this.panelPrint.Size = new System.Drawing.Size(1047, 852);
+            this.panelPrint.TabIndex = 22;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // BieuMauThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 1055);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1351, 1055);
+            this.Controls.Add(this.panelPrint);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "BieuMauThongKe";
             this.Text = "BieuMauThongKe";
             this.Load += new System.EventHandler(this.BieuMauThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -484,15 +463,14 @@ namespace BTL.Lam
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelPrint.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -501,10 +479,6 @@ namespace BTL.Lam
         private System.Windows.Forms.Label lblQuy;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
@@ -531,5 +505,10 @@ namespace BTL.Lam
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn quytrc;
         private System.Windows.Forms.DataGridViewTextBoxColumn quynamtrc;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panelPrint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
