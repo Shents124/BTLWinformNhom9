@@ -1,7 +1,7 @@
 ﻿
 namespace BTL
 {
-    partial class FormInHoaDon
+    partial class FormLapHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,6 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,8 +40,6 @@ namespace BTL
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHuyGd = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.txtTienThua = new System.Windows.Forms.TextBox();
@@ -60,8 +55,8 @@ namespace BTL
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -70,49 +65,14 @@ namespace BTL
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNguoiBan = new System.Windows.Forms.TextBox();
-            this.panel3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSanPham)).BeginInit();
-            this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.groupBox5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 714);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1250, 0);
-            this.panel3.TabIndex = 4;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(1250, 0);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(448, 34);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(286, 47);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
             // 
             // btnThem
             // 
@@ -217,32 +177,9 @@ namespace BTL
             this.label6.TabIndex = 8;
             this.label6.Text = "Địa chỉ:";
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.groupBox4);
-            this.groupBox6.Location = new System.Drawing.Point(0, 660);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(581, 54);
-            this.groupBox6.TabIndex = 13;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnHuyGd);
-            this.groupBox2.Controls.Add(this.btnThanhToan);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 637);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1250, 77);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            // 
             // btnHuyGd
             // 
-            this.btnHuyGd.Location = new System.Drawing.Point(358, 10);
+            this.btnHuyGd.Location = new System.Drawing.Point(511, 5);
             this.btnHuyGd.Name = "btnHuyGd";
             this.btnHuyGd.Size = new System.Drawing.Size(158, 55);
             this.btnHuyGd.TabIndex = 15;
@@ -252,7 +189,7 @@ namespace BTL
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(659, 10);
+            this.btnThanhToan.Location = new System.Drawing.Point(728, 8);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(159, 55);
             this.btnThanhToan.TabIndex = 14;
@@ -264,9 +201,10 @@ namespace BTL
             // 
             this.txtTienThua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTienThua.Location = new System.Drawing.Point(1073, 84);
+            this.txtTienThua.Location = new System.Drawing.Point(1127, 105);
             this.txtTienThua.Margin = new System.Windows.Forms.Padding(4);
             this.txtTienThua.Name = "txtTienThua";
+            this.txtTienThua.ReadOnly = true;
             this.txtTienThua.Size = new System.Drawing.Size(145, 34);
             this.txtTienThua.TabIndex = 11;
             this.txtTienThua.Text = "0";
@@ -275,7 +213,7 @@ namespace BTL
             // 
             this.txtTienKhachDua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTienKhachDua.Location = new System.Drawing.Point(1073, 46);
+            this.txtTienKhachDua.Location = new System.Drawing.Point(1127, 63);
             this.txtTienKhachDua.Margin = new System.Windows.Forms.Padding(4);
             this.txtTienKhachDua.Name = "txtTienKhachDua";
             this.txtTienKhachDua.Size = new System.Drawing.Size(145, 34);
@@ -287,7 +225,7 @@ namespace BTL
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(884, 49);
+            this.label9.Location = new System.Drawing.Point(938, 66);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 28);
@@ -299,7 +237,7 @@ namespace BTL
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(934, 84);
+            this.label10.Location = new System.Drawing.Point(988, 105);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 28);
@@ -323,7 +261,7 @@ namespace BTL
             this.dvgSanPham.Name = "dvgSanPham";
             this.dvgSanPham.RowHeadersWidth = 51;
             this.dvgSanPham.RowTemplate.Height = 29;
-            this.dvgSanPham.Size = new System.Drawing.Size(1244, 201);
+            this.dvgSanPham.Size = new System.Drawing.Size(1298, 318);
             this.dvgSanPham.TabIndex = 1;
             this.dvgSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSanPham_CellClick);
             // 
@@ -383,7 +321,7 @@ namespace BTL
             // 
             this.txtTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTongTien.Location = new System.Drawing.Point(1073, 4);
+            this.txtTongTien.Location = new System.Drawing.Point(1127, 15);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
@@ -396,37 +334,39 @@ namespace BTL
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(932, 4);
+            this.label8.Location = new System.Drawing.Point(986, 15);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 28);
             this.label8.TabIndex = 6;
             this.label8.Text = "Tổng tiền:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox6);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1250, 714);
-            this.panel1.TabIndex = 3;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Controls.Add(this.panel6);
             this.groupBox3.Controls.Add(this.panel5);
             this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 196);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 189);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1250, 437);
+            this.groupBox3.Size = new System.Drawing.Size(1304, 492);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtTienThua);
+            this.panel1.Controls.Add(this.txtTongTien);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtTienKhachDua);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 278);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1298, 148);
+            this.panel1.TabIndex = 18;
             // 
             // panel6
             // 
@@ -434,21 +374,17 @@ namespace BTL
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 108);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1244, 201);
+            this.panel6.Size = new System.Drawing.Size(1298, 318);
             this.panel6.TabIndex = 17;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.txtTongTien);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.txtTienKhachDua);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.txtTienThua);
+            this.panel5.Controls.Add(this.btnThanhToan);
+            this.panel5.Controls.Add(this.btnHuyGd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(3, 309);
+            this.panel5.Location = new System.Drawing.Point(3, 426);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1244, 125);
+            this.panel5.Size = new System.Drawing.Size(1298, 63);
             this.panel5.TabIndex = 16;
             // 
             // panel4
@@ -461,7 +397,7 @@ namespace BTL
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 30);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1244, 78);
+            this.panel4.Size = new System.Drawing.Size(1298, 78);
             this.panel4.TabIndex = 15;
             // 
             // groupBox1
@@ -481,7 +417,7 @@ namespace BTL
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1250, 196);
+            this.groupBox1.Size = new System.Drawing.Size(1304, 189);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -524,27 +460,24 @@ namespace BTL
             this.txtNguoiBan.Size = new System.Drawing.Size(170, 34);
             this.txtNguoiBan.TabIndex = 3;
             // 
-            // FormInHoaDon
+            // FormLapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 714);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1304, 681);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormInHoaDon";
-            this.Text = "FormInHoaDon";
+            this.Name = "FormLapHoaDon";
+            this.Text = "FormLapHoaDon";
             this.Load += new System.EventHandler(this.FormInHoaDon_Load);
-            this.panel3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgSanPham)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -555,22 +488,18 @@ namespace BTL
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
+       
         private System.Windows.Forms.TextBox txtTenkhachhang;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtNgayLap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNguoiBan;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.TextBox txtTienThua;
         private System.Windows.Forms.TextBox txtTienKhachDua;
@@ -586,7 +515,6 @@ namespace BTL
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnHuyGd;
-        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSoLuong;
@@ -596,5 +524,6 @@ namespace BTL
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel1;
     }
 }

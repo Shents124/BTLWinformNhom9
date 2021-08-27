@@ -1,4 +1,5 @@
-﻿using BTL.Models;
+﻿using BTL.Dat;
+using BTL.Models;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -199,12 +200,17 @@ namespace BTL
         }
         private void btnLapHoaDon_Click_1(object sender, EventArgs e)
         {
-            FormInHoaDon myForm = new FormInHoaDon(maTk);
-
-            myForm.Show();
+            FormLapHoaDon myform = new FormLapHoaDon(maTk);
+            myform.Show();
         }
         private void btninhoadon_Click(object sender, EventArgs e)
         {
+            if(File.Exists(@"C:\Users\ADMIN\Downloads\Đề 1.pdf")==true)
+            {
+                MessageBox.Show("file đã mở");
+                File.Delete(@"C:\Users\ADMIN\Downloads\Đề 1.pdf");
+                return;
+            }    
             if (index == -1)
             {
                 MessageBox.Show("Bạn chưa chọn dòng hóa đơn cần xuất");

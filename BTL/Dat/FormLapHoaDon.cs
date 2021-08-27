@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Data;
-
 using System.Linq;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -11,7 +10,7 @@ using BTL.Models;
 
 namespace BTL
 {
-    public partial class FormInHoaDon : Form
+    public partial class FormLapHoaDon : Form
     {
         QLBanSachContext db = new QLBanSachContext();
         static List<Cthoadon> li = new List<Cthoadon>();
@@ -20,7 +19,7 @@ namespace BTL
         static decimal TongTien = 0;
         static int TongSoLuong = 0;
         private int maTK;
-        public FormInHoaDon(int maTK)
+        public FormLapHoaDon(int maTK)
         {
             InitializeComponent();
             this.maTK = maTK;
@@ -84,25 +83,24 @@ namespace BTL
                 cthd.SoLuong = int.Parse(dvgSanPham.Rows[i].Cells[2].Value.ToString());
                 cthd.ThanhTien = decimal.Parse(dvgSanPham.Rows[i].Cells[3].Value.ToString());
                 db.Cthoadons.Add(cthd);
-
             }
             db.SaveChanges();
             li.Clear();
         }
-        private void BatLoi()
+        private bool BatLoi()
         {
             if (txtTenkhachhang.Text == "")
             {
                 MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTenkhachhang.Focus();
-                return ;
+                return false ;
             }
 
             if (txtSoDienThoai.Text == "")
             {
                 MessageBox.Show("Bạn phải số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSoDienThoai.Focus();
-                return;
+                return false;
             }
             else
             {
@@ -114,7 +112,7 @@ namespace BTL
                 {
                     MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtSoDienThoai.SelectAll();
-                    return ;
+                    return false ;
                 }
             }
 
@@ -122,17 +120,18 @@ namespace BTL
             {
                 MessageBox.Show("Bạn phải địa chỉ khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDiaChi.Focus();
-                return ;
+                return false;
             }
             if(dvgSanPham.Rows.Count==1)
             {
                 MessageBox.Show("Bạn chưa nhập sản phẩm cần mua", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }    
             if (txtTienKhachDua.Text == "")
             {
                 MessageBox.Show("Chưa nhập tiền khách hàng thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                txtTienKhachDua.Focus();
+                return false;
             }
             else
             {
@@ -144,22 +143,35 @@ namespace BTL
                 catch
                 {
                     MessageBox.Show("Nhập tiền khách hàng thanh toán không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    txtTienKhachDua.SelectAll();
+                    return false;
                 }
             }
             decimal tienthua = decimal.Parse(txtTienThua.Text);
             if (tienthua < 0)
             {
                 MessageBox.Show("Tiền khách hàng thanh toán không đủ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                txtTienKhachDua.SelectAll();
+                return false;
             }
-            return ;
+
+            try
+            {
+                using (FileStream stream = new FileStream("HoaDon.pdf", FileMode.Create));
+            }
+            catch
+            {
+                MessageBox.Show("File Hoadon.pdf vẫn chưa được đóng lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
         private bool BatLoiCTHoaDon()
         {
            if(txtTenSanPham.Text=="")
             {
                 MessageBox.Show("Bạn chưa nhập tên sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenSanPham.Focus();
                 return false;
             }
             else
@@ -168,25 +180,40 @@ namespace BTL
                 if(s==null)
                 {
                     MessageBox.Show("Sản phẩm không có trông hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtTenSanPham.SelectAll();
                     return false;
                 }    
             }
            if(txtSoLuong.Text=="")
             {
                 MessageBox.Show("Bạn chưa nhập số lượng mua sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoLuong.Focus();
                 return false;
             }
             else
             {
                 try
                 {
-                    int i = int.Parse(txtSoLuong.Text);
+                    try
+                    {
+                        int i = int.Parse(txtSoLuong.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn nhập số lượng sản phẩm không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtSoLuong.SelectAll();
+                        return false;
+                    }
+                    if (int.Parse(txtSoLuong.Text) <= 0)
+                        throw new Exception("Số lượng sách phải lớn hơn 0");
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Bạn nhập số lượng sản phẩm không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtSoLuong.SelectAll();
                     return false;
                 }
+               
             }
             var query = from h in db.Hoadons
 
@@ -211,6 +238,7 @@ namespace BTL
             if (li.Contains(cthd))
             {
                 MessageBox.Show("Bạn không thể chọn 1 sản phẩm trên 2 dòng hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTenSanPham.SelectAll();
                 return false;
             }
             else
@@ -229,16 +257,24 @@ namespace BTL
             {
 
             }    
-                else
-                    {
-                        decimal i = 0;
-                        i = decimal.Parse(txtTienKhachDua.Text) - TongTien;
-                        txtTienThua.Text = i.ToString();
+            else
+            {
+                try
+                {
+                    decimal i = 0;
+                    i = decimal.Parse(txtTienKhachDua.Text) - TongTien;
+                    txtTienThua.Text = i.ToString();
+                }catch
+                {
+                    MessageBox.Show("Nhập số tiền không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return ;
+                }
+                        
 
-                    }
+            }
 
         }
-        int index = -1;
+       
         private void dvgSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
          
@@ -277,6 +313,7 @@ namespace BTL
                     if (txtTenSanPham.Text == "")
                     {
                         MessageBox.Show("Bạn chưa nhập tên sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtTenSanPham.Focus();
                         return ;
                     }
                     else
@@ -285,23 +322,39 @@ namespace BTL
                         if (sa == null)
                         {
                             MessageBox.Show("Sản phẩm không có trông hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtTenSanPham.SelectAll();
                             return ;
                         }
                     }
                     if (txtSoLuong.Text == "")
                     {
                         MessageBox.Show("Bạn chưa nhập số lượng mua sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtSoLuong.Focus();
                         return ;
                     }
                     else
                     {
+                        
                         try
                         {
-                            int i = int.Parse(txtSoLuong.Text);
+                            try
+                            {
+                                int i = int.Parse(txtSoLuong.Text);
+                            }
+                            catch 
+                            {
+                                MessageBox.Show( "Bạn nhập số lượng sản phẩm không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtSoLuong.SelectAll();
+                                return;
+                            }
+
+                            if (int.Parse(txtSoLuong.Text) <= 0)
+                                throw new Exception("Số lượng sách phải lớn hơn 0");
                         }
-                        catch
+                        catch(Exception ex)
                         {
-                            MessageBox.Show("Bạn nhập số lượng sản phẩm không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtSoLuong.SelectAll();
                             return ;
                         }
                     }
@@ -325,21 +378,28 @@ namespace BTL
                         if (ctms == null)
                         {
                             MessageBox.Show("Sách không có trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtTenSanPham.SelectAll();
                             return;
                         }
-                        TongTien = TongTien - decimal.Parse(dvgSanPham.Rows[row].Cells[3].Value.ToString());
-                        TongSoLuong = TongSoLuong - int.Parse(dvgSanPham.Rows[row].Cells[2].Value.ToString());
-                        dvgSanPham.Rows[row].Cells[0].Value = txtTenSanPham.Text;
-                        dvgSanPham.Rows[row].Cells[1].Value = s.DonGia;
-                        dvgSanPham.Rows[row].Cells[2].Value = txtSoLuong.Text;
-                        dvgSanPham.Rows[row].Cells[3].Value = s.DonGia * int.Parse(txtSoLuong.Text);
-                        TongTien = TongTien + decimal.Parse(dvgSanPham.Rows[row].Cells[3].Value.ToString());
-                        TongSoLuong = TongSoLuong + int.Parse(dvgSanPham.Rows[row].Cells[2].Value.ToString());
-                        ctms.SoLuong = int.Parse(txtSoLuong.Text);
-                        ctms.ThanhTien = s.DonGia * int.Parse(txtSoLuong.Text);
-                        li.Insert(row, ctms);
-                   //     txtTongSoLuong.Text = TongSoLuong.ToString();
-                        txtTongTien.Text = TongTien.ToString();
+                        else
+                        {
+                            TongTien = TongTien - decimal.Parse(dvgSanPham.Rows[row].Cells[3].Value.ToString());
+                            TongSoLuong = TongSoLuong - int.Parse(dvgSanPham.Rows[row].Cells[2].Value.ToString());
+                            dvgSanPham.Rows[row].Cells[0].Value = txtTenSanPham.Text;
+                            dvgSanPham.Rows[row].Cells[1].Value = s.DonGia;
+                            dvgSanPham.Rows[row].Cells[2].Value = txtSoLuong.Text;
+                            dvgSanPham.Rows[row].Cells[3].Value = s.DonGia * int.Parse(txtSoLuong.Text);
+                            TongTien = TongTien + decimal.Parse(dvgSanPham.Rows[row].Cells[3].Value.ToString());
+                            TongSoLuong = TongSoLuong + int.Parse(dvgSanPham.Rows[row].Cells[2].Value.ToString());
+                            ctms.SoLuong = int.Parse(txtSoLuong.Text);
+                            ctms.ThanhTien = s.DonGia * int.Parse(txtSoLuong.Text);
+                            li.Insert(row, ctms);
+                            //     txtTongSoLuong.Text = TongSoLuong.ToString();
+                            txtTongTien.Text = TongTien.ToString();
+                            txtSoLuong.Text = "";
+                            txtTenSanPham.Text = "";
+                        }
+                       
                     }
                 }
             }
@@ -388,12 +448,27 @@ namespace BTL
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
            
-            BatLoi();           
-            ThemKhachHang();
-            ThemHoaDon();
-            ThemChiTietHoaDon();
-            li.Clear();
-            InHoaDon();
+           if( BatLoi()==true)
+            {
+                ThemKhachHang();
+                ThemHoaDon();
+                ThemChiTietHoaDon();
+                li.Clear();
+                InHoaDon();
+                txtTenSanPham.Text = "";
+                txtSoLuong.Text = "";
+                txtSoDienThoai.Text = "";
+                txtTenkhachhang.Text = "";
+                txtDiaChi.Text = "";
+
+                dvgSanPham.Rows.Clear();
+                li.Clear();
+                TongSoLuong = 0;
+                TongTien = 0;
+                txtTongTien.Text = 0.ToString();
+                txtTienKhachDua.Text = 0.ToString();
+            }    
+           
         }
         private void btnHuyGd_Click(object sender, EventArgs e)
         {
@@ -406,10 +481,10 @@ namespace BTL
             dvgSanPham.Rows.Clear();
             li.Clear();
             TongSoLuong = 0;
-            TongTien = 0;
-            txtTienKhachDua.Text = 0.ToString();
+            TongTien = 0;          
             txtTongTien.Text = 0.ToString();
-          //  txtTongSoLuong.Text = 0.ToString();
+            txtTienKhachDua.Text = 0.ToString();
+            //  txtTongSoLuong.Text = 0.ToString();
         }
         private void InHoaDon()
         {
@@ -648,7 +723,7 @@ namespace BTL
 
             try
             {
-                using (FileStream stream = new FileStream(@"C:\Users\ADMIN\Downloads\Đề 1.pdf", FileMode.Create))
+                using (FileStream stream = new FileStream("HoaDon.pdf", FileMode.Create))
                 {
                   
                     Document pdfdoc = new Document(PageSize.A9.Rotate(), 50f, 50f, 5f, 5f);
@@ -668,14 +743,14 @@ namespace BTL
                     pdfdoc.Close();
                     writer.Close();
                     stream.Close();
-                    MessageBox.Show("In hóa đơn thành công. Mở thư mục Hoadon.pdf trong thư mục bin của project",
+                    MessageBox.Show("In hóa đơn thành công",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                 }
             }
             catch
             {
-                MessageBox.Show("File Hoadon.pdf vẫn chưa được đóng lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("File HoaDon.pdf vẫn chưa được đóng lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
