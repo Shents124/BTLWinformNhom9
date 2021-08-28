@@ -207,7 +207,7 @@ namespace BTL
             DateTime bd = dtpBD.Value;
             DateTime kt = dtpKT.Value;
             var query = from p in obj.Pnhaps
-                        where p.NgayNhap >= bd && p.NgayNhap <= kt
+                        where bd.Date <= p.NgayNhap && p.NgayNhap <= kt.Date
                         select new
                         {
                             p.MaPn,

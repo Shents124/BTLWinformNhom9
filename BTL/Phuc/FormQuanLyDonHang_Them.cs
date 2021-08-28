@@ -183,6 +183,7 @@ namespace BTL
             txtMaDonHang.Text = madondh.ToString();
             txtMaDonHang.ReadOnly = true;
             LoadBooksList();
+            dataGridView1.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e) //nut Sua
