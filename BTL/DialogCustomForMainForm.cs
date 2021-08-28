@@ -5,22 +5,20 @@ namespace BTL
 {
     public partial class DialogCustomForMainForm : Form
     {
-        MainForm mainForm;
-
-        public DialogCustomForMainForm(MainForm mainForm)
+        public DialogCustomForMainForm()
         {
-            this.mainForm = mainForm;
             InitializeComponent();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
+            Environment.Exit(0);
         }
 
         private void btnDX_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No; 
+            MainForm.dr = DialogResult.Yes;
+            this.Dispose();
         }
     }
 }

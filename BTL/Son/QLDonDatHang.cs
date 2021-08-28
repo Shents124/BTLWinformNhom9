@@ -78,7 +78,7 @@ namespace BTL
         private void HienThiChiTietDDH(int maDonDh)
         {
             ctdondhs = GetChiTietDonHang(maDonDh);
-
+            tongTien = 0;
             dgvThongTinSach.Rows.Clear();
 
             foreach (var item in ctdondhs)
