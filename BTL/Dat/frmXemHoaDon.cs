@@ -181,22 +181,6 @@ namespace BTL
         {
             Tim();
         }
-        private void btnSuahoadon_Click_1(object sender, EventArgs e)
-        {
-            SuaHoaDon myform = new SuaHoaDon(maTk);
-            if (index == -1)
-            {
-                MessageBox.Show("Bạn chưa chọn dòng hóa đơn cần sửa");
-                return;
-            }
-            else
-            {
-                int ma = int.Parse(dvgDanhSachHoaDon.Rows[index].Cells[0].Value.ToString());
-                Hoadon hd = db.Hoadons.SingleOrDefault(hd => hd.MaHd == ma);
-                myform.Tag = hd;
-                myform.Show();
-            }
-        }
         private void btnXem_Click(object sender, EventArgs e)
         {
             HienThiChiTietHoaDon();

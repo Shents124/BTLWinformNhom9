@@ -15,6 +15,7 @@ namespace BTL
         private string hoTen;
         private bool isAdmin;
         public static string ten;
+        public static DialogResult dr = DialogResult.No;
         public MainForm()
         {
             InitializeComponent();
@@ -228,26 +229,14 @@ namespace BTL
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //DialogCustomForMainForm dcfm = new DialogCustomForMainForm(this);
-
-            //if (dcfm.ShowDialog() == DialogResult.Yes)
-            //{
-            //    this.Dispose();
-            //}
-            //else
-            //{
-            //    dcfm.Close();
-            //    this.Close();
-
-            //    //DangNhap dangNhap = new DangNhap();
-            //    //if (dangNhap.ShowDialog() == DialogResult.OK)
-            //    //{
-            //    //    Program.mainForm = new MainForm(dangNhap.MaTK, dangNhap.TenDN, dangNhap.MatKhau, dangNhap.HoTen, dangNhap.isAdmin);
-            //    //    Program.mainForm.Show();
-            //    //}
-            //    //else
-            //    //    Application.Exit();
-            //}
+            e.Cancel = true;
+            DialogCustomForMainForm dcfm = new DialogCustomForMainForm();
+            dcfm.ShowDialog();
+            if(dr == DialogResult.Yes)
+            {
+                DangNhap.ActiveForm.Dispose();
+                Application.Restart();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
