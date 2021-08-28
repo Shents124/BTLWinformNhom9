@@ -29,16 +29,6 @@ namespace BTL.Lam
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
             printPreviewDialog1.WindowState = FormWindowState.Maximized;
             printPreviewDialog1.ShowDialog();
-
-            /*PrinterSettings ps = new PrinterSettings();
-            panelPrint = panel;
-            GetPrintArea(panel);
-            printPreviewDialog1.Document = printDocument1;
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-
-            printPreviewDialog1.WindowState = FormWindowState.Maximized;
-            printPreviewDialog1.ShowDialog();*/
-            /* GetPr*/
         }
         private Bitmap memoryimg;
         private void getprintarea(Panel pnl)
@@ -119,7 +109,7 @@ namespace BTL.Lam
                 if (tongSoLuongBanQT != 0)
                 {
                     /*throw new Exception("Số lượng bán quý trước phải khác không");*/
-                    ptramSLB = (1 - Convert.ToDouble(tongSoLuongBan / tongSoLuongBanQT)) * 100;
+                    ptramSLB =  Convert.ToDouble(tongSoLuongBan / tongSoLuongBanQT) * 100;
                     ptramSLB1 = ptramSLB.ToString("#.##") + "%";
                 }
             decimal tongTienBanHangquytrc = query4.Sum(b => b.thanhtien);
@@ -138,8 +128,12 @@ namespace BTL.Lam
                 if (tongSoLuongBanCQNT != 0)
                 {
                     /*throw new Exception("Số lượng bán ra cùng kì năm trước phải khác không");*/
-                     ptramSLBNT = (1 - Convert.ToDouble(tongSoLuongBan / tongSoLuongBanCQNT)) * 100;
+                     ptramSLBNT =  Convert.ToDouble(tongSoLuongBan / tongSoLuongBanCQNT) * 100;
                      ptramSLBNT1 = ptramSLBNT.ToString("#.##") + "%";
+                }
+                else
+                {
+                    ptramSLBNT1 = "Không có";
                 }
                 decimal tongTienBanHangCKNT = query7.Sum(b => b.thanhtien);
             /* double test = (1 - (float)3 / 2) * 100;
@@ -157,7 +151,7 @@ namespace BTL.Lam
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
                          where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == namcantinh)
                          select new { soluong = d.SlNhap };
-            int tongSoLuongNhap = query2.Sum(x => x.soluong);
+            double tongSoLuongNhap = query2.Sum(x => x.soluong);
             // tinh so luong nhap quy trc
             var query5 = from a in db.Pnhaps
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
@@ -165,14 +159,19 @@ namespace BTL.Lam
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
                          where (a.NgayNhap.Value.Month >= thangbdqt && a.NgayNhap.Value.Month <= thangktqt && a.NgayNhap.Value.Year == namquytrc)
                          select new { soluong = d.SlNhap };
-            int tongSoLuongNhapQT = query5.Sum(x => x.soluong);
+            double tongSoLuongNhapQT = query5.Sum(x => x.soluong);
                 double ptramSLN = 0;
                 string ptramSLN1 = "Không có";
                 if (tongSoLuongNhapQT != 0)
                 {
+                    double x = tongSoLuongNhap / tongSoLuongNhapQT;
                     /*throw new Exception("Số lượng nhập quý trước phải khác không");*/
-                     ptramSLN = (1 - Convert.ToDouble(tongSoLuongNhap / tongSoLuongNhapQT)) * 100;
+                     ptramSLN =  x * 100;
                      ptramSLN1 = ptramSLN.ToString("#.##") + "%";
+                }
+                else
+                {
+                    ptramSLN1 = "Không có";
                 }
             // tinh so luong nhap cung quy nam trc
             var query8 = from a in db.Pnhaps
@@ -181,14 +180,19 @@ namespace BTL.Lam
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
                          where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == (namcantinh-1))
                          select new { soluong = d.SlNhap };
-            int tongSoLuongNhapCQNT = query8.Sum(x => x.soluong);
+            double tongSoLuongNhapCQNT = query8.Sum(x => x.soluong);
                 double ptramSLNNT = 0;
                 string ptramSLNNT1 = "Không có";
                 if (tongSoLuongNhapCQNT != 0)
                 {
+                    double x1 = tongSoLuongNhap / tongSoLuongNhapCQNT;
                     /*throw new Exception("Số lượng nhập cùng kì năm trước phải khác không");*/
-                   ptramSLNNT = (1 - Convert.ToDouble(tongSoLuongNhap / tongSoLuongNhapCQNT)) * 100;
+                    ptramSLNNT = x1 * 100;
                     ptramSLNNT1 = ptramSLNNT.ToString() + "%";
+                }
+                else
+                {
+                    ptramSLNNT1 = "Không có";
                 }
             
                 // tinh phantram quy trc
@@ -245,7 +249,7 @@ namespace BTL.Lam
 
                 if (tongDTQT != 0)
                 {
-                   ptramdtqt = (1 - Convert.ToDouble(tongDTHU / tongDTQT)) * 100;
+                   ptramdtqt =  (tongDTHU / tongDTQT) * 100;
                     sln.Add(ptramdtqt.ToString("#.##") + "%");
                 }
                 else
@@ -257,7 +261,7 @@ namespace BTL.Lam
                     dthu.Add(ptramSLNNT1);
                 if (tongDTCKNT != 0)
                 {
-                    ptramdtcknt = (1 - Convert.ToDouble(tongDTHU / tongDTCKNT)) * 100;
+                    ptramdtcknt =  (tongDTHU / tongDTCKNT) * 100;
 
                    
                     dthu.Add(ptramdtcknt.ToString("#.##") + "%");
