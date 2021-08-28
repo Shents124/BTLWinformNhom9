@@ -44,10 +44,10 @@ namespace BTL
             this.label5 = new System.Windows.Forms.Label();
             this.txbNXB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.txbGiaNhap = new System.Windows.Forms.TextBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -188,6 +188,13 @@ namespace BTL
             this.panel1.Size = new System.Drawing.Size(434, 361);
             this.panel1.TabIndex = 40;
             // 
+            // txbGiaNhap
+            // 
+            this.txbGiaNhap.Location = new System.Drawing.Point(183, 163);
+            this.txbGiaNhap.Name = "txbGiaNhap";
+            this.txbGiaNhap.Size = new System.Drawing.Size(215, 27);
+            this.txbGiaNhap.TabIndex = 44;
+            // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(181, 300);
@@ -197,6 +204,15 @@ namespace BTL
             this.btnXoa.Text = "Xóa trắng";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.XoaTrang);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 20);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Giá nhập";
             // 
             // label7
             // 
@@ -208,22 +224,6 @@ namespace BTL
             this.label7.TabIndex = 42;
             this.label7.Text = "Thêm sách";
             // 
-            // txbGiaNhap
-            // 
-            this.txbGiaNhap.Location = new System.Drawing.Point(183, 163);
-            this.txbGiaNhap.Name = "txbGiaNhap";
-            this.txbGiaNhap.Size = new System.Drawing.Size(215, 27);
-            this.txbGiaNhap.TabIndex = 44;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 20);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "Giá nhập";
-            // 
             // ThemSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -232,6 +232,7 @@ namespace BTL
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Name = "ThemSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemSach";
             this.Load += new System.EventHandler(this.ThemSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

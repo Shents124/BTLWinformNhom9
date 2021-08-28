@@ -403,10 +403,11 @@ namespace BTL.Lam
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1250, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(978, -3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 62);
+            this.pictureBox2.Size = new System.Drawing.Size(67, 52);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -415,14 +416,15 @@ namespace BTL.Lam
             // 
             // panelPrint
             // 
+            this.panelPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelPrint.Controls.Add(this.panel1);
             this.panelPrint.Controls.Add(this.panel4);
             this.panelPrint.Controls.Add(this.panel7);
             this.panelPrint.Controls.Add(this.panel5);
             this.panelPrint.Controls.Add(this.groupBox1);
-            this.panelPrint.Location = new System.Drawing.Point(26, 12);
+            this.panelPrint.Location = new System.Drawing.Point(28, 55);
             this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(1047, 852);
+            this.panelPrint.Size = new System.Drawing.Size(1048, 823);
             this.panelPrint.TabIndex = 22;
             // 
             // printDocument1
@@ -443,10 +445,11 @@ namespace BTL.Lam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 1055);
+            this.ClientSize = new System.Drawing.Size(1088, 910);
             this.Controls.Add(this.panelPrint);
             this.Controls.Add(this.pictureBox2);
             this.Name = "BieuMauThongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BieuMauThongKe";
             this.Load += new System.EventHandler(this.BieuMauThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

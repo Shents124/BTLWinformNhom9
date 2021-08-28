@@ -27,8 +27,18 @@ namespace BTL.Lam
             getprintarea(pnl);
             printPreviewDialog1.Document = printDocument1;
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
+            printPreviewDialog1.WindowState = FormWindowState.Maximized;
             printPreviewDialog1.ShowDialog();
-           /* GetPr*/
+
+            /*PrinterSettings ps = new PrinterSettings();
+            panelPrint = panel;
+            GetPrintArea(panel);
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            printPreviewDialog1.WindowState = FormWindowState.Maximized;
+            printPreviewDialog1.ShowDialog();*/
+            /* GetPr*/
         }
         private Bitmap memoryimg;
         private void getprintarea(Panel pnl)

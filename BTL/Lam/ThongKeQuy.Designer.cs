@@ -32,21 +32,21 @@ namespace BTL.Lam
             this.label7 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbNam = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbQuy = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbNam = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(302, 9);
+            this.label7.Location = new System.Drawing.Point(252, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(416, 41);
             this.label7.TabIndex = 48;
@@ -55,7 +55,7 @@ namespace BTL.Lam
             // btnIn
             // 
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIn.Location = new System.Drawing.Point(3, 14);
+            this.btnIn.Location = new System.Drawing.Point(538, 31);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(144, 43);
             this.btnIn.TabIndex = 28;
@@ -65,34 +65,33 @@ namespace BTL.Lam
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnIn);
-            this.panel2.Controls.Add(this.btnThoat);
-            this.panel2.Location = new System.Drawing.Point(805, 55);
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(60, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(153, 125);
+            this.panel2.Size = new System.Drawing.Size(866, 177);
             this.panel2.TabIndex = 47;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThoat.Location = new System.Drawing.Point(3, 63);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(144, 48);
-            this.btnThoat.TabIndex = 33;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.cbbNam);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbbQuy);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(221, 67);
+            this.panel1.Location = new System.Drawing.Point(89, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 96);
+            this.panel1.Size = new System.Drawing.Size(692, 96);
             this.panel1.TabIndex = 49;
+            // 
+            // cbbNam
+            // 
+            this.cbbNam.FormattingEnabled = true;
+            this.cbbNam.Location = new System.Drawing.Point(378, 36);
+            this.cbbNam.Name = "cbbNam";
+            this.cbbNam.Size = new System.Drawing.Size(151, 28);
+            this.cbbNam.TabIndex = 53;
             // 
             // label2
             // 
@@ -125,30 +124,21 @@ namespace BTL.Lam
             this.label1.TabIndex = 50;
             this.label1.Text = "Chọn quý :";
             // 
-            // cbbNam
-            // 
-            this.cbbNam.FormattingEnabled = true;
-            this.cbbNam.Location = new System.Drawing.Point(378, 36);
-            this.cbbNam.Name = "cbbNam";
-            this.cbbNam.Size = new System.Drawing.Size(151, 28);
-            this.cbbNam.TabIndex = 53;
-            // 
             // ThongKeQuy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 211);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(974, 236);
             this.Controls.Add(this.panel2);
             this.Name = "ThongKeQuy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThongKeSanPhamBanChay";
             this.Load += new System.EventHandler(this.load_Tk);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -157,7 +147,6 @@ namespace BTL.Lam
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbQuy;
