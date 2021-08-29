@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace BTL.Son
 {
-    public partial class frmQLTaiKhoanCaNhan : Form
+    public partial class frmDoiMatKhau : Form
     {
         int maTk;
         string mkCu;
 
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
 
-        public frmQLTaiKhoanCaNhan(int maTk,string hoTen, string tenDN, string mkCu)
+        public frmDoiMatKhau(int maTk,string hoTen, string tenDN, string mkCu)
         {
             this.maTk = maTk;
             this.mkCu = mkCu;

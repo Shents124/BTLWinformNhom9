@@ -29,12 +29,16 @@ namespace BTL.Son
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panelChucNang = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThemTK = new System.Windows.Forms.Button();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.rbUser = new System.Windows.Forms.RadioButton();
             this.rbAdmin = new System.Windows.Forms.RadioButton();
@@ -47,65 +51,106 @@ namespace BTL.Son
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2.SuspendLayout();
-            this.panelChucNang.SuspendLayout();
-            this.panelThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.panelThem.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 315);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1304, 366);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách tài khoản";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvTaiKhoan);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1298, 333);
+            this.panel2.TabIndex = 1;
+            // 
+            // dgvTaiKhoan
+            // 
+            this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Xoa});
+            this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.dgvTaiKhoan.Name = "dgvTaiKhoan";
+            this.dgvTaiKhoan.RowHeadersWidth = 51;
+            this.dgvTaiKhoan.RowTemplate.Height = 29;
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1298, 333);
+            this.dgvTaiKhoan.TabIndex = 0;
+            this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "MaTK";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 70;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 3.346963F;
+            this.Column2.HeaderText = "Tên đăng nhập";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 171.208F;
+            this.Column3.HeaderText = "Họ tên";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 533;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 213.9037F;
+            this.Column4.HeaderText = "Loại tài khoản";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 300;
+            // 
+            // Xoa
+            // 
+            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Xoa.FillWeight = 11.54125F;
+            this.Xoa.HeaderText = "";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.ReadOnly = true;
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panelChucNang);
             this.groupBox2.Controls.Add(this.panelThem);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 347);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1304, 334);
+            this.groupBox2.Size = new System.Drawing.Size(1304, 315);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
-            // panelChucNang
-            // 
-            this.panelChucNang.Controls.Add(this.btnXoa);
-            this.panelChucNang.Controls.Add(this.btnThemTK);
-            this.panelChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChucNang.Location = new System.Drawing.Point(414, 30);
-            this.panelChucNang.Name = "panelChucNang";
-            this.panelChucNang.Size = new System.Drawing.Size(887, 301);
-            this.panelChucNang.TabIndex = 2;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(217, 147);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(180, 40);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa tài khoản";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnThemTK
-            // 
-            this.btnThemTK.Location = new System.Drawing.Point(217, 87);
-            this.btnThemTK.Name = "btnThemTK";
-            this.btnThemTK.Size = new System.Drawing.Size(180, 40);
-            this.btnThemTK.TabIndex = 0;
-            this.btnThemTK.Text = "Thêm tài khoản";
-            this.btnThemTK.UseVisualStyleBackColor = true;
-            this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
-            // 
             // panelThem
             // 
-            this.panelThem.Controls.Add(this.btnHuy);
             this.panelThem.Controls.Add(this.btnThem);
             this.panelThem.Controls.Add(this.rbUser);
             this.panelThem.Controls.Add(this.rbAdmin);
@@ -118,26 +163,15 @@ namespace BTL.Son
             this.panelThem.Controls.Add(this.label3);
             this.panelThem.Controls.Add(this.label2);
             this.panelThem.Controls.Add(this.label1);
-            this.panelThem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelThem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelThem.Location = new System.Drawing.Point(3, 30);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(411, 301);
+            this.panelThem.Size = new System.Drawing.Size(1298, 282);
             this.panelThem.TabIndex = 1;
-            this.panelThem.Visible = false;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(213, 252);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(130, 40);
-            this.btnHuy.TabIndex = 10;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(63, 252);
+            this.btnThem.Location = new System.Drawing.Point(158, 239);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(130, 40);
             this.btnThem.TabIndex = 9;
@@ -242,62 +276,6 @@ namespace BTL.Son
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
-            // dgvTaiKhoan
-            // 
-            this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.dgvTaiKhoan.Name = "dgvTaiKhoan";
-            this.dgvTaiKhoan.RowHeadersWidth = 51;
-            this.dgvTaiKhoan.RowTemplate.Height = 29;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1298, 314);
-            this.dgvTaiKhoan.TabIndex = 0;
-            this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1304, 347);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách tài khoản";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvTaiKhoan);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1298, 314);
-            this.panel2.TabIndex = 1;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên đăng nhập";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Họ tên";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Loại tài khoản";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
             // frmBaoTriTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -309,20 +287,19 @@ namespace BTL.Son
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBaoTriTK";
             this.Text = "frmBaoTriTK";
-            this.groupBox2.ResumeLayout(false);
-            this.panelChucNang.ResumeLayout(false);
-            this.panelThem.ResumeLayout(false);
-            this.panelThem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.panelThem.ResumeLayout(false);
+            this.panelThem.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvTaiKhoan;
+        private System.Windows.Forms.GroupBox groupBox2;       
         private System.Windows.Forms.Panel panelThem;
         private System.Windows.Forms.RadioButton rbUser;
         private System.Windows.Forms.RadioButton rbAdmin;
@@ -335,15 +312,13 @@ namespace BTL.Son
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelChucNang;
-        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtXacNhanMK;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThemTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

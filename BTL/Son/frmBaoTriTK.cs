@@ -15,20 +15,9 @@ namespace BTL.Son
         public frmBaoTriTK()
         {
             InitializeComponent();
-            HidePanelThem();
             LoadTaiKhoan();
-        }
-
-        private void HidePanelThem()
-        {
-            if (panelThem.Visible == true)
-                panelThem.Visible = false;
-        }
-
-        private void HienThiPanelThem()
-        {
-            if (panelThem.Visible == false)
-                panelThem.Visible = true;
+            dgvTaiKhoan.Columns[0].Visible = false;
+            dgvTaiKhoan.RowHeadersVisible = false;
         }
 
         private void LoadTaiKhoan()
@@ -40,12 +29,12 @@ namespace BTL.Son
             foreach (var item in tk)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvTaiKhoan.Rows[0].Clone();
-                row.Cells[0].Value = item.TenDangNhap;
-                row.Cells[1].Value = item.HoTen;
-                row.Cells[2].Value = (item.LoaiTk == true) ? "Admin" : "User";
+                row.Cells[0].Value = item.MaTk;
+                row.Cells[1].Value = item.TenDangNhap;
+                row.Cells[2].Value = item.HoTen;
+                row.Cells[3].Value = (item.LoaiTk == true) ? "Admin" : "User";
                 dgvTaiKhoan.Rows.Add(row);
             }
-            dgvTaiKhoan.RowHeadersVisible = false;
         }
 
         private bool isValid()
@@ -157,30 +146,23 @@ namespace BTL.Son
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
+            int colum = e.ColumnIndex;
             try
             {
                 if (index < 0 || index > dgvTaiKhoan.RowCount - 1)
                     throw new Exception("Dòng bạn chọn không tồn tại");
+                if (index == dgvTaiKhoan.RowCount - 1)
+                    throw new Exception("Dòng bạn chọn không có dữ liệu");
+
+                if (colum == 4)
+                {
+                    XoaTaiKhoan();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            XoaTaiKhoan();
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            HidePanelThem();
-        }
-
-        private void btnThemTK_Click(object sender, EventArgs e)
-        {
-            HienThiPanelThem();
         }
     }
 }

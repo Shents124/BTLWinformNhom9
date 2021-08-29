@@ -108,7 +108,7 @@ namespace BTL
         {
             // Hiển thị form quản lý tài khoản
             HideSubMenu();
-            OpenChildForm(new frmQLTaiKhoanCaNhan(maTK, hoTen, tenDN, matKhau), sender);
+            OpenChildForm(new frmDoiMatKhau(maTK, hoTen, tenDN, matKhau), sender);
         }
         #endregion
 

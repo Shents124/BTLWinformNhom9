@@ -149,7 +149,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == namcantinh)
+                         where (a.NgayNhap.Month >= thangbd && a.NgayNhap.Month <= thangkt && a.NgayNhap.Year == namcantinh)
                          select new { soluong = d.SlNhap };
             double tongSoLuongNhap = query2.Sum(x => x.soluong);
             // tinh so luong nhap quy trc
@@ -157,7 +157,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbdqt && a.NgayNhap.Value.Month <= thangktqt && a.NgayNhap.Value.Year == namquytrc)
+                         where (a.NgayNhap.Month >= thangbdqt && a.NgayNhap.Month <= thangktqt && a.NgayNhap.Year == namquytrc)
                          select new { soluong = d.SlNhap };
             double tongSoLuongNhapQT = query5.Sum(x => x.soluong);
                 double ptramSLN = 0;
@@ -178,7 +178,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == (namcantinh-1))
+                         where (a.NgayNhap.Month >= thangbd && a.NgayNhap.Month <= thangkt && a.NgayNhap.Year == (namcantinh-1))
                          select new { soluong = d.SlNhap };
             double tongSoLuongNhapCQNT = query8.Sum(x => x.soluong);
                 double ptramSLNNT = 0;
@@ -207,7 +207,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == namcantinh)
+                         where (a.NgayNhap.Month >= thangbd && a.NgayNhap.Month <= thangkt && a.NgayNhap.Year == namcantinh)
                          select new { soluong = d.SlNhap, dongia = d.DgNhap ,thanhtien = d.SlNhap*d.DgNhap};
             decimal tongTienChi = query3.Sum(x => x.thanhtien);
             // tinh tong chi tieu cho viec nhap hang quy truoc
@@ -215,7 +215,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbdqt && a.NgayNhap.Value.Month <= thangktqt && a.NgayNhap.Value.Year == namquytrc)
+                         where (a.NgayNhap.Month >= thangbdqt && a.NgayNhap.Month <= thangktqt && a.NgayNhap.Year == namquytrc)
                          select new { soluong = d.SlNhap, dongia = d.DgNhap, thanhtien = d.SlNhap * d.DgNhap };
             decimal tongTienChiQT = query6.Sum(x => x.thanhtien);
         
@@ -227,7 +227,7 @@ namespace BTL.Lam
                          join b in db.Dondhs on a.MaDonDh equals b.MaDonDh
                          join c in db.Ctdondhs on a.MaDonDh equals c.MaDonDh
                          join d in db.Ctpnhaps on a.MaPn equals d.MaPn
-                         where (a.NgayNhap.Value.Month >= thangbd && a.NgayNhap.Value.Month <= thangkt && a.NgayNhap.Value.Year == (namcantinh-1))
+                         where (a.NgayNhap.Month >= thangbd && a.NgayNhap.Month <= thangkt && a.NgayNhap.Year == (namcantinh-1))
                          select new { soluong = d.SlNhap, dongia = d.DgNhap, thanhtien = d.SlNhap * d.DgNhap };
             decimal tongTienChiCQNT = query9.Sum(x => x.thanhtien);
 

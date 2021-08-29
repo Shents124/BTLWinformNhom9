@@ -55,6 +55,7 @@ namespace BTL
             this.tnXemThongtin = new System.Windows.Forms.Button();
             this.dvgDanhSachNhaCungCap = new System.Windows.Forms.DataGridView();
             this.grDanhSachNhaCc = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.grChiTietNhacc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDanhsachchitietdondh)).BeginInit();
             this.grChucNang.SuspendLayout();
@@ -207,6 +208,7 @@ namespace BTL
             // 
             // grChucNang
             // 
+            this.grChucNang.Controls.Add(this.button1);
             this.grChucNang.Controls.Add(this.txtSolandatmax);
             this.grChucNang.Controls.Add(this.txtSolandatmin);
             this.grChucNang.Controls.Add(this.label8);
@@ -352,6 +354,16 @@ namespace BTL
             this.grDanhSachNhaCc.TabStop = false;
             this.grDanhSachNhaCc.Text = "Danh Sách Nhà Cung Cấp";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(806, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 56);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Thêm Nhà Cung Cấp";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // QuanLyNhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -405,5 +417,6 @@ namespace BTL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnboloc;
         private System.Windows.Forms.Button btnLoc;
+        private System.Windows.Forms.Button button1;
     }
 }

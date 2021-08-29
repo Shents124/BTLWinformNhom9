@@ -163,7 +163,7 @@ namespace BTL
                         if (item[i].MaSach == masach[j])
                         {
                             slct[j] -= item[i].SlNhap;
-                            if (slct[j] == 0) masachND.Add(masach[j]);
+                            if (slct[j] <= 0) masachND.Add(masach[j]);
                         }
                     }
                 }
@@ -171,7 +171,7 @@ namespace BTL
             //loai bo sach da nhap du
             foreach (int x in masachND)
                 masach = masach.Where((val => val != x)).ToArray();
-            slct = slct.Where((val => val != 0)).ToArray();
+            slct = slct.Where((val => val > 0)).ToArray();
         }
 
         #endregion
@@ -183,7 +183,6 @@ namespace BTL
             txtMaDonHang.Text = madondh.ToString();
             txtMaDonHang.ReadOnly = true;
             LoadBooksList();
-            dataGridView1.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e) //nut Sua
@@ -335,7 +334,7 @@ namespace BTL
                         {
                             txtSoluong.Clear();
                             txtSoluong.Focus();
-                        } 
+                        }
                     }
                     else
                     {
@@ -375,13 +374,13 @@ namespace BTL
                 .LastOrDefault();
 
             List<Ctpnhap> dspn = (from s in obj.Ctpnhaps
-                                 where s.MaPn == pn.MaPn
-                                 select s)
+                                  where s.MaPn == pn.MaPn
+                                  select s)
                                  .Include(c => c.MaSachNavigation)
                                  .ToList();
             List<Ctdondh> dsddh = (from s in obj.Ctdondhs
-                                  where s.MaDonDh == pn.MaDonDh
-                                  select s).ToList();
+                                   where s.MaDonDh == pn.MaDonDh
+                                   select s).ToList();
 
             int maPN = pn.MaPn;
             int maDonDh = (int)pn.MaDonDh;

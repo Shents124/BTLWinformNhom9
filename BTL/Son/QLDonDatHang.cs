@@ -11,7 +11,7 @@ namespace BTL
 {
     public partial class QLDonDatHang : Form
     {
-        private readonly string[] trangThai = new string[4] { "Chưa nhập", "Nhập đủ", "Chưa nhập đủ", "Đã hủy" };
+        private readonly string[] trangThai = new string[4] { "Chưa nhập", "Nhập đủ", "Nhập thiếu", "Đã hủy" };
 
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
         List<Dondh> dsDondh = new List<Dondh>();
@@ -33,6 +33,8 @@ namespace BTL
         public QLDonDatHang()
         {
             InitializeComponent();
+            dgvThongTinSach.RowHeadersVisible = false;
+            dgvDSDonDH.RowHeadersVisible = false;
         }
 
         private void QLDonDatHang_Load(object sender, EventArgs e)
@@ -61,8 +63,7 @@ namespace BTL
                 row.Cells[2].Value = item.MaNhaCcNavigation.TenNhaCc;
                 row.Cells[3].Value = item.TrangThai;
                 dgvDSDonDH.Rows.Add(row);
-            }
-            dgvDSDonDH.RowHeadersVisible = false;
+            }          
         }
 
         private List<Ctdondh> GetChiTietDonHang(int maDonDh)
@@ -95,8 +96,6 @@ namespace BTL
             }
 
             lblTongTien.Text = string.Format(new CultureInfo("vi-Vn"), "{0:#,##0.00}", tongTien);
-
-            dgvThongTinSach.RowHeadersVisible = false;
         }
 
         #region Lọc đơn đặt hàng
@@ -213,8 +212,11 @@ namespace BTL
             index = e.RowIndex;
             try
             {
-                if (index < 0 || index > dgvDSDonDH.RowCount - 2)
+                if (index < 0)
                     throw new Exception("Dòng bạn chọn không tồn tại");
+                if(index == dgvDSDonDH.RowCount - 1)
+                    throw new Exception("Dòng bạn chọn không có dữ liệu");
+
                 maDonDh = int.Parse(dgvDSDonDH.Rows[index].Cells[0].Value.ToString());
                 HienThiChiTietDDH(maDonDh);
 
@@ -237,6 +239,12 @@ namespace BTL
         //in đơn đặt hàng
         private void button3_Click(object sender, EventArgs e)
         {
+            if (index < 0 || index > dgvDSDonDH.RowCount - 2)
+            {
+                MessageBox.Show("Chưa chọn đơn đặt hàng");
+                return;
+            }
+                
             var ddh = qLBanSachContext.Dondhs
                 .Include("MaNhaCcNavigation")
                 .Where(s => s.MaDonDh == maDonDh)

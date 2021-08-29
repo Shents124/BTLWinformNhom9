@@ -488,6 +488,11 @@ namespace BTL.Son
         //Thêm đơn đặt hàng
         private void button1_Click(object sender, EventArgs e)
         {
+            if(sachCanDat.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sách để đặt");
+                return;
+            }
             ChotDonDatHang();
             qLDonDatHang.LoadDonDatHang(qLDonDatHang.GetDonDatHang());
         }
@@ -501,6 +506,12 @@ namespace BTL.Son
 
         private void btnDatHangVaIn_Click(object sender, EventArgs e)
         {
+            if (sachCanDat.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sách để đặt");
+                return;
+            }
+
             ChotDonDatHang();
             qLDonDatHang.LoadDonDatHang(qLDonDatHang.GetDonDatHang());
 

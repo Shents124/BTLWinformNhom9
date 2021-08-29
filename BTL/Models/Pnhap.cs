@@ -13,7 +13,7 @@ namespace BTL.Models
         }
 
         public int MaPn { get; set; }
-        public DateTime? NgayNhap { get; set; }
+        public DateTime NgayNhap { get; set; }
         public int? MaDonDh { get; set; }
 
         public virtual Dondh MaDonDhNavigation { get; set; }

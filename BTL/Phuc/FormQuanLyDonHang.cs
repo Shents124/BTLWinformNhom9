@@ -1,4 +1,5 @@
 ﻿using BTL.Models;
+using BTL.Phuc;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -120,6 +121,8 @@ namespace BTL
             isAdmin = (bool)this.Tag;
             ShowDanhSach();
             GetDSDonDH();
+            dataGridView1.CurrentCell = null;
+            dgvDSDH.CurrentCell = null;
             btnThem.Enabled = false;
             if (!isAdmin) btnXoa.Enabled = false;
         }
@@ -141,17 +144,34 @@ namespace BTL
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dr == DialogResult.Yes)
+            try
             {
-                Pnhap pn = obj.Pnhaps.SingleOrDefault(s => s.MaPn == mapn);
-                obj.Pnhaps.Remove(pn);
-                obj.SaveChanges();
-                ShowDanhSach();
-                dataGridView2.DataSource = null;
-                dataGridView2.Rows.Clear();
-                dataGridView1.CurrentCell = null;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Pnhap pn = obj.Pnhaps.SingleOrDefault(s => s.MaPn == mapn);
+                    Dondh ddh = obj.Dondhs.SingleOrDefault(s => s.MaDonDh == pn.MaDonDh);
+                    obj.Pnhaps.Remove(pn);
+                    obj.SaveChanges();
+                    List<Pnhap> tempList = (from s in obj.Pnhaps
+                                            where s.MaDonDh == ddh.MaDonDh
+                                            select s).ToList();
+                    if (tempList.Count == 0)
+                        ddh.TrangThai = "Chưa nhập";
+                    obj.SaveChanges();
+                    LoadingForm ld = new LoadingForm();
+                    ld.ShowDialog();
+                    ShowDanhSach();
+                    GetDSDonDH();
+                    dataGridView2.DataSource = null;
+                    dataGridView2.Rows.Clear();
+                    dataGridView1.CurrentCell = null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chưa chọn phiếu nhập hàng nào", "Lỗi");
             }
         }
 
@@ -183,8 +203,8 @@ namespace BTL
             if (pn != null)
             {
                 int[] mp = (from DataGridViewRow row in dataGridView1.Rows
-                           where row.Cells[0].FormattedValue.ToString() != string.Empty
-                           select Convert.ToInt32(row.Cells[0].FormattedValue)).ToArray();
+                            where row.Cells[0].FormattedValue.ToString() != string.Empty
+                            select Convert.ToInt32(row.Cells[0].FormattedValue)).ToArray();
                 for (int i = 0; i < mp.Length; i++)
                     if (pn.MaPn == mp[i])
                     {
@@ -228,12 +248,12 @@ namespace BTL
 
         private void dgvDSDH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > -1)
+            if (e.RowIndex > -1)
             {
                 btnThem.Enabled = true;
                 DataGridViewRow selectedRow = dgvDSDH.Rows[e.RowIndex];
                 madondh = int.Parse(selectedRow.Cells[0].Value.ToString());
-            }    
+            }
         }
     }
 }
