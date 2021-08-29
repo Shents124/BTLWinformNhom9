@@ -48,6 +48,7 @@ namespace BTL
             this.btnDong.TabIndex = 31;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // label1
             // 
