@@ -693,8 +693,8 @@ namespace BTL
             tkdcell2.HorizontalAlignment = Element.ALIGN_RIGHT;
             tt.AddCell(tkdcell2);
             // string url = @"C:\Users\ADMIN\source\repos\BTLWinformNhom9\BTL\Resources\logo.png";
-            // String url = Application.StartupPath + "logo.png";
-            var url = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\logo1.jpg");
+            //String url = Application.StartupPath + "logo.png";
+            var url = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\_Logo.png");
             //string fileNamep = "logo1.jpg";
             //string url = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileNamep);
             Image jbp;
