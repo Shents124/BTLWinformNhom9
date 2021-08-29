@@ -18,10 +18,16 @@ namespace BTL
             var query = from c in db.Saches
                         select new {c.MaSach,c.TenSach,c.MaLoaiNavigation.TenLoai,c.DonGiaBan,c.DonGiaNhap,c.TacGia,c.NhaXuatBan};
             dsSach.Rows.Clear();
+            var query3 = from c in db.Loaisaches
+                         select new { c.TenLoai };
+            foreach(var item in query3)
+            {
+                cbbTenLoaiSach.Items.Add(item.TenLoai);
+            }
             foreach (var item in query)
             {
                 dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan,item.DonGiaNhap, item.TacGia, item.NhaXuatBan);
-                cbbTenLoaiSach.Items.Add(item.TenLoai);
+               /* cbbTenLoaiSach.Items.Add(item.TenLoai);*/
             }
             
         }
@@ -72,7 +78,7 @@ namespace BTL
             {
                 dsSach.Rows.Add(item.MaSach, item.TenSach, item.TenLoai, item.DonGiaBan,item.DonGiaNhap, item.TacGia, item.NhaXuatBan);
             }
-            cbbTenLoaiSach.SelectedIndex=-1;
+            cbbTenLoaiSach.SelectedIndex = -1;
             
         }
 
