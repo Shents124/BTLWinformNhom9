@@ -48,7 +48,7 @@ namespace BTL
                                         where s.MaLoaiNavigation.TenLoai.Contains(cbbTenLoaiSach.SelectedItem.ToString())
                                         select new
                                         {
-                                            map = s.MaLoai,
+                                            map = s.MaSach,
                                             tensp = s.TenSach,
                                             tenl = s.MaLoaiNavigation.TenLoai,
                                             giab  =s.DonGiaBan,
