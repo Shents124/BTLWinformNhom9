@@ -501,22 +501,12 @@ namespace BTL
             Khachhang kh = db.Khachhangs.SingleOrDefault(kh => kh.MaKh == hd.MaKh);
             Taikhoan tk = db.Taikhoans.SingleOrDefault(tk => tk.MaTk == maTK);
             PdfPTable tthd = new PdfPTable(2);
-            // tthd.DefaultCell.Left 
-            //tthd.DefaultCell.PaddingLeft = 90f;
 
             tthd.DefaultCell.BorderWidth = 0;
 
-            //tthd.WidthPercentage = 50f;
-
-            //tthd.HorizontalAlignment = Element.ALIGN_LEFT;
             tthd.SpacingBefore = 1f;
-            //tthd.SpacingAfter = 20f;
-            // string path = Application.StartupPath + "Times New Roman 400.ttf";
-            string fileName = "Times New Roman 400.ttf";
-            string subfoldername = "Resources";
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
             var mainp = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\Times New Roman 400.ttf");
-            //string  path= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Times New Roman 400.ttf");
             BaseFont bf;
             try
             {
@@ -692,11 +682,7 @@ namespace BTL
             tkdcell2.Padding = 0;
             tkdcell2.HorizontalAlignment = Element.ALIGN_RIGHT;
             tt.AddCell(tkdcell2);
-            // string url = @"C:\Users\ADMIN\source\repos\BTLWinformNhom9\BTL\Resources\logo.png";
-            //String url = Application.StartupPath + "logo.png";
             var url = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\_Logo.png");
-            //string fileNamep = "logo1.jpg";
-            //string url = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileNamep);
             Image jbp;
             try
             {
