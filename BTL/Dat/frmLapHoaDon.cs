@@ -684,7 +684,7 @@ namespace BTL
             tkdcell2.Padding = 0;
             tkdcell2.HorizontalAlignment = Element.ALIGN_RIGHT;
             tt.AddCell(tkdcell2);
-            string url = @"C:\Users\ADMIN\source\repos\BTLWinformNhom9\BTL\Resources\logo.png";
+            string url = @"D:\Nam_3_ky_2\Window\BTLWinformNhom9\BTL\Resources\logo.png";
             Image jbp;
             try
             {

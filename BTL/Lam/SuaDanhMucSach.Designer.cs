@@ -132,6 +132,7 @@ namespace BTL
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Name = "SuaDanhMucSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuaDanhMucSach";
             this.Load += new System.EventHandler(this.LoadForm_SuaDM);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -35,7 +35,6 @@ namespace BTL
             this.label5 = new System.Windows.Forms.Label();
             this.lbHTMK = new System.Windows.Forms.Label();
             this.toggleMK = new System.Windows.Forms.Label();
-            this.lbQMK = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,7 +71,6 @@ namespace BTL
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lbHTMK);
             this.panel1.Controls.Add(this.toggleMK);
-            this.panel1.Controls.Add(this.lbQMK);
             this.panel1.Controls.Add(this.btnDangNhap);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -102,7 +100,7 @@ namespace BTL
             this.lbHTMK.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbHTMK.Location = new System.Drawing.Point(215, 391);
             this.lbHTMK.Name = "lbHTMK";
-            this.lbHTMK.Size = new System.Drawing.Size(72, 13);
+            this.lbHTMK.Size = new System.Drawing.Size(88, 19);
             this.lbHTMK.TabIndex = 9;
             this.lbHTMK.Text = "Ẩn mật khẩu";
             // 
@@ -115,18 +113,6 @@ namespace BTL
             this.toggleMK.Size = new System.Drawing.Size(35, 24);
             this.toggleMK.TabIndex = 8;
             this.toggleMK.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // lbQMK
-            // 
-            this.lbQMK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbQMK.AutoSize = true;
-            this.lbQMK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbQMK.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lbQMK.Location = new System.Drawing.Point(142, 521);
-            this.lbQMK.Name = "lbQMK";
-            this.lbQMK.Size = new System.Drawing.Size(118, 20);
-            this.lbQMK.TabIndex = 7;
-            this.lbQMK.Text = "Quên mật khẩu ?";
             // 
             // btnDangNhap
             // 
@@ -162,7 +148,7 @@ namespace BTL
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau.Location = new System.Drawing.Point(174, 352);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(206, 20);
+            this.txtMatKhau.Size = new System.Drawing.Size(206, 25);
             this.txtMatKhau.TabIndex = 3;
             // 
             // txtTenDangNhap
@@ -170,7 +156,7 @@ namespace BTL
             this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenDangNhap.Location = new System.Drawing.Point(174, 289);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 20);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(206, 25);
             this.txtTenDangNhap.TabIndex = 2;
             // 
             // label2
@@ -178,7 +164,7 @@ namespace BTL
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 352);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu : ";
             // 
@@ -187,7 +173,7 @@ namespace BTL
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 289);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập : ";
             // 
@@ -238,7 +224,7 @@ namespace BTL
             this.btnAn.Name = "btnAn";
             this.btnAn.Size = new System.Drawing.Size(30, 30);
             this.btnAn.TabIndex = 1;
-            this.btnAn.Text = "_";
+            this.btnAn.Text = "-";
             this.btnAn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAn.UseVisualStyleBackColor = true;
             this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
@@ -337,7 +323,7 @@ namespace BTL
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 600);
@@ -374,7 +360,6 @@ namespace BTL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Label lbQMK;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label toggleMK;
         private System.Windows.Forms.Label lbHTMK;

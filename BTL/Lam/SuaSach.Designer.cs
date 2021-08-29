@@ -46,9 +46,9 @@ namespace BTL
             this.label6 = new System.Windows.Forms.Label();
             this.txbMaSach = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtGiaNhap = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -202,16 +202,6 @@ namespace BTL
             this.panel1.Size = new System.Drawing.Size(428, 407);
             this.panel1.TabIndex = 54;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(128, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 41);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "Cập nhật sách";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -228,6 +218,16 @@ namespace BTL
             this.txtGiaNhap.Size = new System.Drawing.Size(215, 27);
             this.txtGiaNhap.TabIndex = 55;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(128, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 41);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Cập nhật sách";
+            // 
             // SuaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -236,6 +236,7 @@ namespace BTL
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Name = "SuaSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuaSach";
             this.Load += new System.EventHandler(this.LoadForm_Sua);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

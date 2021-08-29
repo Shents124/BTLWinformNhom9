@@ -11,7 +11,7 @@ namespace BTL
 {
     public partial class QLDonDatHang : Form
     {
-        private readonly string[] trangThai = new string[4] { "Chưa nhập", "Nhập đủ", "Chưa nhập đủ", "Đã hủy" };
+        private readonly string[] trangThai = new string[4] { "Chưa nhập", "Nhập đủ", "Nhập thiếu", "Đã hủy" };
 
         QLBanSachContext qLBanSachContext = new QLBanSachContext();
         List<Dondh> dsDondh = new List<Dondh>();

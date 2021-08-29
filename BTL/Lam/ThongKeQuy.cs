@@ -66,14 +66,7 @@ namespace BTL.Lam
            
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult tl = MessageBox.Show("Bạn muốn đóng form?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (tl == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
+       
 
         private void load_Tk(object sender, EventArgs e)
         {

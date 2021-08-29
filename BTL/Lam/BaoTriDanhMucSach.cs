@@ -33,25 +33,6 @@ namespace BTL
         {
 
         }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            //Lấy dữ liệu từ bảng Sản phẩm
-            var query = from s in db.Loaisaches
-                        where s.TenLoai.Contains(txbTim.Text)
-                        select new
-                        {
-                            map = s.MaLoai,
-                            tensp = s.TenLoai
-                        };
-            dsDanhMuc.Rows.Clear();
-            //Hiển thị lên datagrid view
-            foreach (var item in query)
-            {
-                dsDanhMuc.Rows.Add(item.map, item.tensp);
-            }
-        }
-
         private void BaoTriDanhMuc_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -152,49 +133,6 @@ namespace BTL
                 MessageBox.Show(e1.Message);
             }
             LoadData();
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            var query = from s in db.Loaisaches
-
-                        select new
-                        {
-                            map = s.MaLoai,
-                            tensp = s.TenLoai
-                        };
-            dsDanhMuc.Rows.Clear();
-            foreach (var item in query)
-            {
-                dsDanhMuc.Rows.Add(item.map, item.tensp);
-            }
-        }
-
-        private void btnSap_Click(object sender, EventArgs e)
-        {
-            var query = from s in db.Loaisaches
-                        orderby s.TenLoai
-                        select new
-                        {
-                            map = s.MaLoai,
-                            tensp = s.TenLoai
-                        };
-            dsDanhMuc.Rows.Clear();
-            //Hiển thị lên datagrid view
-            foreach (var item in query)
-            {
-                dsDanhMuc.Rows.Add(item.map, item.tensp);
-            }
-
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult tl = MessageBox.Show("Bạn muốn đóng form?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (tl == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-
 #nullable disable
 
 namespace BTL.Models

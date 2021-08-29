@@ -31,6 +31,7 @@ namespace BTL.Lam
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BieuMauThongKe));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@ namespace BTL.Lam
             this.lblQuy = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbngaytk2 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -86,20 +89,23 @@ namespace BTL.Lam
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(89, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 20);
+            this.label2.Size = new System.Drawing.Size(353, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -107,7 +113,7 @@ namespace BTL.Lam
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 43);
+            this.label3.Location = new System.Drawing.Point(89, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 20);
             this.label3.TabIndex = 3;
@@ -117,19 +123,20 @@ namespace BTL.Lam
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 63);
+            this.label4.Location = new System.Drawing.Point(89, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "_________________________________";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(138, 7);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(135, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 28);
+            this.label6.Size = new System.Drawing.Size(291, 38);
             this.label6.TabIndex = 6;
             this.label6.Text = "THỐNG KÊ BÁO CÁO";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -137,39 +144,69 @@ namespace BTL.Lam
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 57);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(21, 57);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(295, 20);
+            this.label7.Size = new System.Drawing.Size(345, 23);
             this.label7.TabIndex = 7;
             this.label7.Text = "Kết quả hoạt động bán hàng của cửa hàng ";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblQuy
             // 
             this.lblQuy.AutoSize = true;
-            this.lblQuy.Location = new System.Drawing.Point(295, 57);
+            this.lblQuy.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQuy.Location = new System.Drawing.Point(372, 57);
             this.lblQuy.Name = "lblQuy";
-            this.lblQuy.Size = new System.Drawing.Size(106, 20);
+            this.lblQuy.Size = new System.Drawing.Size(129, 23);
             this.lblQuy.TabIndex = 8;
             this.lblQuy.Text = "Quý ..... Năm ....";
+            this.lblQuy.Click += new System.EventHandler(this.lblQuy_Click);
             // 
             // label11
             // 
             this.label11.AllowDrop = true;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 125);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(91, 7);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(243, 20);
+            this.label11.Size = new System.Drawing.Size(280, 23);
             this.label11.TabIndex = 11;
             this.label11.Text = "CỬA HÀNG BÁN HÀNG VINABOOK";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(13, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 158);
+            this.panel1.Size = new System.Drawing.Size(381, 90);
             this.panel1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(93, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Website: www.vinabook.com";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(93, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 23);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Điện thoại: 1900 6401";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel3
             // 
@@ -177,19 +214,25 @@ namespace BTL.Lam
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(627, 14);
+            this.panel3.Location = new System.Drawing.Point(360, 14);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(362, 114);
+            this.panel3.Size = new System.Drawing.Size(384, 114);
             this.panel3.TabIndex = 16;
             // 
             // tbngaytk2
             // 
-            this.tbngaytk2.Location = new System.Drawing.Point(69, 11);
+            this.tbngaytk2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbngaytk2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbngaytk2.Enabled = false;
+            this.tbngaytk2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tbngaytk2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tbngaytk2.Location = new System.Drawing.Point(9, 8);
             this.tbngaytk2.Name = "tbngaytk2";
             this.tbngaytk2.ReadOnly = true;
-            this.tbngaytk2.Size = new System.Drawing.Size(256, 27);
+            this.tbngaytk2.Size = new System.Drawing.Size(372, 23);
             this.tbngaytk2.TabIndex = 22;
             this.tbngaytk2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbngaytk2.TextChanged += new System.EventHandler(this.tbngaytk2_TextChanged);
             // 
             // label24
             // 
@@ -203,7 +246,7 @@ namespace BTL.Lam
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(178, 63);
+            this.label23.Location = new System.Drawing.Point(184, 63);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 20);
             this.label23.TabIndex = 17;
@@ -212,11 +255,13 @@ namespace BTL.Lam
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label22.Location = new System.Drawing.Point(158, 39);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 20);
+            this.label22.Size = new System.Drawing.Size(96, 23);
             this.label22.TabIndex = 7;
             this.label22.Text = "Người lập ";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // panel4
             // 
@@ -224,17 +269,21 @@ namespace BTL.Lam
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(692, 10);
+            this.panel4.Location = new System.Drawing.Point(427, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(306, 130);
+            this.panel4.Size = new System.Drawing.Size(371, 141);
             this.panel4.TabIndex = 17;
             // 
             // tbngaytk
             // 
-            this.tbngaytk.Location = new System.Drawing.Point(27, 86);
+            this.tbngaytk.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbngaytk.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbngaytk.Enabled = false;
+            this.tbngaytk.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbngaytk.Location = new System.Drawing.Point(45, 86);
             this.tbngaytk.Name = "tbngaytk";
             this.tbngaytk.ReadOnly = true;
-            this.tbngaytk.Size = new System.Drawing.Size(256, 27);
+            this.tbngaytk.Size = new System.Drawing.Size(276, 23);
             this.tbngaytk.TabIndex = 21;
             this.tbngaytk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbngaytk.TextChanged += new System.EventHandler(this.tbngaytk_TextChanged);
@@ -244,22 +293,24 @@ namespace BTL.Lam
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.lblQuy);
-            this.panel5.Location = new System.Drawing.Point(286, 157);
+            this.panel5.Location = new System.Drawing.Point(159, 175);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(486, 91);
+            this.panel5.Size = new System.Drawing.Size(533, 91);
             this.panel5.TabIndex = 18;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataThongKe);
-            this.groupBox1.Location = new System.Drawing.Point(28, 277);
+            this.groupBox1.Location = new System.Drawing.Point(48, 283);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 344);
+            this.groupBox1.Size = new System.Drawing.Size(739, 302);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
             // dataThongKe
             // 
+            this.dataThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataThongKe.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -268,13 +319,23 @@ namespace BTL.Lam
             this.dataGridViewTextBoxColumn4,
             this.quytrc,
             this.quynamtrc});
-            this.dataThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataThongKe.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataThongKe.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataThongKe.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dataThongKe.Location = new System.Drawing.Point(3, 23);
             this.dataThongKe.Name = "dataThongKe";
             this.dataThongKe.RowHeadersWidth = 51;
             this.dataThongKe.RowTemplate.Height = 29;
             this.dataThongKe.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataThongKe.Size = new System.Drawing.Size(969, 284);
+            this.dataThongKe.Size = new System.Drawing.Size(733, 276);
             this.dataThongKe.TabIndex = 0;
             this.dataThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -283,42 +344,36 @@ namespace BTL.Lam
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "Diễn giải";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 150;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Đơn vị tính";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Thực hiện";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // quytrc
             // 
             this.quytrc.HeaderText = "% so với quý trước ";
             this.quytrc.MinimumWidth = 6;
             this.quytrc.Name = "quytrc";
-            this.quytrc.Width = 125;
             // 
             // quynamtrc
             // 
             this.quynamtrc.HeaderText = "% so với cùng kỳ năm trước";
             this.quynamtrc.MinimumWidth = 6;
             this.quynamtrc.Name = "quynamtrc";
-            this.quynamtrc.Width = 125;
             // 
             // stt
             // 
@@ -362,33 +417,38 @@ namespace BTL.Lam
             this.panel6.Controls.Add(this.label25);
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(146, 125);
+            this.panel6.Size = new System.Drawing.Size(159, 125);
             this.panel6.TabIndex = 19;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label27
             // 
-            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label27.Location = new System.Drawing.Point(55, 85);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(79, 20);
+            this.label27.Size = new System.Drawing.Size(101, 31);
             this.label27.TabIndex = 21;
             this.label27.Text = "- Lưu: VT,...";
             // 
             // label26
             // 
-            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label26.Location = new System.Drawing.Point(55, 46);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(75, 20);
+            this.label26.Size = new System.Drawing.Size(88, 20);
             this.label26.TabIndex = 20;
             this.label26.Text = "- Sở TTTT;";
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label25.Location = new System.Drawing.Point(30, 22);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(69, 20);
+            this.label25.Size = new System.Drawing.Size(89, 20);
             this.label25.TabIndex = 0;
             this.label25.Text = "Nơi nhận";
             // 
@@ -396,17 +456,18 @@ namespace BTL.Lam
             // 
             this.panel7.Controls.Add(this.panel3);
             this.panel7.Controls.Add(this.panel6);
-            this.panel7.Location = new System.Drawing.Point(28, 643);
+            this.panel7.Location = new System.Drawing.Point(48, 644);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(996, 147);
+            this.panel7.Size = new System.Drawing.Size(750, 139);
             this.panel7.TabIndex = 20;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1250, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(1126, 7);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 62);
+            this.pictureBox2.Size = new System.Drawing.Size(67, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -415,14 +476,15 @@ namespace BTL.Lam
             // 
             // panelPrint
             // 
+            this.panelPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelPrint.Controls.Add(this.panel1);
             this.panelPrint.Controls.Add(this.panel4);
             this.panelPrint.Controls.Add(this.panel7);
             this.panelPrint.Controls.Add(this.panel5);
             this.panelPrint.Controls.Add(this.groupBox1);
-            this.panelPrint.Location = new System.Drawing.Point(26, 12);
+            this.panelPrint.Location = new System.Drawing.Point(101, 12);
             this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(1047, 852);
+            this.panelPrint.Size = new System.Drawing.Size(840, 1120);
             this.panelPrint.TabIndex = 22;
             // 
             // printDocument1
@@ -434,6 +496,7 @@ namespace BTL.Lam
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
             this.printPreviewDialog1.Enabled = true;
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
@@ -443,10 +506,13 @@ namespace BTL.Lam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 1055);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1236, 1032);
             this.Controls.Add(this.panelPrint);
             this.Controls.Add(this.pictureBox2);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "BieuMauThongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BieuMauThongKe";
             this.Load += new System.EventHandler(this.BieuMauThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -461,7 +527,6 @@ namespace BTL.Lam
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataThongKe)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPrint.ResumeLayout(false);
@@ -510,5 +575,7 @@ namespace BTL.Lam
         private System.Windows.Forms.Panel panelPrint;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }
