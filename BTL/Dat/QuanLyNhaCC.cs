@@ -217,5 +217,12 @@ namespace BTL
         {
             HienThiDanhSachNhaCungCap();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemNhaCC myform = new ThemNhaCC();
+            myform.Show();
+
+        }
     }
 }

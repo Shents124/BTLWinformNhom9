@@ -511,11 +511,16 @@ namespace BTL
             //tthd.HorizontalAlignment = Element.ALIGN_LEFT;
             tthd.SpacingBefore = 1f;
             //tthd.SpacingAfter = 20f;
-            string path = Application.StartupPath + "Times New Roman 400.ttf";
+            // string path = Application.StartupPath + "Times New Roman 400.ttf";
+            string fileName = "Times New Roman 400.ttf";
+            string subfoldername = "Resources";
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+            var mainp = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\Times New Roman 400.ttf");
+            //string  path= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Times New Roman 400.ttf");
             BaseFont bf;
             try
             {
-                bf = BaseFont.CreateFont(path, BaseFont.IDENTITY_H, true);
+                bf = BaseFont.CreateFont(mainp, BaseFont.IDENTITY_H, true);
             }
             catch
             {
@@ -526,10 +531,13 @@ namespace BTL
 
             Font font1 = new Font(bf, 2f);
             Font font12 = new Font(bf, 2f);
+
             font12.SetStyle(1);
             Phrase dongmahd = new Phrase();
-            dongmahd.Add(new Chunk("Mã HD: ", font12));
-            dongmahd.Add(new Chunk(hd.MaHd.ToString(), font1));
+
+            dongmahd.Add(new Chunk("Mã HD: ",font12));
+            dongmahd.Add(new Chunk(hd.MaHd.ToString(),font12));
+           
             PdfPCell mahd = new PdfPCell(dongmahd);
             mahd.BorderWidth = 0;
             mahd.Padding = 0;
@@ -684,7 +692,11 @@ namespace BTL
             tkdcell2.Padding = 0;
             tkdcell2.HorizontalAlignment = Element.ALIGN_RIGHT;
             tt.AddCell(tkdcell2);
-            string url = @"D:\Nam_3_ky_2\Window\BTLWinformNhom9\BTL\Resources\logo.png";
+            // string url = @"C:\Users\ADMIN\source\repos\BTLWinformNhom9\BTL\Resources\logo.png";
+            // String url = Application.StartupPath + "logo.png";
+            var url = path.Replace("\\bin\\Debug\\net5.0-windows\\", "\\Resources\\logo1.jpg");
+            //string fileNamep = "logo1.jpg";
+            //string url = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileNamep);
             Image jbp;
             try
             {
