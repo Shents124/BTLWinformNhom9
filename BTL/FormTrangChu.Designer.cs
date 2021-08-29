@@ -72,9 +72,9 @@ namespace BTL
             this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTime.Location = new System.Drawing.Point(12, 52);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(300, 75);
+            this.lblTime.Size = new System.Drawing.Size(354, 75);
             this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "18:30:00";
+            this.lblTime.Text = "loading. . .";
             // 
             // timer1
             // 
