@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Models;
 namespace BTL.Lam
@@ -330,7 +327,7 @@ namespace BTL.Lam
         {
             Rectangle pagearea = e.PageBounds;
             //e.Graphics.DrawImage(memoryimg, (pagearea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
-            e.Graphics.DrawImage(memoryimg, 0, 0, 1369, 1102);
+            e.Graphics.DrawImage(memoryimg, 0, 0, 1047, 852);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

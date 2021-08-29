@@ -1,7 +1,7 @@
 ﻿
 namespace BTL.Son
 {
-    partial class frmQLTaiKhoanCaNhan
+    partial class frmDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.
